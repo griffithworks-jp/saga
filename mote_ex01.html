@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>『境界のミレイ ―Mirei on the Edge― 』 | Extra01</title>
+  <style>
+    :root { --bg:#0f1320; --ink:#e7ebff; --muted:#a6b0d4; --border:#2a3147; --accent:#6ea8fe; }
+    html, body { margin:0; background:var(--bg); color:var(--ink); font-family: system-ui, -apple-system, Segoe UI, Roboto, Noto Sans JP, "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif; }
+    .wrap { max-width: 820px; margin: 0 auto; padding: 18px 14px 24px; }
+    header h1 { margin:0 0 6px; font-size: 1.2rem; }
+    header .sub { color: var(--muted); font-size: .9rem; margin:0 0 8px; }
+
+    .panel { background: linear-gradient(180deg, #1a1f33, #151a2a); border:1px solid var(--border); border-radius:12px; padding: 12px; box-shadow: 0 4px 12px rgba(0,0,0,.35); }
+    .panel + .panel { margin-top: 10px; }
+
+    .panel.location { background: linear-gradient(180deg, #14182a, #101424); text-align: center; }
+    .location-title { font-size: 1.05rem; letter-spacing: 0.15em; color: var(--ink); }
+    .location-sub { margin-top: 4px; font-size: 0.85rem; color: var(--muted); }
+    .panel.time { background: none; border: none; box-shadow: none; padding: 8px 0 4px; text-align: center; }
+    .time-label { font-size: 0.8rem; color: var(--muted); letter-spacing: 0.1em; }
+
+    em.chant { font-style: italic; color: #cfd8ff; letter-spacing: 0.05em; text-shadow: 0 0 6px rgba(180,200,255,.25); }
+    .think { color: var(--muted); font-style: italic; }
+
+    .audio { display:flex; flex-direction:column; gap:6px; }
+    .caption { color:var(--muted); line-height:1.7; font-size: 1rem; white-space: pre-wrap; }
+    figure { margin:0; }
+    .art { width:100%; aspect-ratio: auto; background:none; border:none; border-radius: 0; overflow:hidden; display:grid; place-items:left; }
+    .art img { max-width:100%; height:auto; display:block; }
+
+    footer.nav { display:flex; gap:8px; justify-content:space-between; margin-top:14px; flex-wrap:wrap; }
+    .btn { display:inline-block; padding:10px 14px; border:1px solid var(--border); border-radius:999px; background:#11162a; color:var(--ink); text-decoration:none; font-size:.95rem; }
+    .btn:hover { border-color: var(--accent); box-shadow: 0 0 0 2px rgba(110,168,254,.15) inset; }
+    .btn[aria-disabled="true"] { opacity:.5; pointer-events:none; }
+
+    :root { --font-body: 1rem; --line-body: 1.9; }
+    .caption { font-size: var(--font-body); line-height: var(--line-body); line-height: 1.9; }
+    .font-tools { display:flex; gap:8px; justify-content:flex-start; margin-left:8px; margin-top:8px; }
+    .font-tools button { padding:4px 10px; border:1px solid var(--border);
+      border-radius:8px; background:#11162a; color:var(--ink); cursor:pointer; }
+  </style>
+</head>
+<body>
+  <div class="font-tools">
+    <button onclick="setFontSize('small')">小</button>
+    <button onclick="setFontSize('normal')">標準</button>
+    <button onclick="setFontSize('large')">大</button>
+  </div>
+  <!-- ここから編集 -->
+  <script>
+    function setFontSize(size) {
+    const root = document.documentElement;
+    if (size === 'large') {
+      root.style.setProperty('--font-body', '1.25rem');
+      root.style.setProperty('--line-body', '2.1');
+      localStorage.setItem('fontSize', 'large');
+    } else if (size === 'small') {
+      root.style.setProperty('--font-body', '0.9rem');
+      localStorage.setItem('fontSize', 'small');
+    } else {
+      root.style.setProperty('--font-body', '1rem');
+      localStorage.setItem('fontSize', 'normal');
+    }
+  }
+  (function(){
+    const saved = localStorage.getItem('fontSize');
+    if (saved === 'large') {
+      document.documentElement.style.setProperty('--font-body', '1.25rem');
+      document.documentElement.style.setProperty('--line-body', '2.1');
+    } else if (saved === 'small') {
+      document.documentElement.style.setProperty('--font-body', '0.9rem');
+    }
+  })();
+  const META = {
+    id: 'mote_ex01',
+    no: 'Extra01',
+    title: '誰かがいた場所',
+    audio: '',
+    blocks: [
+      { type: 'text', content: `
+街道だった。
+たぶん。
+
+今では腰ほどの草が伸び、石畳の大半は土の下に沈んでいる。
+
+それでも、ときおり地面から覗く灰色の石が、この道が人の手で築かれたものだと教えていた。
+
+ミレイは足を止めずに歩く。
+
+草が波のように揺れた。
+その向こうに、傾いた道標が一本見えた。
+
+表面はひび割れている。
+ただ、方角を示す矢印と地名だけ辛うじて読むことができた。
+
+クストリー。
+
+道標を後にして、さらに歩くと木々の向こうに建物の影が見えた。
+集落だった場所だ。
+
+草に呑まれた柵。
+壁の崩れた家。
+子供が遊んでいたかもしれない広場。
+
+昔はここを荷馬車が行き交っていたのかもしれない。
+商人も。兵士も。旅人も。
+今は自分しかいない。
+人の姿はない。
+
+戦争か。
+飢饉か。
+それとも魔物か。
+
+理由は分からない。
+ただ、ここ七つ国の辺りでは珍しい話でもなかった。
+
+集落の外れに一本の果樹が立っている。
+誰かが植えたものだろう。
+枝は好き勝手に伸びていたが、赤い実が残っていた。
+
+ミレイは手を伸ばし、ひとつ取る。
+袖で軽く磨き、ひと口かじる。
+
+しゃり、と音がした。
+甘い。
+
+少し考え、もうひとつ鞄へ放り込む。
+明日の朝にでも食べればいい。
+
+さらに歩く。
+傾き始めた陽射しの中、今度は井戸を見つけた。
+
+桶を下ろす。
+ほどなく、ちゃぷん、と水音。
+
+石積みは古い。
+だが、井戸はまだ生きていた。
+
+引き上げた水は驚くほど澄んでいた。
+ミレイはひと口だけ飲み、水袋を沈める。
+
+日が沈む頃。
+古い礼拝堂へ辿り着いた。
+
+壁は半ば崩れ、窓は割れ、祭壇も失われている。
+けれど屋根だけは残っていた。
+
+雨風を凌ぐには十分だった。
+薪を集め、火を起こしながら、ふと天井を見上げる。
+
+黒ずんだ梁。
+色褪せた壁画の欠片。
+崩れた壁の向こうには赤い空。
+
+かつて誰かが祈った場所。
+今は旅人が一夜を借りるだけの場所。
+
+ミレイはしばらく祭壇の跡を眺めていた。
+やがて視線を外し、小さく息を吐く。
+
+（……一晩だけ、お借りします）
+
+もちろん返事はない。
+ただ、夕風だけが崩れた礼拝堂を静かに吹き抜けていった。
+    ` }
+    ],
+
+      // リンク先（存在しない場合は null に）
+      prevHref: 'mote_ep05.html',     // 例: 'ep00.html'
+      nextHref: 'mote_ep06.html',     // 例: 'ep02.html'
+      indexHref: '../mote_index.html',     // インデックスのパス
+  };
+  </script>
+  <!-- ここまで -->
+
+  <div class="wrap">
+    <header>
+      <h1 id="h-title">読み込み中…</h1>
+      <div class="sub" id="h-sub"></div>
+    </header>
+
+    <section class="panel">
+      <div class="audio" id="audio-wrap"></div>
+    </section>
+
+    <section class="panel" id="content-wrap"></section>
+
+    <footer class="nav" id="nav">
+      <a id="prev" class="btn" href="#" aria-disabled="true">← 前の話</a>
+      <a id="index" class="btn" href="#">目次へ</a>
+      <a id="next" class="btn" href="#" aria-disabled="true">次の話 →</a>
+    </footer>
+  </div>
+
+  <script>
+    (function init(){
+      const hTitle = document.getElementById('h-title');
+      const hSub = document.getElementById('h-sub');
+      const audioWrap = document.getElementById('audio-wrap');
+      const artWrap = document.getElementById('art-wrap');
+      const beforeWrap = document.getElementById('before-wrap');
+      const afterWrap = document.getElementById('after-wrap');
+
+      hTitle.textContent = `${META.no}｜${META.title}`;
+      hSub.textContent = META.id;
+
+      if (META.audio) {
+        audioWrap.innerHTML = `<div>BGM</div><audio src="${escapeAttr(META.audio)}" controls controlsList="nodownload" preload="metadata" loop></audio>`;
+      } else {
+        audioWrap.textContent = '（BGM なし）';
+      }
+
+    const contentWrap = document.getElementById('content-wrap');
+
+    if (Array.isArray(META.blocks)) {
+      META.blocks.forEach(block => {
+        if (block.type === 'time') {
+          const panel = document.createElement('section');
+          panel.className = 'panel time';
+
+          const div = document.createElement('div');
+          div.className = 'time-label';
+          div.textContent = block.value || '';
+
+          panel.appendChild(div);
+          contentWrap.appendChild(panel);
+        }
+
+        if (block.type === 'location') {
+          const panel = document.createElement('section');
+          panel.className = 'panel location';
+
+          const h = document.createElement('div');
+          h.className = 'location-title';
+          h.textContent = block.title || '';
+
+          panel.appendChild(h);
+
+          if (block.subtitle) {
+            const s = document.createElement('div');
+            s.className = 'location-sub';
+            s.textContent = block.subtitle;
+            panel.appendChild(s);
+          }
+
+          contentWrap.appendChild(panel);
+        }
+
+        if (block.type === 'text') {
+          const div = document.createElement('div');
+          div.className = 'caption';
+          div.innerHTML = renderText(block.content);
+          contentWrap.appendChild(div);
+        }
+
+        if (block.type === 'image') {
+          const fig = document.createElement('figure');
+          fig.className = 'art';
+          fig.innerHTML = `<img src="${escapeAttr(block.src)}">`;
+          contentWrap.appendChild(fig);
+        }
+      });
+    }
+
+    const aPrev = document.getElementById('prev');
+    const aNext = document.getElementById('next');
+    const aIndex = document.getElementById('index');
+
+    if (META.prevHref) { aPrev.href = META.prevHref; aPrev.removeAttribute('aria-disabled'); }
+    else { aPrev.setAttribute('aria-disabled','true'); aPrev.removeAttribute('href'); }
+
+    if (META.nextHref) { aNext.href = META.nextHref; aNext.removeAttribute('aria-disabled'); }
+    else { aNext.setAttribute('aria-disabled','true'); aNext.removeAttribute('href'); }
+
+    aIndex.href = META.indexHref || '../index.html';
+    })();
+
+    function renderText(raw = '') {
+      return escapeHtml(raw)
+        .replace(/\[i\]([\s\S]+?)\[\/i\]/g, '<em class="chant">$1</em>')
+        .replace(/\[b\]([\s\S]+?)\[\/b\]/g, '<strong>$1</strong>')
+        .replace(/\[think\]([\s\S]+?)\[\/think\]/g, '<span class="think">$1</span>');
+    }
+
+    function escapeHtml(str=''){ return String(str).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#039;'); }
+    function escapeAttr(str=''){ return escapeHtml(str).replaceAll('"','&quot;'); }
+  </script>
+</body>
+</html>
