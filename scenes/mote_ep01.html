@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>『境界のミレイ ―Mirei on the Edge― 』 | 第1話</title>
+  <style>
+    :root { --bg:#0f1320; --ink:#e7ebff; --muted:#a6b0d4; --border:#2a3147; --accent:#6ea8fe; }
+    html, body { margin:0; background:var(--bg); color:var(--ink); font-family: system-ui, -apple-system, Segoe UI, Roboto, Noto Sans JP, "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif; }
+    .wrap { max-width: 820px; margin: 0 auto; padding: 18px 14px 24px; }
+    header h1 { margin:0 0 6px; font-size: 1.2rem; }
+    header .sub { color: var(--muted); font-size: .9rem; margin:0 0 8px; }
+
+    .panel { background: linear-gradient(180deg, #1a1f33, #151a2a); border:1px solid var(--border); border-radius:12px; padding: 12px; box-shadow: 0 4px 12px rgba(0,0,0,.35); }
+    .panel + .panel { margin-top: 10px; }
+
+    .audio { display:flex; flex-direction:column; gap:6px; }
+    .caption { color:var(--muted); line-height:1.7; font-size: 1rem; white-space: pre-wrap; }
+    figure { margin:0; }
+    .art { width:100%; aspect-ratio: auto; background:none; border:none; border-radius: 0; overflow:hidden; display:grid; place-items:left; }
+    .art img { max-width:100%; height:auto; display:block; }
+
+    footer.nav { display:flex; gap:8px; justify-content:space-between; margin-top:14px; flex-wrap:wrap; }
+    .btn { display:inline-block; padding:10px 14px; border:1px solid var(--border); border-radius:999px; background:#11162a; color:var(--ink); text-decoration:none; font-size:.95rem; }
+    .btn:hover { border-color: var(--accent); box-shadow: 0 0 0 2px rgba(110,168,254,.15) inset; }
+    .btn[aria-disabled="true"] { opacity:.5; pointer-events:none; }
+
+    :root { --font-body: 1rem; --line-body: 1.9; }
+    .caption { font-size: var(--font-body); line-height: var(--line-body); line-height: 1.9; }
+    .font-tools { display:flex; gap:8px; justify-content:flex-start; margin-left:8px; margin-top:8px; }
+    .font-tools button { padding:4px 10px; border:1px solid var(--border);
+      border-radius:8px; background:#11162a; color:var(--ink); cursor:pointer; }
+  </style>
+</head>
+<body>
+  <div class="font-tools">
+    <button onclick="setFontSize('small')">小</button>
+    <button onclick="setFontSize('normal')">標準</button>
+    <button onclick="setFontSize('large')">大</button>
+  </div>
+  <!-- ここから編集 -->
+  <script>
+    function setFontSize(size) {
+    const root = document.documentElement;
+    if (size === 'large') {
+      root.style.setProperty('--font-body', '1.25rem');
+      root.style.setProperty('--line-body', '2.1');
+      localStorage.setItem('fontSize', 'large');
+    } else if (size === 'small') {
+      root.style.setProperty('--font-body', '0.9rem');
+      localStorage.setItem('fontSize', 'small');
+    } else {
+      root.style.setProperty('--font-body', '1rem');
+      localStorage.setItem('fontSize', 'normal');
+    }
+  }
+  (function(){
+    const saved = localStorage.getItem('fontSize');
+    if (saved === 'large') {
+      document.documentElement.style.setProperty('--font-body', '1.25rem');
+      document.documentElement.style.setProperty('--line-body', '2.1');
+    } else if (saved === 'small') {
+      document.documentElement.style.setProperty('--font-body', '0.9rem');
+    }
+  })();
+  const META = {
+    id: 'mote_ep01',
+    no: '第1話',
+    title: '名を捨て、名を拾う',
+    audio: '../assets/PerituneMaterial_Augury.mp3',
+    blocks: [
+      { type: 'text', content: `
+――目覚めは、祈りの残響とともに訪れた。
+
+石の冷たさが背を這い、かすかな声が天の彼方から降ってくる。
+まるで、この命がまだ終わっていないことを告げるかのように。
+
+    ` },
+      { type: 'image', src: '../image/mote_ep01_church.png' },
+      { type: 'text', content: `
+
+「……気がつかれましたか？」
+
+その声は、やさしく、けれど現実のものとは思えぬほど遠かった。
+
+ぼやけた視界の中、まず映ったのは高く聳える石柱。
+そして、光の雨を落とすステンドグラス。
+傍らには、修道女がひとり。
+俺を覗き込み、神の導きを確かめるように目を細めていた。
+
+（ここは……七つ国の教会……？　大陸の、どこか――）
+
+思考が揺らぎながら、記憶の波が押し寄せる。
+塔での出来事。引きずり込む闇。あと少しで届くはずだった、世界。
+
+「ひどい怪我でした。でも命は助かりました。
+　神さまに、感謝しないといけませんね」
+
+軋む関節を引き起こすようにして、身体を起こす。
+動ける――腕も足も残っていた。
+下着の上から、薄手の内衣が着せられていた。
+
+だが、違和感が全身を這う。
+重心が違う。骨格が異なる。
+身体が、自分のものではない。
+
+（……変わってる。体が……）
+
+恐れていた呪いが、現実になっていた。
+喉を震わせても、声が出ない。
+
+「……やっぱり、声を……失って……」
+
+修道女が差し出したのは、濃紺の法衣。
+質素で、肌を覆い隠すような衣。
+自分の身を守るための、"仮面"だ。
+
+（……今は、これしかない）
+
+扉の向こうからノックの音が響く。
+
+＊
+
+入ってきたのは、年老いた男――バルディウスと名乗る司教だった。
+杖を手に、教会の威厳をまとっている。
+
+「動けるようになったかね？」
+
+頷く俺に、筆と紙を渡す。
+そこに、嘘を記した。
+
+”魔物の群れに襲われ、声が”
+
+司教は何も問わず、ただひとつの銀の留め具を差し出す。
+
+「〈ソノ・ピン〉という。
+　祈りを失った者に、もう一度声を与える術具だ」
+
+襟元に留めた瞬間、喉に震えが走る。
+
+「……あ……う……っ」
+
+かすかな声――だが確かにそれは声だった。
+
+「……ありがとう」
+
+「助けを求める者を救う。それが神の家の務めだ」
+
+真っ直ぐな眼差しと穏やかな言葉。
+この人を信じてもいいかもしれないと思った――
+胸の奥に、わずかな違和感を残しながら。
+
+    ` },
+      { type: 'image', src: '../image/church_interior03_960.png' },
+      { type: 'text', content: `
+
+夜更け。
+眠れぬまま廊下へ出た俺は、静まり返った教会を歩き出す。
+声は戻ったはずなのに、胸のざわめきだけが消えなかった。
+
+北の翼廊の突き当たり。
+祈りの場から、わずかに外れた場所。
+施錠された扉の隙間から、淡い灯りが漏れている。
+足を止め、耳を澄ました。
+
+「……凡人の魔術式というのは、本来、幹のように太い一本から枝が分かれるものだ。
+　戦闘魔術士であっても、主軸は一本。
+　それ以外は、せいぜい数本並走する程度に過ぎない。
+　だが、彼女の体内では、夥しい線が絡み合い、互いを侵し合いながら、なお崩れていない。
+　普通なら、とっくに焼き切れている」
+
+司教の声は、抑揚のない冷静さを帯びていた。
+祈りを語るときのそれとは、明らかに違う。
+
+「……眠っている間に、覗いたのですか」
+
+短い沈黙。
+返答はなかった。
+
+代わりに、低く、乾いた声が続く。
+
+「……あれほどの構造だ。
+　あれが制御さえできれば、単独で部隊一つに匹敵する」
+
+一瞬、言葉の意味を理解できなかった。
+
+「……洗脳器〈ノク・アニム〉を使えばいい。
+　それで余計な意思も、迷いも、痛みも削げ落とせる。
+　人として扱うより――
+　“器”にしたほうが、むしろ慈悲だろう」
+
+血が凍った。
+信じかけたばかりの心が、音を立てて崩れ落ちる。
+
+――“洗脳器“。
+言葉だけが、頭の中で反芻する。
+
+意思を削ぐ。
+迷いを消す。
+考えることを奪う。
+
+それは、従わせるための道具だ。
+いや――
+最初から、従う“形”に作り替えるためのもの。
+
+（……人の駒にされるのは御免だ）
+
+踵を返す。
+出口へ――いや、門扉は夜間封鎖されている。
+試しに押したが、びくともしなかった。
+ならば――別の道を探す。
+
+目が覚めたときの客間。
+そこの窓から、外へ出られる。
+
+＊
+
+「……この服、借りさせてもらう」
+
+「ええ、構いませんが……？」
+
+「もっとも当分返せそうにないが――看病、感謝してる」
+
+窓を開けると、夜風が頬を撫でる。
+
+「司教殿によろしく。"他を当たってくれ"とな」
+
+足をかけ、外へ。
+塀の前で振り返る。
+せめて名を告げるべきだと思った。
+名前も知らないこの人の手がなければ、俺はここにすら立てなかった。
+
+「……俺の名は、――」
+
+元の名が口を突きかける。
+だが、法衣を纏うこの姿は、もう“俺”ではない。
+
+「……ミレイ」
+
+なぜ、その名を名乗ったのか。
+自分でも理由はわからなかった。
+だが、そう口にした瞬間、不思議と胸にすとんと落ちた。
+
+――名を捨てた人間が、名を拾いなおす。
+そんな風にも思えた。
+
+「名は、ミレイだ。」
+
+そう残して、俺は夜の石畳へと降り立った。
+
+＊
+
+夜風の中、俺は踏み固められた道を歩く。
+石ではなく、土と砂利が、かつての足跡を覚えている巡礼路だ。
+
+教会を出たはいいが、行く当てなど、最初からなかった。
+
+このまま、どこかへ姿を消すか。
+それとも――。
+
+あるとすれば。
+
+（……あの学苑に、戻る……？）
+
+ここから学苑までは、相当な距離があるみたいだった。
+道中、魔物とも出くわすに違いない。
+――魔物。
+この世界では、力の無い者は、生きていけない。
+
+（武器もない。
+　この身体で、まともに剣を振れるとも思えない）
+
+頼れるのは、魔術だけだ。
+だが、その魔術も借り物の声で――今は、信用できなかった。
+
+（“願い”で手に入れた力は、本物のはずだった。
+　それなのに……声ひとつ、思うように扱えないなんて）
+
+それでも、生きている。
+こうして歩けている。
+
+奇跡か。
+それとも、運命がまだ終わりを許さなかっただけか。
+
+（……ともかく、人のいるところへ行くしかない）
+
+海沿いを北へ。
+まずは、道の続くほうへ。
+町があるなら、そこへ。
+
+この新しい身体。
+この名もない姿。
+
+慣れない感覚を引きずるようにして、ミレイは夜の道を歩き出していった。
+
+    ` },
+      { type: 'image', src: '../image/nightsky_star03_960.png' }
+    ],
+
+      // リンク先（存在しない場合は null に）
+      prevHref: null,          // 例: 'ep00.html'
+      nextHref: 'mote_ep02.html',     // 例: 'ep02.html'
+      indexHref: '../mote_index.html',     // インデックスのパス
+  };
+  </script>
+  <!-- ここまで -->
+
+  <div class="wrap">
+    <header>
+      <h1 id="h-title">読み込み中…</h1>
+      <div class="sub" id="h-sub"></div>
+    </header>
+
+    <section class="panel">
+      <div class="audio" id="audio-wrap"></div>
+    </section>
+
+  <section class="panel" id="content-wrap"></section>
+
+    <footer class="nav" id="nav">
+      <a id="prev" class="btn" href="#" aria-disabled="true">← 前の話</a>
+      <a id="index" class="btn" href="#">目次へ</a>
+      <a id="next" class="btn" href="#" aria-disabled="true">次の話 →</a>
+    </footer>
+  </div>
+
+  <script>
+    // META を流し込む
+    (function init(){
+      const hTitle = document.getElementById('h-title');
+      const hSub = document.getElementById('h-sub');
+      const audioWrap = document.getElementById('audio-wrap');
+      const artWrap = document.getElementById('art-wrap');
+      const beforeWrap = document.getElementById('before-wrap');
+      const afterWrap = document.getElementById('after-wrap');
+
+      hTitle.textContent = `${META.no}｜${META.title}`;
+      hSub.textContent = META.id;
+
+      if (META.audio) {
+        audioWrap.innerHTML = `<div>BGM</div><audio src="${escapeAttr(META.audio)}" controls controlsList="nodownload" preload="metadata" loop></audio>`;
+      } else {
+        audioWrap.textContent = '（BGM なし）';
+      }
+
+  const contentWrap = document.getElementById('content-wrap');
+
+  if (Array.isArray(META.blocks)) {
+    META.blocks.forEach(block => {
+      if (block.type === 'text') {
+        const div = document.createElement('div');
+        div.className = 'caption';
+        div.textContent = block.content;
+        contentWrap.appendChild(div);
+      }
+
+      if (block.type === 'image') {
+        const fig = document.createElement('figure');
+        fig.className = 'art';
+        fig.innerHTML = `<img src="${escapeAttr(block.src)}">`;
+        contentWrap.appendChild(fig);
+      }
+    });
+  }
+
+      // ナビゲーション
+      const aPrev = document.getElementById('prev');
+      const aNext = document.getElementById('next');
+      const aIndex = document.getElementById('index');
+
+      if (META.prevHref) { aPrev.href = META.prevHref; aPrev.removeAttribute('aria-disabled'); }
+      else { aPrev.setAttribute('aria-disabled','true'); aPrev.removeAttribute('href'); }
+
+      if (META.nextHref) { aNext.href = META.nextHref; aNext.removeAttribute('aria-disabled'); }
+      else { aNext.setAttribute('aria-disabled','true'); aNext.removeAttribute('href'); }
+
+      aIndex.href = META.indexHref || '../index.html';
+    })();
+
+    function escapeHtml(str=''){ return String(str).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#039;'); }
+    function escapeAttr(str=''){ return escapeHtml(str).replaceAll('"','&quot;'); }
+  </script>
+</body>
+</html>
