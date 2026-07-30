@@ -1,0 +1,501 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>『境界のミレイ ―Mirei on the Edge― 』 | 第3話</title>
+  <style>
+    :root { --bg:#0f1320; --ink:#e7ebff; --muted:#a6b0d4; --border:#2a3147; --accent:#6ea8fe; }
+    html, body { margin:0; background:var(--bg); color:var(--ink); font-family: system-ui, -apple-system, Segoe UI, Roboto, Noto Sans JP, "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif; }
+    .wrap { max-width: 820px; margin: 0 auto; padding: 18px 14px 24px; }
+    header h1 { margin:0 0 6px; font-size: 1.2rem; }
+    header .sub { color: var(--muted); font-size: .9rem; margin:0 0 8px; }
+
+    .panel { background: linear-gradient(180deg, #1a1f33, #151a2a); border:1px solid var(--border); border-radius:12px; padding: 12px; box-shadow: 0 4px 12px rgba(0,0,0,.35); }
+    .panel + .panel { margin-top: 10px; }
+
+    .panel.location { background: linear-gradient(180deg, #14182a, #101424); text-align: center; }
+    .location-title { font-size: 1.05rem; letter-spacing: 0.15em; color: var(--ink); }
+    .location-sub { margin-top: 4px; font-size: 0.85rem; color: var(--muted); }
+    .panel.time { background: none; border: none; box-shadow: none; padding: 8px 0 4px; text-align: center; }
+    .time-label { font-size: 0.8rem; color: var(--muted); letter-spacing: 0.1em; }
+
+    em.chant { font-style: italic; color: #cfd8ff; letter-spacing: 0.05em; text-shadow: 0 0 6px rgba(180,200,255,.25); }
+    .think { color: var(--muted); font-style: italic; }
+
+    .audio { display:flex; flex-direction:column; gap:6px; }
+    .caption { color:var(--muted); line-height:1.7; font-size: 1rem; white-space: pre-wrap; }
+    figure { margin:0; }
+    .art { width:100%; aspect-ratio: auto; background:none; border:none; border-radius: 0; overflow:hidden; display:grid; place-items:left; }
+    .art img { max-width:100%; height:auto; display:block; }
+
+    footer.nav { display:flex; gap:8px; justify-content:space-between; margin-top:14px; flex-wrap:wrap; }
+    .btn { display:inline-block; padding:10px 14px; border:1px solid var(--border); border-radius:999px; background:#11162a; color:var(--ink); text-decoration:none; font-size:.95rem; }
+    .btn:hover { border-color: var(--accent); box-shadow: 0 0 0 2px rgba(110,168,254,.15) inset; }
+    .btn[aria-disabled="true"] { opacity:.5; pointer-events:none; }
+
+    :root { --font-body: 1rem; --line-body: 1.9; }
+    .caption { font-size: var(--font-body); line-height: var(--line-body); line-height: 1.9; }
+    .font-tools { display:flex; gap:8px; justify-content:flex-start; margin-left:8px; margin-top:8px; }
+    .font-tools button { padding:4px 10px; border:1px solid var(--border);
+      border-radius:8px; background:#11162a; color:var(--ink); cursor:pointer; }
+  </style>
+</head>
+<body>
+  <div class="font-tools">
+    <button onclick="setFontSize('small')">小</button>
+    <button onclick="setFontSize('normal')">標準</button>
+    <button onclick="setFontSize('large')">大</button>
+  </div>
+  <!-- ここから編集 -->
+  <script>
+    function setFontSize(size) {
+    const root = document.documentElement;
+    if (size === 'large') {
+      root.style.setProperty('--font-body', '1.25rem');
+      root.style.setProperty('--line-body', '2.1');
+      localStorage.setItem('fontSize', 'large');
+    } else if (size === 'small') {
+      root.style.setProperty('--font-body', '0.9rem');
+      localStorage.setItem('fontSize', 'small');
+    } else {
+      root.style.setProperty('--font-body', '1rem');
+      localStorage.setItem('fontSize', 'normal');
+    }
+  }
+  (function(){
+    const saved = localStorage.getItem('fontSize');
+    if (saved === 'large') {
+      document.documentElement.style.setProperty('--font-body', '1.25rem');
+      document.documentElement.style.setProperty('--line-body', '2.1');
+    } else if (saved === 'small') {
+      document.documentElement.style.setProperty('--font-body', '0.9rem');
+    }
+  })();
+  const META = {
+    id: 'mote_ep03',
+    no: '第3話',
+    title: '前日譚：因果の魔人',
+    audio: '../assets/PerituneMaterial_Wish4_loop.mp3',
+    blocks: [
+      { type: 'text', content: `
+――やがて、陽は傾き、道は夜の色に染まっていった。
+丘を越えた先に、ひらけた草原が広がる。
+
+月明かりに照らされ、草花が銀色に光っている。
+あてもない歩みを、そこで止めた。
+一人で焚き火を起こすことも考えたが、煙も光も、この世界では余計な招き灯だ。
+人に見つかれば面倒で、魔物に見つかれば命が惜しい。
+
+外套を身体に巻きつけて、草の上に身を横たえた。
+背中から伝わる夜露の冷たさに、思わず肩をすくめた。
+春とはいえ、長くは眠れそうにない。
+
+ケープの下、借りた法衣の内ポケットに手を入れると、指先が何か硬いものに触れた。
+角銀貨が二枚、月明かりに鈍く光った。
+忘れ物か。でもおかげで、街に着けば一泊くらいはできる。
+
+（……ありがたい）
+
+風が髪を揺らすたび、首筋に張りつく感覚が気になる。
+汗や潮風の塩気が肌に残っている気がして、なんとなく落ち着かない。
+寝床や食事はともかく、水をたっぷり使って身体を洗えるのは宿ぐらいだ。
+こうして肌がざらつくと、妙に気になってしまうのは、やはりこの身体のせいか。
+
+    ` },
+      { type: 'image', src: '../image/flowers_night02_480.png' },
+      { type: 'text', content: `
+
+銀貨をポケットに戻し、仰向けになる。
+見上げれば、雲の切れ間に星が満ちていた。
+無数の光が、暗い空を飾っている。
+学苑の高い塀の中では、決して見られなかった景色。
+昨日までは同じ空を見ても、ただ時間を測るための目印にしか思えなかったはずだ。
+今は――なぜか、胸が静かにざわつく。
+
+（……少し、冷えるな）
+
+両膝を抱え、ケープの裾をたぐり寄せる。
+眠気は訪れず、耳に届くのは草のさざめきと、遠くで響く獣の鳴き声。
+その音の隙間に、ふいに別の記憶が流れ込んでくる。
+
+    ` },
+      { type: 'location',
+        title: '【前日譚：因果の魔人】' },
+      { type: 'text', content: `
+
+あれは、学苑での最後の休日だった。
+この日ばかりは、俺も全力で走った。
+
+ただひたすら、風を切って、塀を越えて、監視の目を潜って。
+召喚された連中を閉じ込めておく、学苑という名の収容施設から抜け出す。
+それが、俺のここ数ヶ月の計画だった。
+
+いままで学苑に従順なふりをしていたのも、すべてはこの瞬間のため。
+向かう先は、“因果の塔”。
+
+学苑の遥か向こうに聳える、廃墟同然の古塔。
+その最上階には、“書の魔人”が眠っているという。
+
+    ` },
+      { type: 'image', src: '../image/mote_ep03_01.png' },
+      { type: 'text', content: `
+
+それを知ったのは偶然だった。
+ごく少数の“王者の資質”とやらがある者に、何でも好きな願いを叶えるという存在。
+信じがたい話だった。
+けれど、元の世界から呼び出され、こんな世界に勝手に連れてこられたことを思えば、
+俺にはそれを疑う余裕なんてなかった。
+
+塔の最上階、崩れかけた書見台に、ぽつんと置かれていた一冊の赤革の本。
+それに触れた瞬間だった。
+
+    ` },
+      { type: 'image', src: '../image/mote_ep03_syo.png' },
+      { type: 'text', content: `
+
+外の空が翳り、風が塔内に吹き込む。
+ページがひとりでに開き、書の魔人は現れた。
+
+──因果律の改竄者。
+選ばれし弱者に、等しき代償をもって奇跡を与える者。
+
+『我を何と呼ぼうと構わぬ。
+　我に名前などないのだからな』
+
+声とも音ともつかぬものが頭の中に直接響いた。
+存在自体が言葉を超えているような感覚だった。
+
+そして、魔人は言った。
+
+『願いは三つ。順番も内容も、すべて汝に委ねよう』
+
+三つ――？
+一つだけではないと知った瞬間、自分の中で何かが弾けた。
+叶えられることができる願いは三つ……。
+
+一つは、決めていた。元の世界に帰ること。
+
+だが、これは最後にとっておくべきだろう。
+残る二つ。何を“手土産”に持って帰ろうか……。
+
+金？　不老不死の身体？　もっと特別な能力？
+何を言うべきか。
+悩んでいると、下階から気配が近づいた。
+
+「ちっ、やっぱり来てたんだ」
+
+追いついてきたのは、“ジルヴァ”と名乗る男だ。
+学生服を翻しながら、余裕の笑みを浮かべていた。
+
+「それ、俺も狙ってたんだけどなぁ」
+
+言いながら、魔人を一瞥する。
+
+「“王者の資質”とか言う割に、案外、間口広いんだな」
+
+挑発的な口ぶりに、俺は舌打ちした。
+こいつだけには譲れない。
+
+だから、俺は願った。
+
+「敵を打ち倒すための、圧倒的な強さを」
+
+瞬間、身体にあふれてくる力を感じた。
+
+魔力が巡る――魔力は、生き物の体内を流れる“魔術の燃料”だ。
+詠唱構文は、その燃料を形にするための呪文の設計図。
+それは、すでに知っているはずの理屈。
+
+あの学苑で、何度も頭に叩き込んだ。
+炎を生み、制御するための最初の一歩。
+初歩の属性語《ボル》。
+火花を起こし、小さな火を灯すための、教本にも載っている基礎術。
+
+本来なら、そこから先は、厳しい訓練と反復が必要なはずだった。
+
+それが、今は違った。
+誰かに教えられた知識ではなく、
+最初から“そうである”ものとして、頭に直接刻まれていく。
+
+加えて筋力、瞬発力も、すべてが別物になった感覚。
+
+踏み込めば、地面が遅れてついてくる。
+視界に映るものすべてが僅かに鈍く、引き伸ばされたように感じられる。
+力は“溜める”ものではなく、“流す”ものになっていた。
+腕を振るだけで、空気が割れる。
+そんな予感があった。
+
+強さ。
+――いや。これは、訓練で得られるような強さじゃない。
+
+そして俺は、躊躇なく手をかざした。
+完全な詠唱破棄（Silent Chant）で放つ、炎の魔術――[i]《ボル＝ゾーガ》[/i]。
+大きな火の球を撃ち出す攻撃の術だ。
+
+だが──
+
+ジルヴァは、その爆炎の中から、涼しげに歩いてきた。
+
+「……それって、本当にお前の最強の攻撃か？
+　以前の喧嘩で貰った火術の方がまだ効いた気がするけど？」
+
+ありえない。
+威力は桁違いのはずだ。
+だがジルヴァは、楽しそうに笑っていた。
+
+「お前、騙されてない？
+　願いが叶うって言うなら、もっと分かりやすいものを試せばいいのに」
+
+ジルヴァは、にやりと笑って続けた。
+
+「例えば、“口の利けない女になる”……とか」
+
+馬鹿にされた気がして、頭に血が上った。
+
+「その願いで、ちゃんと変わるなら……少なくとも本物だって証明できる」
+
+カッとなった俺は、ろくに考えもせず、二つ目の願いを口にしてしまった。
+
+「だったら“口の利けない女に”──」
+
+言った瞬間、喉が詰まり、言葉が出なくなった。
+
+（訂正……できない！）
+
+さっきまで、世界が遅れて見えていたはずだった。
+踏み込めば、地面が応える感触さえ感じていた。
+
+――なのに。
+
+骨格が軋み、重心が崩れる。
+力の流れが、途中で途切れる。
+身体の内側で、何かが“組み替えられていく”のが分かった。
+
+声だけじゃない。
+この身体そのものが、別のものになろうとしている。
+混乱のまま、ジルヴァに飛びかかる。
+詠唱はできない。
+魔術が使えないなら、殴ればいい。掴めばいい。
+
+だが――
+
+踏み込んだはずの脚が、床を捉えない。
+拳に力を込めた瞬間、重さだけが空回りする。
+
+（……弱い）
+
+ほんの少し前、あれほど満ちていた力は、どこにもない。
+掴みかかった腕は、あっさりと受け止められた。
+次の瞬間、天地が反転する。
+視界が横倒しになり、衝撃が背中を打った。
+
+そのとき、視界いっぱいに――淡く光るものが舞った。
+顔の前を、長い銀色の線が揺れる。
+遅れて落ちてくるそれが、自分のものだと理解するまで、一瞬の間があった。
+
+（……髪？）
+
+肩の先まで流れ落ちる、見覚えのない長さ。
+指先に絡みつく、冷たい感触。
+
+考えるより先に、衝撃が来た。
+ジルヴァは俺を容易く受け止め、体重ごと投げ飛ばしていたからだ。
+
+「効かないって分かってたよ。
+　魔術くらい警戒するさ。
+　以前、あんたが得意げにぶちかましてきたからね」
+
+床に倒れたまま、視界の端でジルヴァの影が揺れた。
+背中に走る鈍痛が、遅れて全身に広がる。
+
+その様子を見下ろしながら、ジルヴァは袖口から小袋を取り出した。
+
+「“魔封薬”――ふりかけると魔術の干渉を抑えることができる。
+　ま、予防線ってやつだ」
+
+少しだけ、視線を逸らしてから、続けた。
+
+「……悪く思うなよ。
+　どうしても、一つは“願い”を使わせてもらう必要があった」
+
+言い訳でも、謝罪でもない。
+ただ事実を告げる声音だった。
+
+ようやく膝を立てる。
+ミレイは壁に手をつき、ふらつきながらも、なんとか体を起こした。
+
+そのときだった。
+
+魔人が、その一部始終を楽しむように見下ろし、言葉を落とす。
+
+『願いを叶えてもらうということ。
+　それは本来、己の手で運命を切り開くことではない。
+　運でも、努力でもなく、外の力を借りる行為だ』
+
+頭の奥に直接、声が響く。
+
+『それは因果律の逆流。
+　物質にも魂にも、均しく“代償”が与えられる』
+
+その瞬間、俺の思考が凍りついた。
+
+（“代償”……？）
+
+喉が締めつけられ、息が浅くなる。
+
+ジルヴァも、動かなかった。
+いや、動けなかった。
+
+さっきまで余裕を装っていたはずの肩が、わずかに強張っている。
+魔封薬の袋を握る指に、無意識な力がこもっていた。
+
+書の魔人の言葉が続く。
+
+『望みが大きければ大きいほど、支払うものもまた大きい。
+　それは呪いではなく、均衡なのだ』
+
+一歩、後ずさった。
+
+（……呪い……？　そんな……）
+
+そのとき、足元が音もなく崩れた。
+床石が砕け、視界が一気に傾く。
+風が吹き荒れる。
+身体が宙に放り出される感覚。
+
+空が、塔が、ジルヴァが、魔人が――
+すべてが遠ざかっていく。
+
+（……こんな、はずじゃ……）
+
+叫ぼうとして、音が空を切った。
+
+俺の声は、もう――どこにも、なかった。
+    ` }
+    ],
+
+      // リンク先（存在しない場合は null に）
+      prevHref: 'mote_ep02.html',     // 例: 'ep00.html'
+      nextHref: 'mote_ep04.html',     // 例: 'ep02.html'
+      indexHref: '../mote_index.html',     // インデックスのパス
+  };
+  </script>
+  <!-- ここまで -->
+
+  <div class="wrap">
+    <header>
+      <h1 id="h-title">読み込み中…</h1>
+      <div class="sub" id="h-sub"></div>
+    </header>
+
+    <section class="panel">
+      <div class="audio" id="audio-wrap"></div>
+    </section>
+
+  <section class="panel" id="content-wrap"></section>
+
+    <footer class="nav" id="nav">
+      <a id="prev" class="btn" href="#" aria-disabled="true">← 前の話</a>
+      <a id="index" class="btn" href="#">目次へ</a>
+      <a id="next" class="btn" href="#" aria-disabled="true">次の話 →</a>
+    </footer>
+  </div>
+
+  <script>
+    // META を流し込む
+    (function init(){
+      const hTitle = document.getElementById('h-title');
+      const hSub = document.getElementById('h-sub');
+      const audioWrap = document.getElementById('audio-wrap');
+      const artWrap = document.getElementById('art-wrap');
+      const beforeWrap = document.getElementById('before-wrap');
+      const afterWrap = document.getElementById('after-wrap');
+
+      hTitle.textContent = `${META.no}｜${META.title}`;
+      hSub.textContent = META.id;
+
+      if (META.audio) {
+        audioWrap.innerHTML = `<div>BGM</div><audio src="${escapeAttr(META.audio)}" controls controlsList="nodownload" preload="metadata" loop></audio>`;
+      } else {
+        audioWrap.textContent = '（BGM なし）';
+      }
+
+  const contentWrap = document.getElementById('content-wrap');
+
+  if (Array.isArray(META.blocks)) {
+    META.blocks.forEach(block => {
+      if (block.type === 'time') {
+        const panel = document.createElement('section');
+        panel.className = 'panel time';
+
+        const div = document.createElement('div');
+        div.className = 'time-label';
+        div.textContent = block.value || '';
+
+        panel.appendChild(div);
+        contentWrap.appendChild(panel);
+      }
+
+      if (block.type === 'location') {
+        const panel = document.createElement('section');
+        panel.className = 'panel location';
+
+        const h = document.createElement('div');
+        h.className = 'location-title';
+        h.textContent = block.title || '';
+
+        panel.appendChild(h);
+
+        if (block.subtitle) {
+          const s = document.createElement('div');
+          s.className = 'location-sub';
+          s.textContent = block.subtitle;
+          panel.appendChild(s);
+        }
+
+        contentWrap.appendChild(panel);
+      }
+          if (block.type === 'text') {
+        const div = document.createElement('div');
+        div.className = 'caption';
+        div.innerHTML = renderText(block.content);
+        contentWrap.appendChild(div);
+      }
+
+      if (block.type === 'image') {
+        const fig = document.createElement('figure');
+        fig.className = 'art';
+        fig.innerHTML = `<img src="${escapeAttr(block.src)}">`;
+        contentWrap.appendChild(fig);
+      }
+    });
+  }
+
+      // ナビゲーション
+      const aPrev = document.getElementById('prev');
+      const aNext = document.getElementById('next');
+      const aIndex = document.getElementById('index');
+
+      if (META.prevHref) { aPrev.href = META.prevHref; aPrev.removeAttribute('aria-disabled'); }
+      else { aPrev.setAttribute('aria-disabled','true'); aPrev.removeAttribute('href'); }
+
+      if (META.nextHref) { aNext.href = META.nextHref; aNext.removeAttribute('aria-disabled'); }
+      else { aNext.setAttribute('aria-disabled','true'); aNext.removeAttribute('href'); }
+
+      aIndex.href = META.indexHref || '../index.html';
+    })();
+
+    function renderText(raw = '') {
+      return escapeHtml(raw)
+        .replace(/\[i\]([\s\S]+?)\[\/i\]/g, '<em class="chant">$1</em>')
+        .replace(/\[b\]([\s\S]+?)\[\/b\]/g, '<strong>$1</strong>')
+        .replace(/\[think\]([\s\S]+?)\[\/think\]/g, '<span class="think">$1</span>');
+    }
+
+    function escapeHtml(str=''){ return String(str).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#039;'); }
+    function escapeAttr(str=''){ return escapeHtml(str).replaceAll('"','&quot;'); }
+  </script>
+</body>
+</html>
