@@ -1,0 +1,754 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>用語集・設定資料 | ガルレリアンサーガ</title>
+  <style>
+    :root { --bg:#0f1320; --ink:#e7ebff; --muted:#a6b0d4; --border:#2a3147; --accent:#6ea8fe; }
+    html, body { margin:0; background:var(--bg); color:var(--ink); font-family:system-ui,-apple-system,Segoe UI,Roboto,Noto Sans JP,"Hiragino Kaku Gothic ProN","Meiryo",sans-serif; }
+    .wrap { max-width: 900px; margin: 0 auto; padding: 18px 14px 28px; }
+    header h1 { margin:0 0 6px; font-size: 1.3rem; }
+    header p { margin:0 0 10px; color:var(--muted); }
+
+    .tools { display:flex; gap:8px; align-items:center; margin:10px 0 14px; }
+    .tools input[type="search"] { flex:1; min-width:160px; padding:10px 12px; border-radius:10px; border:1px solid var(--border); background:#0e1430; color:var(--ink); }
+    .tools a { padding:10px 12px; border-radius:999px; border:1px solid var(--border); background:#11162a; color:var(--ink); text-decoration:none; }
+    .tools a:hover { border-color: var(--accent); box-shadow: 0 0 0 2px rgba(110,168,254,.15) inset; }
+    .card { background: linear-gradient(180deg, #1a1f33, #151a2a); border:1px solid var(--border); border-radius:12px; padding: 12px; box-shadow: 0 4px 12px rgba(0,0,0,.35); }
+    .card + .card { margin-top: 12px; }
+
+    .entry { display:grid; grid-template-columns: 220px 1fr; gap:12px; }
+    @media (max-width: 720px){ .entry { grid-template-columns: 1fr; } }
+
+    .term { font-weight:700; font-size:1rem; }
+    .reading { color:var(--muted); font-size:.9rem; }
+    .tags { display:flex; gap:6px; flex-wrap:wrap; margin-top:6px; }
+    .tag { font-size:.75rem; color:#b9c3ff; background:#11162a; border:1px solid var(--border); padding:2px 6px; border-radius:999px; }
+    .first { margin-top: 6px; font-size: .82rem; color: var(--muted); line-height: 1.5; }
+    .first a { color: var(--accent); text-decoration: none; }
+    .first a:hover { text-decoration: underline; }
+    .def-toggle {
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:10px;
+      cursor:pointer;
+      user-select:none;
+      padding: 2px 0;
+      outline: none; }
+    .def-toggle:focus-visible { box-shadow: 0 0 0 2px rgba(110,168,254,.25) inset; border-radius: 8px; }
+    .def-toggle .label { color: var(--muted); font-size: .88rem; }
+    .def-toggle .chev {
+      color: var(--muted);
+      font-size: .9rem;
+      transform: translateY(1px);
+      opacity: .9;
+      white-space: nowrap; }
+
+    .def {
+      display:none;
+      margin-top: 6px;
+      line-height:1.7;
+      white-space: pre-wrap;
+      color: var(--muted); }
+    .card.open .def { display:block; }
+    .card.open .def-toggle .chev { transform: rotate(180deg) translateY(-1px); }
+    .alpha { display:flex; gap:6px; flex-wrap:wrap; margin: 4px 0 10px; }
+    .alpha a { padding:6px 8px; border:1px solid var(--border); border-radius:8px; text-decoration:none; color:var(--ink); }
+    .alpha a:hover { border-color: var(--accent); }
+    .group-title { margin: 16px 0 8px; font-size: 1rem; color: var(--muted); }
+
+    /* 概要は常時表示 */
+    .summary { line-height:1.7; white-space: pre-wrap; color: var(--muted); }
+
+    /* 詳細（折りたたみ） */
+    .detail-toggle{
+      margin-top: 8px;
+      display:flex; align-items:center; justify-content:space-between; gap:10px;
+      cursor:pointer; user-select:none;
+      padding: 6px 8px;
+      border:1px dashed var(--border);
+      border-radius:10px;
+      color: var(--muted);
+      font-size:.86rem;
+    }
+    .detail-toggle:hover{ border-color: var(--accent); }
+    .detail-toggle:focus-visible{ outline:none; box-shadow: 0 0 0 2px rgba(110,168,254,.25) inset; }
+    .detail{ display:none; margin-top: 8px; line-height:1.7; white-space: pre-wrap; color: var(--muted); }
+    .card.open-detail .detail{ display:block; }
+    .card.open-detail .detail-toggle .chev{ transform: rotate(180deg); }
+
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>用語集・設定資料</h1>
+      <p>ガルレリアンサーガシリーズに登場する用語の説明ページです。</p>
+      <div class="tools">
+        <input id="q" type="search" placeholder="検索（用語・よみ・本文）…" aria-label="用語検索" />
+        <a href="saga_portal.html">小説ポータルへ戻る</a>
+      </div>
+      <div class="alpha" id="alpha"></div>
+    </header>
+
+    <div id="list"></div>
+  </div>
+  <script>
+    const TERMS = [
+      {
+        id: 'oath_of_akyuletes',
+        term: 'アキューリーズの誓約 / Oath of Akyuletes',
+        reading: 'あきゅーりーずのせいやく',
+        summary: `庇護の天使アキューリーズが地上界に施した防護の結界。
+外界からの侵入意思を持つ存在を拒む防壁として機能する。
+これにより魔界からの侵攻は防がれているが、
+同時に天界からの直接的な介入も不可能となっている。
+アキューリーズは、ザナン連合を建国した五英雄と協力して、
+異教エディル人による魔族召喚を防いだ存在として語られている。`,
+        tags: ['人物', '神秘', '伝説', '設定'], initial: 'あ',
+        firstWork: '設定のみ', firstEpisode: '', firstHref: ''
+      },
+      {
+        id: 'azure_hall',
+        term: '青の家 / Azure Hall',
+        reading: 'あおのいえ',
+        summary: `大陸中央部で活動する民間の自警・救済組織。
+魔物退治や治安維持、民の自立支援を掲げている集団。
+その規模と行動力から一つの勢力として見なされ、権力層から警戒される存在でもある。
+リーダーは、ウェインと呼ばれる人物。`,
+        tags: ['組織', '勢力'], initial: 'あ',
+        firstWork: 'MotE', firstEpisode: '第17話', firstHref: 'scenes/mote_ep17.html'
+      },
+      {
+        id: 'otherworlder',
+        term: '異界人 / Otherworlder',
+        reading: 'いかいじん',
+        summary: `召喚などにより元の世界からサーガ世界にやってきた人間。
+召喚人とも呼ばれるが、一般的には認知されていない。
+なお彼らが皆、同じ世界からやってきたとは限らない。`,
+        tags: ['人物', '設定'], initial: 'あ',
+        firstWork: '本編', firstEpisode: '第3話', firstHref: 'scenes/mote_ep03.html'
+      },
+      {
+        id: 'force_of_will',
+        term: '意志の力 / Force of Will',
+        reading: 'いしのちから',
+        summary: `サーガ世界では、意思を媒介として物質や現象に影響することがある。
+魔力とは、また異なる力である。`,
+        tags: ['設定'], initial: 'あ',
+        firstWork: '本編', firstEpisode: '第1話', firstHref: 'scenes/mote_ep01.html'
+      },
+      {
+        id: 'valzel_house',
+        term: 'ヴァルゼル家 / Valzel House',
+        reading: 'ヴぁるぜるけ',
+        summary: `ザナン連合五公家の一角を成す、儀式や祭礼を司る宗教的色彩の強い公家。
+善悪や価値判断が独特で、他家とは異なる論理で動く。`,
+        tags: ['家名'], initial: 'あ',
+//        firstWork: 'MotE', firstEpisode: '第00話', firstHref: 'scenes/mote_ep00.html'
+      },
+      {
+        id: 'el-rimea',
+        term: '《エル＝リーメア》',
+        reading: 'えるりーめあ',
+        summary: `教本にも載っている初歩的な治癒術。
+軽傷に対し非常に高い成功率を持ち、切り傷や打撲などを穏やかに癒す。`,
+        tags: ['魔術'], initial: 'あ',
+        firstWork: 'MotE', firstEpisode: '第6話', firstHref: 'scenes/mote_ep06.html'
+      },
+      {
+        id: 'aether_synchronization',
+        term: 'エーテル同調 / Aether Synchronization',
+        reading: 'えーてるどうちょう',
+        summary: `異界人が、この世界の言語などを自然に扱えるようになる現象。
+召喚の際に付着した「エーテル」が、サーガ世界の魔力網と同調することで起こる。
+これにより会話は違和感なく成立する。ただし、文字の読み書きは自動では身につかない。
+※感覚的には「自動翻訳機が頭に入っている状態」に近い。`,
+        tags: ['設定'], initial: 'あ',
+        firstWork: '舞台設定', firstEpisode: '', firstHref: ''
+      },
+      {
+        id: 'mask',
+        term: '仮面',
+        reading: 'かめん',
+        summary: `ミレイが身にまとう法衣を指す言葉であると同時に、本当の自分を隠すものの象徴。
+『境界のミレイ』の物語では、肉体的な変化、政治的な立場、性別や名といった多重の仮面が織り込まれる。
+仮面は時に鎧であり、同時に檻でもある。`,
+        tags: ['比喩'], initial: 'か',
+        firstWork: 'MotE', firstEpisode: '第1話', firstHref: 'scenes/mote_ep01.html'
+      },
+      {
+        id: 'karaya',
+        term: 'カラヤ公爵 / Duke of Kayara',
+        reading: 'からやこうしゃく',
+        summary: `七つ国のカラヤ地方を領地として治める爵位。
+首府は、公都テルディア。`,
+        tags: ['称号'], initial: 'か',
+//        firstWork: 'GS', firstEpisode: '第00話', firstHref: 'scenes/gs0_ep00.html'
+      },
+      {
+        id: 'gariya_house',
+        term: 'ガリヤ家 / Gariya House',
+        reading: 'がりやけ',
+        summary: `ザナン連合五公家の一角を成す、守護と軍事を司る公爵家。
+外敵からの防衛と秩序維持を担い、連合における武の象徴とされる。
+その反面、戦費の負担が重く、他家に比べて収入源が乏しいため、慢性的に財政が苦しい。
+歴史的には多くの戦乱で中心的役割を果たしてきたが、過去の判断を巡る批判も抱えている。`,
+        tags: ['地名', '国家', '勢力'], initial: 'か',
+        firstWork: 'MotE', firstEpisode: '第7話', firstHref: 'scenes/mote_ep07.html'
+      },
+      {
+        id: 'summoning',
+        term: '召喚 / Summoning',
+        reading: 'しょうかん',
+        summary: `異界に住む人間を、この世界へ強制的に呼び出す現象。
+主に地球人の少年少女が対象となり、戦力や契約者として利用される。
+サーガ世界における多くの悲劇と変革は、この行為を起点としている。
+完全な召喚は難しいようで、個人差もあるが瞳や髪の色が変わることがある。
+召喚術は非常に高度な魔術で、実際には魔法に近いものとされる。`,
+        tags: ['魔術', '神秘'], initial: 'さ',
+        firstWork: 'MotE', firstEpisode: '第3話', firstHref: 'scenes/mote_ep03.html'
+      },
+      {
+        id: 'zanan-union',
+        term: 'ザナン連合 / Zanan Union',
+        reading: 'ざなんれんごう',
+  summary: `大陸北部に位置する連合国家。
+五公家による合議制を基本とし、盟主はその中から選出される。
+庇護の天使アキューリーズへの信仰を共有し、魔族との戦いを通じて結束を維持してきた。
+首府は、聖都ルニア。`,
+  detail: `【統治と構造】
+  五公家による合議制国家で、いくつかの衛星国を持つ
+  盟主は外交代表に過ぎず、内政は公家ごとに強権
+【軍事】
+  男性のみの伝統的な騎士、兵制
+  古代から続く要塞線とガリヤ家の軍事力が防衛の要
+【宗教】
+  公的には創造神が遣わしたという庇護の天使を奉じるが、政治と信仰の距離は五公ごとに差がある
+  建国神話で五公の祖先たる五英雄は天使と共に魔神の召喚を阻止したとされる
+【文化・生活】
+  花崗岩・片麻岩などをもちいた石造建築が多い
+  術具技術が発達しており、都市部では広く普及している
+  北部は寒冷で、保存食や燻製文化が根付いている
+【対外関係】
+  七つ国とは緊張と協調を繰り返してきた
+  東西諸国とも交易を行うが、異教徒との戦いを優先する傾向が強い`,
+        tags: ['地名', '国家', '勢力'], initial: 'さ',
+        firstWork: 'MotE', firstEpisode: '第7話', firstHref: 'scenes/mote_ep07.html'
+      },
+      {
+        id: 'nanasea',
+        term: '七つ国〈ナナセア〉 / Seven Kingdoms (Nanasea)',
+        reading: 'ななつくに',
+        summary: `大陸中央部に位置する、複数の爵位国家が緩やかに並立する地域。
+もとは騎馬民族の祖王と七部族が建国した国家群で、伝統的な騎馬戦術を重視する。
+ザナン連合とは宗教的対立を避けつつ、中立的な距離を保っている。
+首府は、央都フィーニキア。`,
+        detail: `【統治と構造】
+  七王国は形式上対等で、中央集権国家ではない
+  王は騎馬貴族層に支持される必要があり、独裁は困難
+  連合としての意思決定は遅く、内紛が起こりやすい
+【軍事】
+  主力は騎馬戦術と槍盾歩兵
+  魔術の体系化は遅れており、対魔族戦では不利
+  弓兵は対人戦では有効だが、魔族戦では補助火力に留まる
+【宗教】
+  創造神イゼルレイズを信仰
+  ザナン連合の庇護天使信仰とは距離を取り、宗教戦争を避けている
+【文化・生活】
+  もとは遊牧民で、定住後も簡素な食文化が残る
+  乳製品や羊肉が多く、平たいパンや揚げ菓子が主流
+  酒は馬乳酒（クミス）や赤ワイン
+【対外関係】
+  中央ではザナン連合と中立
+  内部では王家間の対立が絶えず、外圧に弱い
+  一部貴族が〈灰の帳〉と接触している噂がある`,
+        tags: ['地名', '国家', '勢力'],
+        initial: 'な',
+        firstWork: 'MotE', firstEpisode: '第1話', firstHref: 'scenes/mote_ep01.html'
+      },
+      {
+        id: 'quinque-clans',
+        term: 'ザナン五公家〈クインケ・クラン〉 / Quinque Clans',
+        reading: 'ざなんごこうけ',
+        summary: `ザナン連合国家を構成する、五つの有力貴族家の総称。
+連合の最高意思決定は五公家による合議を基本とし、歴代の盟主はこの中から選出されてきた。
+軍事・内政・儀礼・交易など、各家はそれぞれ異なる役割と権限を担う。
+ガリヤ家もまた、この五公家の一角である。`,
+        tags: ['家名'], initial: 'さ',
+        firstWork: 'MotE', firstEpisode: '第10話', firstHref: 'scenes/mote_ep01.html'
+      },
+      {
+        id: 'magical_tool',
+        term: '術具 / Magical Tool',
+        reading: 'じゅつぐ',
+        summary: `魔術を“特別な才能”から“使える技術”に引き下ろすための道具や設備。
+使用者が魔術師でなくても基本的に扱えるようになっており、
+日用品から軍用装備まで幅広く存在する。
+術具は「魔術を使う道具」であって、「魔法そのもの」ではない。
+術具にはあらかじめ術式が刻まれており、使用者は魔力を供給して起動操作だけを行えばよい。`,
+        detail: `【術具の例】
+〈マジック・ランタン〉 / Magic-Lantern
+灯火術を簡易的に再現した照明用術具。
+要するに魔法の懐中電灯。
+油や火を使わず、安定した光を得られる。
+
+浄水筒〈アクア・ボトル〉 / Aqua-Bottle
+水を注ぐと、自動的に濾過・浄化が行われる術具瓶。
+簡易的な水精霊術式《ミスア》と浄化構文が内部に刻まれており、泥水や川水でも飲用可能な水に変えることができる。
+旅人や冒険者、庶民の間でも広く普及しており、「持ち歩ける井戸」のような存在。
+疫病の発生率を大きく下げ、都市部の衛生水準を底上げした術具の代表例。
+ただし、強い毒や呪いを帯びた水などは完全には除去できない。
+
+〈ソノ・ピン〉 / Sono-Pin
+発声を補助する精神波伝達型の術具。
+魔術の詠唱にも使われるが、使用者本人の感覚を阻害する場合もある。
+
+【社会的な影響】
+現在流通している術具の多くは、古代魔道具（Ancient Artifact）を解析・模倣することで生まれた技術に基づいている。
+人の手で再現可能な範囲にまで落とし込まれたものが、術具と呼ばれる。
+術具の普及により、魔術は一部の人間の専有物ではなくなったことで、魔術の民主化と形骸化が同時に進んでいる。`,
+        tags: ['道具'],
+        initial: 'さ',
+        firstWork: 'MotE', firstEpisode: '第1話', firstHref: 'scenes/mote_ep01.html'
+      },
+      {
+        id: 'holy_lunea',
+        term: '聖都ルニア / Lunea Sancta',
+        reading: 'せいとるにあ',
+        summary: `大陸北部に位置するザナン連合の宗教的・政治的中枢都市。
+三重の城壁と白亜の城を擁し、五大貴族家による合議制の本拠地でもある。
+古の時代、魔族を退けた五貴族の旗のもとに築かれ、今も“聖都”と呼ばれ続けている。
+内部には貴族館、議会、大聖堂、訓練所、商館、運河などが立体的に組み込まれ、街全体は丘陵に沿って幾層にも重なり築かれている。
+春先には雪解け水が運河を満たし、小花が石壁の隙間から芽吹くが、その美しさの裏には、政争の緊張と信仰の戒律が張り詰めた空気が漂う。`,
+        tags: ['地名'], initial: 'さ',
+        firstWork: 'MotE', firstEpisode: '第15話', firstHref: 'scenes/mote_ep15.html'
+      },
+      {
+        id: 'zelde-empire',
+        term: 'ゼルデ帝国 / Zelde Empire',
+        reading: 'ぜるでていこく',
+        summary: `はじめは南方の小さな領主だったゼルデが興した国。
+首府は、オリクテイル。`,
+        tags: ['地名', '国家', '勢力'], initial: 'さ',
+        firstWork: '第一章本編', firstEpisode: '第1話', firstHref: 'scenes/ep01.html'
+      },
+      {
+        id: 'izelraise',
+        term: '創造神イゼルレイズ / Izelraise, the Creator',
+        reading: 'そうぞうしんいぜるれいず',
+        summary: '？？？',
+        tags: ['人物', '伝説', '神秘'], initial: 'さ',
+        firstWork: 'MotE', firstEpisode: '第1話', firstHref: 'scenes/mote_ep01.html'
+      },
+      {
+        id: 'probably_unimportant_detail',
+        term: 'たぶん重要じゃない設定 / Probably Unimportant Detail',
+        reading: 'たぶんじゅうようじゃないせってい',
+        summary: `【概要】
+物語の本筋には影響しないが、作者が気に入っているため残されている要素。
+
+【補足】
+※気に入ったもの勝ち。`,
+        tags: ['設定', 'たぶん重要じゃない設定'], initial: 'た',
+        firstWork: '', firstEpisode: '', firstHref: ''
+      },
+      {
+        id: 'nig-gladis',
+        term: '《ニグ＝グラディス》',
+        reading: 'にぐぐらでぃす',
+        summary: `雷光を実体化させ一点に収束し、鋭い雷の槍を生成・投擲する魔術。直線的な貫通力に優れるが、連射はできない。`,
+        detail: `【主な用途】
+・奇襲、牽制、対空に有効
+・氷や風の術と異なり“瞬間火力”を重視する
+・金属鎧や導電体へのダメージが高い
+
+【主な使用者】
+・オイフェ（熟達）
+・ミレイ（あまり得意な属性ではないが、反射・即応的な戦況でよく使用する。言い換えれば「とっさの一撃」という、雷の扱いやすさを活かした選択。）`,
+        tags: ['魔術'],
+        initial: 'な',
+        firstWork: 'MotE', firstEpisode: '第1話', firstHref: 'scenes/mote_ep02.html'
+      },
+      {
+        id: 'aedil-league',
+        term: 'エディル同盟 / Aedil League',
+        reading: 'えでぃるどうめい',
+        summary: '大陸北西荒野「エディルラント」の諸部族・信仰共同体の同盟。',
+        tags: ['国家', '勢力'], initial: 'あ',
+        firstWork: '本編', firstEpisode: '第1話', firstHref: 'scenes/ep01.html'
+      },
+      {
+        id: 'ashen-veil',
+        term: '〈灰の帳〉 / Ashen Veil',
+        reading: 'はいのとばり',
+        summary: `表の歴史や記録にはほとんど残らない、正体不明の組織。
+国家や宗教、勢力図の裏側で暗躍していると噂される。
+その目的や全容は明らかでなく、関係者の証言も食い違っている。
+ただ一つ確かなのは、大きな転換点の影には、必ず彼らの名が囁かれるということだ。`,
+        tags: ['組織', '勢力',], initial: 'は',
+        firstWork: 'MotE', firstEpisode: '第1話', firstHref: 'scenes/mote_ep01.html'
+      },
+      {
+        id: 'demihuman',
+        term: '半魔 / Demihuman (Demi-Demon)',
+        reading: 'はんま',
+        summary: `現在知られている限り、魔人との契約や取引によって変質した人間。
+寿命は通常の人間と変わらず、永久に生き続けたりする存在ではない。
+一方で、周期的、または感情が昂ぶった際などに、痛みの発作が現れることがある。
+これは、願いを叶えるために改竄された因果律が、本来から逸脱したことによる反動と考えられており、逸脱が大きいほど、その代償も重くなるとされる。
+また、半魔は治癒が届きにくい傾向を持つようである。
+その理由は明らかになっていないが、「魔に寄った血肉が、人のための癒しを拒む」とも語られている。
+外見にも変化が現れる場合があり、体毛が薄くなったり、犬歯や耳の先が尖る、髪や瞳の色が変わるなどの例がある。
+ただし、その変化には大きな個人差がある。`,
+        tags: ['人物', '魔族'], initial: 'は',
+        firstWork: 'MotE', firstEpisode: '第3話', firstHref: 'scenes/mote_ep03.html'
+      },
+      {
+        id: 'hughbird',
+        term: 'ヒューバード伯爵 / Count of Hughbird',
+        reading: 'ひゅーばーどはくしゃく',
+        summary: `七つ国の武家であるロウディガン家がもつ爵位。
+所領は、トゥレーン周辺。`,
+        tags: ['称号'], initial: 'は',
+//        firstWork: 'GS', firstEpisode: '第00話', firstHref: 'scenes/gs0_ep00.html'
+      },
+      {
+        id: 'falmera_house',
+        term: 'ファルメラ家 / Falmera House',
+        reading: 'ふぁるめらけ',
+        summary: `ザナン連合五公家の一角を成す、辺境監視と交易を司る実務派の公家。
+現実主義的で、情勢次第では立場を柔軟に変える。`,
+        tags: ['家名'], initial: 'は',
+//        firstWork: 'MotE', firstEpisode: '第00話', firstHref: 'scenes/mote_ep00.html'
+      },
+      {
+        id: 'filar_windlands',
+        term: 'フィラル風原 / Filar Windlands',
+        reading: 'ふぃらるふうげん',
+        summary: `大陸中央部に広がる広大な草原地帯。
+緩やかな丘陵が連なり、見通しが良い。
+馬での移動に適した地形も多く、古くから交易や軍の往来に利用されてきた。
+「フィラル」という名は古語で「風の通り道」を意味するとされる。`,
+        tags: ['地名'], initial: 'は',
+        firstWork: 'MotE', firstEpisode: '第12話', firstHref: 'scenes/mote_ep12.html'
+      },
+      {
+        id: 'village_of_belicia',
+        term: 'ベリシアの村 / Village of Belicia',
+        reading: 'べりしあのむら',
+        summary: `大陸北部と中央を隔てるベリンジア海峡の手前に位置する静かな集落。
+石壁と赤瓦の家々が並び、礼拝堂の鐘が村の時間をゆるやかに刻む。
+観光地ではないが、旅人が道中の休息を取るには最適な場所とされる。
+潮風の香りと夕陽に染まる空気が、束の間の安らぎを与えてくれる。`,
+        tags: ['地名'], initial: 'は',
+        firstWork: 'MotE', firstEpisode: '第12話', firstHref: 'scenes/mote_ep12.html'
+      },
+      {
+        id: 'bergen_house',
+        term: 'ベルゲン家 / Bergen House',
+        reading: 'べるげんけ',
+        summary: `ザナン連合五公家の一角を成す、伝統と血統を重んじる名門公爵家。
+五公家の中で最も保守的で、しばしば他家と対立する。`,
+        tags: ['家名'], initial: 'は',
+//        firstWork: 'MotE', firstEpisode: '第00話', firstHref: 'scenes/mote_ep00.html'
+      },
+      {
+        id: 'magis',
+        term: '魔界の神マギス / Magis, God of the Abyss',
+        reading: 'まかいのかみまぎす',
+        summary: '？？？',
+        tags: ['人物', '伝説', '魔族'], initial: 'ま',
+        firstWork: '設定のみ／未出', firstEpisode: '', firstHref: ''
+      },
+      {
+        id: 'demonkind',
+        term: '魔族 / Demonkind',
+        reading: 'まぞく',
+        summary: `魔界に由来し、次元門を通って地上界に現れた存在。
+地上界で自然的に発生する魔物とは起源が異なる。
+機械・科学的な攻撃では倒すことができず、意志の力を伴う武器や魔術が有効とされる。`,
+        tags: ['種族', '魔族'], initial: 'ま',
+        firstWork: '本編', firstEpisode: '第1話', firstHref: 'scenes/mote_ep01.html'
+      },
+      {
+        id: 'monster',
+        term: '魔物 / Monster',
+        reading: 'まもの',
+        summary: `地上界で、魔素が凝集するなど環境要因によって自然発生する存在。
+魔界由来の魔族とは異なり、サーガ世界の内部で完結している。
+個体の戦闘力は魔族より低いのが一般的だが、数も多くこの世界でありふれた脅威とされる。
+知性を持たない獣のようなものだが、食物連鎖の外におり捕食も繁殖もせず、ただ人間に対する破壊衝動に基づいて行動する。
+理性や感情を持たず、原則として意思の疎通は不可能。`,
+        tags: ['種族', '敵'], initial: 'ま',
+        firstWork: 'MotE', firstEpisode: '第2話', firstHref: 'scenes/mote_ep02.html'
+      },
+      {
+        id: 'demon_lord',
+        term: '魔王 / Demon Lord',
+        reading: 'まおう',
+        summary: `次元門を越え、地上界に魔の肉体を持って現れた魔族。
+魔物とは比較にならない上位存在だが、魔界の神を指す言葉ではない。
+あくまで魔族の一種であり、地上で活動可能な存在の頂点を指す呼称である。`,
+        tags: ['魔族', '敵'], initial: 'ま',
+        firstWork: '第零章本編', firstEpisode: '第0話', firstHref: 'scenes/ep01.html'
+      },
+      {
+        id: 'demonic_being',
+        term: '魔人 / Demonic Being',
+        reading: 'まじん',
+        summary: `高い知性を持ち、交渉や契約が可能な存在。
+異界由来と考えられているが、魔族であるかどうかは明確ではない。
+多くの場合、破壊衝動を行動原理とせず、何らかの目的や論理に基づいて行動する。
+代表例として「因果の魔人」が知られ、選ばれし者の願いを叶えるとされるが、その代償は重く、契約者の運命を大きく変えてしまう。`,
+        tags: ['存在'], initial: 'ま',
+        firstWork: 'MotE', firstEpisode: '第3話', firstHref: 'scenes/mote_ep03.html'
+      },
+      {
+        id: 'sorcery',
+        term: '魔術 / Sorcery',
+        reading: 'まじゅつ',
+        summary: `構文と魔力、詠唱の技術、それらを合わせた力。
+人間が扱える領域で、自然の属性や術理を借りる、または模倣する技術。
+炎・氷・雷・風・土など、基本的に「世界の既存の仕組み」に従う。
+成功・失敗は、術者の詠唱の精度、魔力の量や媒介具などに左右される。`,
+        tags: ['魔術'], initial: 'ま',
+        firstWork: 'MotE', firstEpisode: '第3話', firstHref: 'scenes/mote_ep03.html'
+      },
+      {
+        id: 'magic',
+        term: '魔法 / Magic',
+        reading: 'まほう',
+        summary: `サーガ世界において、魔術体系の外側に位置づけられる力。
+人々が日常的に扱うものではなく、神話や伝承の中にのみ語られる存在である。
+できる理由が説明できないことが、できてしまう力。
+世界の法則そのものを書き換える／超える力。
+魔術師が「魔法みたいな真似」と口にするのは、この次元の力を指す。
+作中において、魔法そのものが直接描写されることはほとんどない。`,
+        detail: `※作者の現時点の構想では、
+物語本編において魔法そのものを直接描写する予定はない。
+魔法はあくまで伝説として扱われ、作中で描かれる力の大半は魔術である。`,
+        tags: ['魔術', '神秘'], initial: 'ま',
+        firstWork: '設定のみ', firstEpisode: '', firstHref: ''
+      },
+      {
+        id: 'muda-majutu',
+        term: '無駄に詠唱が長すぎる魔術',
+        reading: 'むだにえいしょうがながすぎるまじゅつ',
+        detail: `「囲まれたな……！」
+
+クラウスが剣を構え、前に出る。
+その背後で、ミレイはすでに詠唱態勢に入っていた。
+
+「なら――一掃します」
+
+ミレイは深く息を吸い、口を開く。
+
+「来たれ、天と地を結ぶ循環の理よ。
+始まりの風にして終わりの静寂、
+名もなき時より連なりし、
+夜明けと黄昏のあわいに揺らぐ境界。
+――え、えっと……」
+
+「……ミレイ？」
+
+「ちょっと待って……！
+定まりし理の外縁に漂う――揺蕩う？
+――次……なんだっけ……」
+
+魔物が一歩、また一歩と迫る。
+
+クラウスが振り返った。
+
+「待てミレイ！
+なぜ、その魔術なんだ！？」`,
+        tags: ['たぶん重要じゃない設定'], initial: 'ま',
+        firstWork: '', firstEpisode: '', firstHref: ''
+      },
+      {
+        id: 'replica_academy',
+        term: '模写学苑 / Replica Academy',
+        reading: 'もしゃがくえん',
+        summary: `召喚された者たちを集め、“教育および監視”するために設けられた収容・訓練施設。
+マコト達が召喚後、生活していた場所であり、第零章の物語の舞台でもある。`,
+        tags: ['地名', '施設', '舞台', '勢力'], initial: 'ま',
+        firstWork: '本編', firstEpisode: '第1話', firstHref: 'scenes/mote_ep01.html'
+      },
+      {
+        id: 'roneil_house',
+        term: 'ロネイル家 / Roneil House',
+        reading: 'ろねいるけ',
+        summary: `かつてザナン連合に仕えていた由緒ある武家。
+剣士としての家系で知られていたが、大陸歴565年「異教徒鎮圧の遠征」にて、当時指揮を執っていたガリヤ公が自軍を退いたことにより、ロネイル隊は見捨てられる形となり壊滅。
+戦後、ロネイル家は「統治」という名目でガリヤ家に吸収され、実質的な取り潰しとなった。`,
+        tags: ['家名'], initial: 'ら',
+        firstWork: 'MotE', firstEpisode: '第13話', firstHref: 'scenes/mote_ep13.html'
+      },
+      {
+        id: 'romna_house',
+        term: 'ロムナ家 / Romna House',
+        reading: 'ろむなけ',
+        summary: `ザナン連合五公家の一角を成す、内政・教育・法制度を担う理知的な公爵家。
+表では中立を保ちつつ、裏では均衡を支える調整役。`,
+        tags: ['家名'], initial: 'ら',
+//        firstWork: 'MotE', firstEpisode: '第00話', firstHref: 'scenes/mote_ep00.html'
+//      },
+//      {
+//        id: 'yougo',
+//        term: '？？？ / Yougo',
+//        reading: 'ざ',
+//        summary: `？？？`,
+//        tags: ['地名', '舞台'], initial: 'さ',
+//        firstWork: '本編', firstEpisode: '第1話', firstHref: 'scenes/ep01.html'
+//      },
+//      {
+//        id: 'old-archive',
+//        term: '旧書庫',
+//        reading: 'きゅうしょこ',
+//        summary: '王立図書院の地下に隠された書庫。封印された写本と禁書が眠る。',
+//        detail: `【設定メモ】
+//                ・入口は二重封印。鍵は…。
+//                ・初代司書長が…。`,
+//        tags: ['施設'], initial: 'か',
+//        firstWork: '本編', firstEpisode: '第1話', firstHref: 'scenes/ep01.html'
+      }
+    ];
+
+    function escapeHtml(str=''){ return String(str).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#039;'); }
+
+    function deriveInitial(s){
+      if (!s) return '#';
+      const ch = s.trim()[0];
+      if (/^[A-Za-z0-9]$/.test(ch)) return ch.toUpperCase();
+      const hira = ch.replace(/[ァ-ン]/g, m => String.fromCharCode(m.charCodeAt(0) - 0x60));
+      const groups = {
+        'あ': /[あいうえお]/, 'か': /[かきくけこ]/, 'さ': /[さしすせそ]/, 'た': /[たちつてと]/,
+        'な': /[なにぬねの]/, 'は': /[はひふへほ]/, 'ま': /[まみむめも]/, 'や': /[やゆよ]/,
+        'ら': /[らりるれろ]/, 'わ': /[わをん]/
+      };
+      for (const k of Object.keys(groups)) { if (groups[k].test(hira)) return k; }
+      return '#';
+    }
+
+    function groupByInitial(items){
+      const map = {};
+      items.forEach(t => {
+        const initial = (t.initial || deriveInitial(t.term || t.reading || '？')).toUpperCase();
+        if (!map[initial]) map[initial] = [];
+        map[initial].push(t);
+      });
+      return map;
+    }
+
+    function firstLineHtml(t){
+      if (!t.firstWork && !t.firstEpisode) return '';
+      const label = `${escapeHtml(t.firstWork || '')}${t.firstWork && t.firstEpisode ? ' ' : ''}${escapeHtml(t.firstEpisode || '')}`.trim();
+      if (!label) return '';
+      if (t.firstHref) {
+        return `<div class="first">初出：<a href="${escapeHtml(t.firstHref)}">${label}</a></div>`;
+      }
+      return `<div class="first">初出：${label}</div>`;
+    }
+
+    function renderList(items){
+      const host = document.getElementById('list');
+      items.forEach(t => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.id = t.anchor || t.id || '';
+
+        const summary = (t.summary ?? '').toString();
+        const detail = (t.detail ?? '').toString();
+
+        card.innerHTML = `
+          <div class="entry">
+            <div>
+              <div class="term">${escapeHtml(t.term)}</div>
+              ${t.reading ? `<div class="reading">${escapeHtml(t.reading)}</div>` : ''}
+              ${Array.isArray(t.tags) && t.tags.length ? `<div class="tags">${t.tags.map(x=>`<span class="tag">${escapeHtml(x)}</span>`).join('')}</div>` : ''}
+              ${firstLineHtml(t)}
+            </div>
+
+            <div>
+              <div class="summary">${escapeHtml(summary)}</div>
+
+              ${detail ? `
+                <div class="detail-toggle" role="button" tabindex="0" aria-expanded="false">
+                  <span class="label">詳細（設定資料）を表示</span>
+                  <span class="chev">▼</span>
+                </div>
+                <div class="detail">${escapeHtml(detail)}</div>
+              ` : ''}
+            </div>
+          </div>
+        `;
+
+        if (detail) {
+          const toggle = card.querySelector('.detail-toggle');
+          const label = toggle.querySelector('.label');
+
+          function setOpen(open){
+            card.classList.toggle('open-detail', open);
+            toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+            label.textContent = open ? '詳細を折りたたむ' : '詳細（設定資料）を表示';
+          }
+
+          toggle.addEventListener('click', () => setOpen(!card.classList.contains('open-detail')));
+          toggle.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              setOpen(!card.classList.contains('open-detail'));
+            }
+          });
+        }
+
+        host.appendChild(card);
+      });
+    }
+
+    function renderAlphaIndex(items){
+      const alphaHost = document.getElementById('alpha');
+      alphaHost.innerHTML = '';
+      const listHost = document.getElementById('list');
+      listHost.innerHTML = '';
+
+      const groups = groupByInitial(items);
+      Object.keys(groups).sort().forEach(key => {
+        const a = document.createElement('a');
+        a.href = `#g-${encodeURIComponent(key)}`;
+        a.textContent = key;
+        alphaHost.appendChild(a);
+      });
+
+      Object.keys(groups).sort().forEach(key => {
+        const h = document.createElement('div');
+        h.className = 'group-title';
+        h.id = `g-${key}`;
+        h.textContent = key;
+        listHost.appendChild(h);
+        renderList(groups[key]);
+      });
+    }
+
+    (function init(){
+      let all = TERMS;
+      let current = all;
+      renderAlphaIndex(current);
+      const q = document.getElementById('q');
+      q.addEventListener('input', () => {
+        const key = q.value.trim().toLowerCase();
+        current = !key ? all : all.filter(t => {
+          // 折り畳みも検索対象に含める
+          //const hay = `${t.term||''} ${t.reading||''} ${t.summary||t.definition||''} ${t.detail||''} ${t.firstWork||''} ${t.firstEpisode||''}`.toLowerCase();
+          const hay = `${t.term||''} ${t.reading||''} ${t.firstWork||''} ${t.firstEpisode||''}`.toLowerCase();
+          return hay.includes(key);
+        });
+        renderAlphaIndex(current);
+      });
+    })();
+  </script>
+</body>
+</html>
