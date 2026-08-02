@@ -1,0 +1,808 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>『境界のミレイ ―Mirei on the Edge― 』 | 第17話</title>
+  <style>
+    :root { --bg:#0f1320; --ink:#e7ebff; --muted:#a6b0d4; --border:#2a3147; --accent:#6ea8fe; }
+    html, body { margin:0; background:var(--bg); color:var(--ink); font-family: system-ui, -apple-system, Segoe UI, Roboto, Noto Sans JP, "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif; }
+    .wrap { max-width: 820px; margin: 0 auto; padding: 18px 14px 24px; }
+    header h1 { margin:0 0 6px; font-size: 1.2rem; }
+    header .sub { color: var(--muted); font-size: .9rem; margin:0 0 8px; }
+
+    .panel { background: linear-gradient(180deg, #1a1f33, #151a2a); border:1px solid var(--border); border-radius:12px; padding: 12px; box-shadow: 0 4px 12px rgba(0,0,0,.35); }
+    .panel + .panel { margin-top: 10px; }
+
+    .panel.location { background: linear-gradient(180deg, #14182a, #101424); text-align: center; }
+    .location-title { font-size: 1.05rem; letter-spacing: 0.15em; color: var(--ink); }
+    .location-sub { margin-top: 4px; font-size: 0.85rem; color: var(--muted); }
+    .panel.time { background: none; border: none; box-shadow: none; padding: 8px 0 4px; text-align: center; }
+    .time-label { font-size: 0.8rem; color: var(--muted); letter-spacing: 0.1em; }
+
+    em.chant { font-style: italic; color: #cfd8ff; letter-spacing: 0.05em; text-shadow: 0 0 6px rgba(180,200,255,.25); }
+    .think { color: var(--muted); font-style: italic; }
+
+    .audio { display:flex; flex-direction:column; gap:6px; }
+    .caption { color:var(--muted); line-height:1.7; font-size: 1rem; white-space: pre-wrap; }
+    figure { margin:0; }
+    .art { width:100%; aspect-ratio: auto; background:none; border:none; border-radius: 0; overflow:hidden; display:grid; place-items:left; }
+    .art img { max-width:100%; height:auto; display:block; }
+
+    footer.nav { display:flex; gap:8px; justify-content:space-between; margin-top:14px; flex-wrap:wrap; }
+    .btn { display:inline-block; padding:10px 14px; border:1px solid var(--border); border-radius:999px; background:#11162a; color:var(--ink); text-decoration:none; font-size:.95rem; }
+    .btn:hover { border-color: var(--accent); box-shadow: 0 0 0 2px rgba(110,168,254,.15) inset; }
+    .btn[aria-disabled="true"] { opacity:.5; pointer-events:none; }
+
+    :root { --font-body: 1rem; --line-body: 1.9; }
+    .caption { font-size: var(--font-body); line-height: var(--line-body); line-height: 1.9; }
+    .font-tools { display:flex; gap:8px; justify-content:flex-start; margin-left:8px; margin-top:8px; }
+    .font-tools button { padding:4px 10px; border:1px solid var(--border);
+      border-radius:8px; background:#11162a; color:var(--ink); cursor:pointer; }
+  </style>
+</head>
+<body>
+  <div class="font-tools">
+    <button onclick="setFontSize('small')">小</button>
+    <button onclick="setFontSize('normal')">標準</button>
+    <button onclick="setFontSize('large')">大</button>
+  </div>
+  <!-- ここから編集 -->
+  <script>
+    function setFontSize(size) {
+    const root = document.documentElement;
+    if (size === 'large') {
+      root.style.setProperty('--font-body', '1.25rem');
+      root.style.setProperty('--line-body', '2.1');
+      localStorage.setItem('fontSize', 'large');
+    } else if (size === 'small') {
+      root.style.setProperty('--font-body', '0.9rem');
+      localStorage.setItem('fontSize', 'small');
+    } else {
+      root.style.setProperty('--font-body', '1rem');
+      localStorage.setItem('fontSize', 'normal');
+    }
+  }
+  (function(){
+    const saved = localStorage.getItem('fontSize');
+    if (saved === 'large') {
+      document.documentElement.style.setProperty('--font-body', '1.25rem');
+      document.documentElement.style.setProperty('--line-body', '2.1');
+    } else if (saved === 'small') {
+      document.documentElement.style.setProperty('--font-body', '0.9rem');
+    }
+  })();
+  const META = {
+    id: 'mote_ep17',
+    no: '第17話',
+    title: '聖都ルニア ― 氷銀の城',
+    audio: '../assets/kk_scene52.mp3',
+    blocks: [
+      { type: 'image', src: '../image/mote_ep17_luneasancta.png' },
+      { type: 'text', content: ` ` },
+      { type: 'location',
+        title: '聖都ルニア / Lunea Sancta',
+        subtitle: 'ザナン連合の中枢都市' },
+      { type: 'text', content: `
+聖都ルニアが見えてきたのは、朝の霧が山の影を解きほぐし始めた頃だった。
+
+丘を越えたその先に――
+白銀の壁と塔の群れが、朝日を受けて光の都のように浮かび上がる。
+
+遠目にはまるで空に咲いた花のような光景だった。
+だが実際には、膨大な年月と血の歴史の上に築かれた、
+ザナン連合国家の心臓部――それがルニアである。
+
+城壁は三重に連なり、最外郭だけでも数千の兵が常駐すると言われている。
+その城壁の石は雪解けの水を吸い、朝の陽に濡れて鈍く青白く輝いていた。
+
+巨大な門扉には翼を広げた五つの獅子が刻まれている。
+魔族との戦を越えてきた、五公家の象徴だ。
+
+中央には、庇護の天門（ゲート・オブ・アキューリーズ）と呼ばれる神殿風の門楼。
+その上には純白の大旗がはためき、白翼十字の紋章が高々と掲げられている。
+
+城都の中心には、白亜の政庁がそびえている。
+ザナン五公が集う合議の館にして、盟主の政務が執り行われる――
+この国の意思が、ここで形を持つ。
+
+塔群は天に向かってまっすぐ伸び、尖塔の上部には天使の彫像が祈るように翼を広げていた。
+街全体が丘陵に沿って築かれており、石畳の道は複雑に分岐しながら、各貴族邸、聖堂、広場、商館を結んでいる。
+
+街のあちこちに雪解け水が流れる小運河が走り、春を告げる小花が苔むした壁のあいだから顔をのぞかせていた。
+行き交う人々の衣は、冬の名残を留めながらも、どこか心なしか明るい色合いに変わってきている。
+
+それでも、この街の空気には、常にどこか緊張感が漂っていた。
+
+表面上は平穏だが、政争・信仰・魔の脅威……
+この国の命運を決める者たちが集う都市に相応しい、美しさと冷たさが交錯する都だった。
+
+ミレイは、街の遠景を見下ろしながら、ひとつ小さく息を吐いた。
+
+（……ここからが、本当の“舞台”）
+
+その言葉に、自分で小さく違和感を覚えながら、
+ケープの前を留め直す。
+
+その背に、クラウスの足音が近づく。
+
+「まもなくです」
+
+「……ああ」
+
+言葉は少なくとも、視線は確かに、同じ方向を向いていた。
+彼らを乗せた馬車は、ゆっくりと、聖都ルニアの正門へと吸い込まれていく。
+
+    ` },
+      { type: 'image', src: '../image/mote_ep17_gariyahouse.png' },
+      { type: 'text', content: ` ` },
+      { type: 'location',
+        title: 'ガリヤ公爵邸 / Gariya House',
+        subtitle: '聖都ルニア　御苑区' },
+      { type: 'text', content: `
+
+重厚な扉が、ひとつ、静かに開かれる。
+
+「失礼いたします、閣下」
+
+控えめに進み出たのは、若いが知性を感じさせる黒衣の男。
+その瞳は一寸の濁りもなく光をたたえていた。
+
+    ` },
+      { type: 'image', src: '../image/mote_ep17_gariya.png' },
+      { type: 'text', content: `
+
+ガリヤ公爵――
+
+ザナン五公の一角にして、現・盟主。
+その人は、半ば寝台に腰を下ろしたまま、銀糸の紋付の上着の胸元に、赤褐色の襟布を巻いていた。
+
+「……ヴェルディスか。どうしたのだ？」
+
+「は、例の次代の件にございます」
+
+「そうか、で？」
+
+「“公子”が到着されました。
+　今、お通ししております。もう少しでお見えになるかと」
+
+ガリヤ公爵は、口元にうっすらと笑みを浮かべる。
+老いてなお、威厳を宿すその声音には、わずかな安堵の色が混ざっていた。
+
+「いよいよか」
+
+「度々の不手際、申し訳ございません」
+
+「かまわん。ここまで来れば、心配するようなこともない。
+　この命も、もはや尽きるかと思うたが――老いてますます、などというわけだ」
+
+老公は咳払いひとつしながら、天井の梁を見上げた。
+窓の外では、季節が一段進んだ明るい光が、薄いカーテン越しに差し込んでいる。
+
+「人間、大詰めを迎えると丈夫になるらしいな。
+　由緒正しき公爵家、魔術の名門……そして、王の資質を持つ系譜を、儂の代で途絶えさせるわけにはゆかぬ」
+
+その声音には、誇りと、そしてわずかな寂寥があった。
+
+「息子を失い、一時はすべてが終わったと思ったが――此度の話、
+　まさしく、暗闇に光が射したごとくぞ」
+
+「……畏れ多きお言葉。
+　それに私とて、ガリヤの家名が途絶えることが惜しかったのでございます」
+
+老公は、視線だけをヴェルディスに向ける。
+
+「貴君の働き。まことに大儀であった。
+　よく、あのような“奇怪な話”を探し当ててきてくれたものよ」
+
+「畏れ多きこと――」
+
+ヴェルディスは、目を伏せて膝を折った。
+
+「……その忠誠ぶり、引き続き、次代の者にも頼みたいものだ」
+
+「勿論でございます」
+
+その時――
+
+トン……トン……
+
+扉を控えめに叩く音が、静かな室内に響いた。
+
+ヴェルディスが目を細め、扉の方を振り向く。
+ガリヤ公爵もまた、深く息をつき、膝の上で両手を重ねる。
+
+「――来たか」
+
+＊
+
+静かな間が流れる――
+扉の向こうから聞こえるノック音が、まるで運命の拍子のようだった。
+
+「……失礼します」
+
+控えめに扉を開けて進み出たのは、銀髪の少年の姿――ミレイ。
+濃紺の法衣に身を包み、銀眼をまっすぐに向けて一礼する。
+
+「来たまえ」
+
+ガリヤ公爵の声が、老いてなお威厳を帯びた響きで空間を支配する。
+
+壁には絵画ではなく、古い戦旗や地図が無造作に掛けられている。
+椅子や卓は装飾こそ控えめだが、いずれも分厚く、使い込まれた傷がそのまま残されていた。
+
+ミレイは、心の底に冷たいものを抱えたまま、一歩、また一歩と室内へ進む。
+
+「……君が、そうか」
+
+「はい」
+
+静かに応じた声は、男としての低い抑揚を保っていた。
+襟元の黒いリボンには、小さな発声装置のピンが仕込まれている。
+
+老公はミレイをしばし見つめた。
+その視線に、探るような色が宿る。
+
+「……聞いていたより、儂の息子に似ているとは思えぬが」
+
+「一年ほど前に確認した際は、瓜二つでしたが」
+
+ヴェルディスの言葉に、老公はふう、と短く息を吐く。
+そして、銀に近いその髪色から、視線をいったん外した。
+
+胸の奥で、遠い記憶がかすかに揺れる。
+若き日の妻。
+その髪もまた、光の加減によっては、灰を帯びて見えたことを――
+老公は、誰にともなく思い出していた。
+
+「……まあ良い」
+
+自らに言い聞かせるように、そう呟く。
+
+「子は成長するものだ。面影など、時とともに薄れる。
+　それに、まったく似ていないわけでもない。
+　庶民や諸侯の目には、違いなど分かるまい」
+
+再びミレイへと視線を戻す。
+
+「ところで、君がここに来た理由――
+　分かっておるか」
+
+静かに、しかし明確な試しの問い。
+
+ミレイは一拍、間を置き――
+静かに頭を垂れた。
+
+「……はっ。“父上”」
+
+その声が発せられた瞬間、室内の空気が一瞬、固まったようにすら感じられた。
+
+老公は、長い沈黙ののち――
+
+「……及第だ」
+
+と、わずかに微笑んだ。
+
+その視線には、何かを見透かしているような光があったが、
+それを肯定するかのように、軽く頷く。
+
+「――残りのことは、ヴェルディスに任せよう。
+　儂は……少々、疲れた」
+
+そう言って、ガリヤ公爵は長椅子の背に身を預け、小さく息を整えた。
+まだ疲労の色はあるが、寝台に伏すほどではない。
+
+若き側近ヴェルディスが、さっと前へ出た。
+
+「公子殿。
+　このままお部屋へご案内する前に――少々、お待ちいただきたく」
+
+「……ああ」
+
+ミレイは短く応じ、深くは問い返さなかった。
+いまは、それで十分だと理解していた。
+
+（“公子”になった。たった今、わたしは――）
+
+その重みを、身体の芯でひしと受け止めながら、
+ミレイは静かに扉の向こうへと歩を進めた。
+
+＊
+
+厚い扉が静かに閉じられると、赤褐色の煉瓦壁に囲まれた回廊にわずかな風が吹き込んできた。
+ミレイは深く息をついて一歩進み、控えていたクラウスのもとへ歩み寄った。
+
+「お話は終わりですか？」
+
+と、クラウス。
+
+「ええ……」
+
+ミレイは短く頷き、あくまで無表情を保った。
+
+クラウスは少しだけ首をかしげたようにして、眉を下げた。
+
+「久しぶりの再会なのに、嬉しくなさそうだ」
+
+それは、冗談めかしたつもりの言葉だった。
+だが、ミレイはほんのわずか間を置いて、目を伏せる。
+
+「……まぁ。そんなことはいいから、君も入りなさい」
+
+言葉の端に、かすかな疲れが滲んでいた。
+
+「父上は、君にも話したいことがあるらしい」
+
+その言葉に、クラウスは目を見開き、すぐに姿勢を正した。
+
+「では、失礼します」
+
+軽く頭を下げ、クラウスは扉の方へと向き直る。
+
+ミレイはその背中を見送る。
+
+クラウスが扉をノックし、再びあの部屋へと入っていく音が響いた。
+
+＊
+
+扉が静かに閉じられると、再び静寂が戻った。
+
+太い木柱が梁を支える広間、その中央、ガリヤ公爵は長椅子に静かに腰掛けていた。
+傍らには、若き側近・ヴェルディスが控えている。
+
+クラウスはそのまま進み出て、床に片膝をつき、深く頭を垂れた。
+
+「クラウス・バウル、参上つかまつりました」
+
+ガリヤ公爵は、その姿をしばし無言で見つめ――やがてゆっくりと口を開いた。
+
+「……ご苦労であった」
+
+「は」
+
+クラウスは簡潔に応じる。
+視線はなおも床に伏せたままだ。
+
+「“あれ”も、またすぐにここを発たねばならん。
+　引き続き、護衛を頼もうか」
+
+老公は、わざとその言い回しを選んだようだった。
+“息子”とは言わず、“あれ”と呼んだことに、クラウスは一瞬眉を寄せた。
+
+そのわずかな変化を、側近のヴェルディスは見逃さなかった。
+
+「次の行き先は、〈青の家〉――七つ国で近頃噂の民間組織にございます」
+　今回は船も手配しております。行程は前回より幾分、楽かと」
+
+「分かりました。……しかし」
+
+ここでクラウスは顔を上げ、やや躊躇いがちに言葉を続ける。
+
+「――あのような、非正規の武装集団に、なぜまた？」
+
+静かな、だが確かに針を含んだ問いだった。
+
+その瞬間、老公の目がほんの僅かだけ細められる。
+
+「君は、何も知らずとも良い」
+
+きっぱりとした口調。それは、問いを封じる言葉であり、
+また――下の者には余計な思慮は無用という、貴族の権威そのものであった。
+
+だが、横から口を開いたのはヴェルディスだった。
+
+「……公爵閣下には、公爵閣下のお考えというものがあるのだ。
+　それとも、この任務は、嫌かね？」
+
+語調はやわらかだが、芯には鋼のような圧がある。
+
+クラウスは、短く目を伏せ――
+
+「……いえ」
+
+応じた声は低く、努めて平静だったが、拳にはわずかに力がこもっていた。
+
+（――“考えがある”か。勝手なものだ）
+
+そう呟くような思いを、クラウスは奥底に沈めた。
+
+老公は、そんな彼の反応に満足したのか、今度は少し口元を緩めて言った。
+
+「ところで――息子はどうかね？
+　率直な感想を聞きたいのだ」
+
+老公の問いに、クラウスはほんの一瞬、言葉を詰まらせた。
+頭に浮かぶのは、旅の途上で見た“公子”の姿だった。
+
+――細身の身体で、両手でやっと剣を構える様子。
+
+――魔物との戦いで見せた、冷静だが脆さを含んだ気配。
+
+――震える手で、それでも前へ進もうとする背中。
+
+（……あれが、“公子”だと？）
+
+だが――この場で本音を語ることが、己に何をもたらすかはわかっている。
+だからクラウスは、口角をほんの僅かに持ち上げ、静かに言った。
+
+「――他者には無い、気風のようなものがあります」
+
+「ほう」
+
+老公の目が細められた。
+
+「剣技はおろか魔術にも詳しく、そこらの兵にも劣らぬ力を備えており
+　……大変、素晴らしい方です」
+
+その声音はあくまで冷静だったが、どこか、感情を切り離した仮面のようでもあった。
+
+（素晴らしい方――？　それが、俺の口から出るとはな）
+
+ヴェルディスがわずかに眉を上げて、視線を横に流す。
+クラウスはその反応にも気づいたが、表情は変えない。
+
+「……そうか」
+
+老公は静かに頷いた。それ以上詮索することはしない。
+
+「――あれには、替えが利かぬからな。
+　万が一のことがなきように」
+
+その言葉に込められた重みを、クラウスは察する。
+
+（替えが利かない、か）
+
+それは息子を案じる父の情ではなく――
+駒を失ってはならぬという、支配者の論理。
+
+「……では、行くが良い」
+
+その最後の言葉を背に受けながら、クラウスは無言で頭を垂れ、
+静かに後ずさり、扉の方へ向かった。
+
+その背に、公爵と側近の目が重なる。
+
+やがて扉が閉じられると、室内に再び、静寂が戻った。
+
+＊
+
+クラウスが退室し、厚い扉が低い音を残して閉じると、室内には静寂が戻った。
+
+長椅子に身を預けるようにしていたガリヤ公爵は、しばし目を閉じ、重たくなり始めた空気の中で考えを巡らせているようだった。
+
+側近のヴェルディスが、一歩だけ前に出る。
+
+「……しかし、本当に、あのロネイル家の子に――
+　護衛の任を与えて良いのですか？」
+
+語調は柔らかだったが、その裏には確かな危惧があった。
+
+老公はゆっくりと瞼を開け、年老いたその目をわずかに細めて言った。
+
+「奴は、刃だ」
+
+低く、含むような声だった。
+
+「使い方を誤れば、自らを傷つける凶器となる。
+　だが、上手く扱えれば、武器ともなろう」
+
+かすかに口元をゆるめ、乾いた独り言のように続ける。
+
+「……力なくして、この世を渡ってはいけぬ。
+　かつての儂に、かのロネイルが居たようにな」
+
+ヴェルディスの眉が、わずかに動く。
+
+「……使いこなせるでしょうか？」
+
+問いかけは、曖昧な主語を含んでいた。
+だが老公は、いずれにも明確な答えを返すことなく、ただこう言った。
+
+「それは――あの“偽りの息子”しだいだ」
+
+静かに椅子の背にもたれ、指を組む。
+
+「できぬのであれば……終焉だ」
+
+その言葉は、慈悲を含まない断定だった。
+部屋の片隅で、ランプの火が熱を孕んで小さく揺れた。
+
+＊
+
+重厚な扉が背後で静かに閉まる。
+
+クラウスは一礼もせず、そのまま歩き出した。
+深く沈んだ廊下の絨毯に、革靴の音はほとんど吸い込まれていく。
+
+ふと、立ち止まる。
+
+広間の窓の向こう、雪解け水を吸った土と、濃くなり始めた緑の庭に目を向けながら、彼は心の中で呟いた。
+
+（――親と、子）
+
+（肉親には、替えが利かない）
+
+――もし、“替えの利かぬ”あの子息を、失わせたなら。
+それはすなわち、ガリヤにとって唯一の存在を、奪うことになる。
+
+それは、ガリヤ公爵――ロネイルの仇に対する、最も痛烈な報復となるだろう。
+
+クラウスは、無表情のまま歩き出した。
+しかし、拳は見えぬところでかすかに震えていた。
+
+（機は、まだ先でいい。だが、必ず――
+　家族を殺された痛みを、あの老いた貴族に……思い知らせてやる）
+
+薄く熱を帯びた光が差し込む長い廊下の奥へ、少年の背が静かに遠ざかっていった。
+
+＊
+
+聖都・中央区の石畳を少し外れた裏通り。
+訓練所の一角、葉の色を濃くし始めた街路樹の下で、クラウスは木のベンチに腰かけていた。
+
+鎧は着ていない。
+剣も外し、肩の力が抜けている。
+
+けれど、その表情はどこか沈んでいた。
+
+「……溜め息つくには、まだ昼よ？
+　ほら、空、ちゃんと晴れてるじゃない」
+
+聞き慣れた声が、不意に横から飛んでくる。
+
+    ` },
+      { type: 'image', src: '../image/mote_ep17_eliseria.png' },
+      { type: 'text', content: `
+
+振り向くと、リボンでまとめた飴色の髪が陽をはねて揺れていた。
+迷いのない足取りで、鮮やかな瞳の少女がクラウスの隣に腰を下ろす。
+
+「エリセ……なんでここに？」
+
+「なによ、“なんで”って。
+　お昼の散歩に決まってるじゃない。
+　あんたがあんまり顔出さないから、訓練所の人に“どこ行ったか知ってる？”って聞かれたわよ」
+
+クラウスは小さく頭を掻く。
+
+エリセリア・フォン・ロズベルン。
+貴族家の次女にして、昔からの幼馴染。
+遠慮という言葉をどこかに置いてきたかのような調子だが、悪気はない。
+
+「……最近は忙しいんだ。任務が増えてきたし」
+
+「ふぅん。“公子様付き”の従騎士様は、やっぱり違うわけね」
+
+「……からかうなよ」
+
+エリセは頬杖をつきながら、クラウスの顔を覗き込む。
+
+「あんただって、昔はただの“剣バカ”だったのに」
+
+「……あの頃の話をするな」
+
+「そうやってすぐ真顔になる。あーもう、ほんと真面目って損ね。
+　少し笑いなさいよ、ねえ？」
+
+その軽口に、クラウスも――
+自分でも気づかぬうちに、口元をわずかに緩めていた。
+
+「……都の空気に、慣れなくてさ」
+
+「……そう。」
+
+その一言に、エリセは少しだけ目を細めた。
+ただ、それ以上はなにも聞かなかった。
+
+「ねえ、今日くらいお茶でも飲みに行こうよ。
+　あんたの分も私が払うからさ」
+
+「……それは新しいな。貴族のお嬢様に奢られる男ってのも」
+
+「言っとくけど、奢るってだけで、変な意味はないからね。
+　お茶に誘ってるんじゃないの。気分転換よ、気分転換」
+
+「はは……分かった。休みが取れたら、考える」
+
+　そう答えると、エリセは満足げに笑って立ち上がる。
+
+「じゃ、そういうことで。
+　またサボってるの見つけたら、今度は無理やり連れてくからね！」
+
+そう言って、彼女は手を振り、石畳の向こうへ消えていった。
+
+その背を見送りながら、クラウスはほんのわずかに息を吐く。
+気を許せる存在が、今も都にいることが、どこか救いだった。
+
+彼は空を見上げる。
+雲は高く、陽射しはすでに夏の気配を含んでいた。
+
+＊
+
+夜の名残を含んだ風が、まだわずかに冷たい朝。
+ガリヤ公爵邸の厩舎前にて、馬車の準備が進められている。
+
+ミレイはいつもの黒いケープの襟元を直しながら、風に揺れる銀の髪を押さえ、
+静かに時を待っていた。
+
+そのとき。
+
+「――待ってくれ！」
+
+鋭く割って入る声。
+ミレイが振り向くと、クラウスが駆け寄ってくる。
+
+「……クラウス君？」
+
+少しだけ意外そうな声。
+だがミレイの表情は変わらない。
+
+「俺も……連れて行ってくれ」
+
+ミレイの銀の眼がわずかに細められる。
+
+「せっかくですが、必要ありません。
+　……今回の任務は、ひとりで十分です」
+
+ミレイは胸元の黒いリボンを指で撫でながら言った。
+
+「……父上に言われたのでしょうけど。
+　今回は船で行くわけですし、護衛を付けるようなことでもないでしょう」
+
+言葉は柔らかだが、その中にある微かな拒絶は隠されてもいなかった。
+
+しかしクラウスは、一歩も退かなかった。
+
+「――いえ。行かせてください。
+　道は知っています。邪魔にはならない」
+
+その声は低く、どこか押し殺すような響きを帯びていた。
+
+ミレイはしばし黙ってクラウスの顔を見つめる。
+その視線が、真意を見極めようとするように。
+
+クラウスは、視線をそらさなかった。
+
+（……罪悪感が無いわけじゃない。
+　だが――それでも、やる）
+
+彼の中では、もはや一つの決意が形を成していた。
+
+（“あれ”を失わせれば……あの男への最大の報復になる）
+
+復讐。それが目的。
+
+なのに、その視線の奥に潜む、わずかな躊躇――
+それが何に由来するのか、クラウス自身もまだ気づいていない。
+
+だが、今はただ。
+
+次の地へ。
+次の任務へ。
+
+クラウスは答えを待たず、馬車の後部に積まれた荷の上へ鞄を放った。
+御者の視線も気にせず、そのまま乗り込む支度を始める。
+
+（……どうして、こういうときだけ目を逸らさない）
+
+物語は再び、旅へと向かう。
+    ` }
+    ],
+
+      // リンク先（存在しない場合は null に）
+      prevHref: 'mote_ep16.html',     // 例: 'ep00.html'
+      nextHref: 'mote_ep18.html',     // 例: 'ep02.html'
+      indexHref: '../mote_index.html',     // インデックスのパス
+  };
+  </script>
+  <!-- ここまで -->
+
+  <div class="wrap">
+    <header>
+      <h1 id="h-title">読み込み中…</h1>
+      <div class="sub" id="h-sub"></div>
+    </header>
+
+    <section class="panel">
+      <div class="audio" id="audio-wrap"></div>
+    </section>
+
+    <section class="panel" id="content-wrap"></section>
+
+    <footer class="nav" id="nav">
+      <a id="prev" class="btn" href="#" aria-disabled="true">← 前の話</a>
+      <a id="index" class="btn" href="#">目次へ</a>
+      <a id="next" class="btn" href="#" aria-disabled="true">次の話 →</a>
+    </footer>
+  </div>
+
+  <script>
+    (function init(){
+      const hTitle = document.getElementById('h-title');
+      const hSub = document.getElementById('h-sub');
+      const audioWrap = document.getElementById('audio-wrap');
+      const artWrap = document.getElementById('art-wrap');
+      const beforeWrap = document.getElementById('before-wrap');
+      const afterWrap = document.getElementById('after-wrap');
+
+      hTitle.textContent = `${META.no}｜${META.title}`;
+      hSub.textContent = META.id;
+
+      if (META.audio) {
+        audioWrap.innerHTML = `<div>BGM</div><audio src="${escapeAttr(META.audio)}" controls controlsList="nodownload" preload="metadata" loop></audio>`;
+      } else {
+        audioWrap.textContent = '（BGM なし）';
+      }
+
+    const contentWrap = document.getElementById('content-wrap');
+
+    if (Array.isArray(META.blocks)) {
+      META.blocks.forEach(block => {
+        if (block.type === 'time') {
+          const panel = document.createElement('section');
+          panel.className = 'panel time';
+          const div = document.createElement('div');
+          div.className = 'time-label';
+          div.textContent = block.value || '';
+          panel.appendChild(div);
+          contentWrap.appendChild(panel);
+        }
+
+        if (block.type === 'location') {
+          const panel = document.createElement('section');
+          panel.className = 'panel location';
+          const h = document.createElement('div');
+          h.className = 'location-title';
+          h.textContent = block.title || '';
+          panel.appendChild(h);
+
+          if (block.subtitle) {
+            const s = document.createElement('div');
+            s.className = 'location-sub';
+            s.textContent = block.subtitle;
+            panel.appendChild(s);
+          }
+          contentWrap.appendChild(panel);
+        }
+        if (block.type === 'text') {
+        const div = document.createElement('div');
+        div.className = 'caption';
+        div.innerHTML = renderText(block.content);
+        contentWrap.appendChild(div);
+        }
+
+        if (block.type === 'image') {
+          const fig = document.createElement('figure');
+          fig.className = 'art';
+          fig.innerHTML = `<img src="${escapeAttr(block.src)}">`;
+          contentWrap.appendChild(fig);
+        }
+      });
+    }
+
+      // ナビゲーション
+      const aPrev = document.getElementById('prev');
+      const aNext = document.getElementById('next');
+      const aIndex = document.getElementById('index');
+
+      if (META.prevHref) { aPrev.href = META.prevHref; aPrev.removeAttribute('aria-disabled'); }
+      else { aPrev.setAttribute('aria-disabled','true'); aPrev.removeAttribute('href'); }
+      if (META.nextHref) { aNext.href = META.nextHref; aNext.removeAttribute('aria-disabled'); }
+      else { aNext.setAttribute('aria-disabled','true'); aNext.removeAttribute('href'); }
+
+      aIndex.href = META.indexHref || '../index.html';
+    })();
+
+    function renderText(raw = '') {
+      return escapeHtml(raw)
+        .replace(/\[i\]([\s\S]+?)\[\/i\]/g, '<em class="chant">$1</em>')
+        .replace(/\[b\]([\s\S]+?)\[\/b\]/g, '<strong>$1</strong>')
+        .replace(/\[think\]([\s\S]+?)\[\/think\]/g, '<span class="think">$1</span>');
+    }
+
+    function escapeHtml(str=''){ return String(str).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#039;'); }
+    function escapeAttr(str=''){ return escapeHtml(str).replaceAll('"','&quot;'); }
+  </script>
+</body>
+</html>

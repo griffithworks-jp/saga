@@ -1,0 +1,664 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>『境界のミレイ ―Mirei on the Edge― 』 | 第16話</title>
+  <style>
+    :root { --bg:#0f1320; --ink:#e7ebff; --muted:#a6b0d4; --border:#2a3147; --accent:#6ea8fe; }
+    html, body { margin:0; background:var(--bg); color:var(--ink); font-family: system-ui, -apple-system, Segoe UI, Roboto, Noto Sans JP, "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif; }
+    .wrap { max-width: 820px; margin: 0 auto; padding: 18px 14px 24px; }
+    header h1 { margin:0 0 6px; font-size: 1.2rem; }
+    header .sub { color: var(--muted); font-size: .9rem; margin:0 0 8px; }
+
+    .panel { background: linear-gradient(180deg, #1a1f33, #151a2a); border:1px solid var(--border); border-radius:12px; padding: 12px; box-shadow: 0 4px 12px rgba(0,0,0,.35); }
+    .panel + .panel { margin-top: 10px; }
+
+    .panel.location { background: linear-gradient(180deg, #14182a, #101424); text-align: center; }
+    .location-title { font-size: 1.05rem; letter-spacing: 0.15em; color: var(--ink); }
+    .location-sub { margin-top: 4px; font-size: 0.85rem; color: var(--muted); }
+    .panel.time { background: none; border: none; box-shadow: none; padding: 8px 0 4px; text-align: center; }
+    .time-label { font-size: 0.8rem; color: var(--muted); letter-spacing: 0.1em; }
+
+    em.chant { font-style: italic; color: #cfd8ff; letter-spacing: 0.05em; text-shadow: 0 0 6px rgba(180,200,255,.25); }
+    .think { color: var(--muted); font-style: italic; }
+
+    .audio { display:flex; flex-direction:column; gap:6px; }
+    .caption { color:var(--muted); line-height:1.7; font-size: 1rem; white-space: pre-wrap; }
+    figure { margin:0; }
+    .art { width:100%; aspect-ratio: auto; background:none; border:none; border-radius: 0; overflow:hidden; display:grid; place-items:left; }
+    .art img { max-width:100%; height:auto; display:block; }
+
+    footer.nav { display:flex; gap:8px; justify-content:space-between; margin-top:14px; flex-wrap:wrap; }
+    .btn { display:inline-block; padding:10px 14px; border:1px solid var(--border); border-radius:999px; background:#11162a; color:var(--ink); text-decoration:none; font-size:.95rem; }
+    .btn:hover { border-color: var(--accent); box-shadow: 0 0 0 2px rgba(110,168,254,.15) inset; }
+    .btn[aria-disabled="true"] { opacity:.5; pointer-events:none; }
+
+    :root { --font-body: 1rem; --line-body: 1.9; }
+    .caption { font-size: var(--font-body); line-height: var(--line-body); line-height: 1.9; }
+    .font-tools { display:flex; gap:8px; justify-content:flex-start; margin-left:8px; margin-top:8px; }
+    .font-tools button { padding:4px 10px; border:1px solid var(--border);
+      border-radius:8px; background:#11162a; color:var(--ink); cursor:pointer; }
+  </style>
+</head>
+<body>
+  <div class="font-tools">
+    <button onclick="setFontSize('small')">小</button>
+    <button onclick="setFontSize('normal')">標準</button>
+    <button onclick="setFontSize('large')">大</button>
+  </div>
+  <!-- ここから編集 -->
+  <script>
+    function setFontSize(size) {
+    const root = document.documentElement;
+    if (size === 'large') {
+      root.style.setProperty('--font-body', '1.25rem');
+      root.style.setProperty('--line-body', '2.1');
+      localStorage.setItem('fontSize', 'large');
+    } else if (size === 'small') {
+      root.style.setProperty('--font-body', '0.9rem');
+      localStorage.setItem('fontSize', 'small');
+    } else {
+      root.style.setProperty('--font-body', '1rem');
+      localStorage.setItem('fontSize', 'normal');
+    }
+  }
+  (function(){
+    const saved = localStorage.getItem('fontSize');
+    if (saved === 'large') {
+      document.documentElement.style.setProperty('--font-body', '1.25rem');
+      document.documentElement.style.setProperty('--line-body', '2.1');
+    } else if (saved === 'small') {
+      document.documentElement.style.setProperty('--font-body', '0.9rem');
+    }
+  })();
+  const META = {
+    id: 'mote_ep16',
+    no: '第16話',
+    title: '海峡洞窟（３） ― 仮面越しの声',
+    audio: '../assets/PerituneMaterial_Forest_Sage_loop.mp3',
+    blocks: [
+      { type: 'text', content: `
+魔物の骸が静かに水に沈んでいく。
+
+クラウスは剣を納め、光源灯〈マジック・ランタン〉の光を掲げ直した。
+青白い光が洞窟の奥を照らし、濡れた岩肌が鈍く反射する。
+
+「……行きましょうか。まだ先はあります」
+
+「……ああ」
+
+ミレイも小さくうなずいて、再び歩を進める。
+
+並ぶには狭すぎる通路。
+自然とクラウスが先を歩き、ミレイが少し後ろからついていく形になった。
+足元には溜まった潮水、天井からは時折、水滴がぽたりと落ちる。
+
+しばらく沈黙の中を歩いたあと、クラウスがふと前を向いたまま口を開いた。
+
+「……あの、失礼を承知で言いますが」
+
+ミレイは無言のまま歩きながら、ほんのわずかに眉を寄せた。
+
+「自分、最初はもっと……公子殿って、熊みたいな大男だと思ってたんです。
+　正直なところ」
+
+意図せぬ軽口だった。
+空気を和らげようとしたのかもしれない。
+
+ミレイは、歩を止めかけたが――そのまま進み続けた。
+
+「熊か……」
+
+短く返す。
+
+その声音は、冗談を受け流すように冷ややかだったが、
+クラウスには聞こえなかったかのように、また前を向いて歩いた。
+
+その背を見つめながら、ミレイは目を伏せる。
+
+（……その“熊”が、本物の“公子”だったんだろう）
+
+噂に流された虚像。
+学舎で作られた、誰も見たことのない英雄像。
+自分は――ただ、その“代わり”に過ぎない。
+
+ふと、足元に目を落とす。
+
+ケープの裾が揺れ、濡れた地面の反射に、自分の細い影が映っていた。
+
+（なら……この姿を見た時、内心、違和感くらいは覚えただろうな）
+
+ケープの袖の下――華奢な手首。
+軽く握ってみても、拳に重みはない。
+
+（……鍛えたら、筋肉って、つくのか？　この身体）
+
+静かに、前を歩くクラウスの背を見上げた。
+そして、いつものように、仮面の口調で言った。
+
+「……その噂の出どころに、文句でも言っておいてくれ」
+
+「……はい？」と一瞬聞き返されるも、ミレイはそれ以上、何も言わなかった。
+
+＊
+
+青白いランタンの光に照らされながら、ふたりはぬかるんだ通路を進み続けていた。
+天井が低く、時折身をかがめる場所もあるが、空気はさっきより幾分乾いている。
+岩肌には古びた鉱石の筋が混じり、かすかに金属の匂いも漂っていた。
+
+しばらくの沈黙の後、ミレイがふと口を開いた。
+
+「……ところで」
+
+「はい？」
+
+「実際に、私と会う前。どこまで、私のことを知っていましたか？」
+
+前を歩くクラウスが、少し振り返る。
+その顔は驚きより、むしろ考え込むようなものだった。
+
+「ガリヤ公爵閣下、側近の方から伝えられた情報のみですが……」
+
+言い淀みながら、彼は淡々と続けた。
+
+「公爵閣下、唯一の御子息。
+　３年間、学舎にて武人として鍛錬を積み、御家の方に戻られるとのこと。
+　さっき言ったとおり、学舎において優秀でおられたとか」
+
+「……なるほど。その程度のことまでしか？」
+
+「ええ、それだけです」
+
+ミレイは、前方のクラウスの背を見つめながら、ほんの一瞬だけ目を伏せた。
+
+（むしろ……ありがたい）
+
+誰も、その“御子息”の素顔を知らない。
+ならば、自分が成り切ればいい。
+
+（自分は、その“御子息”とやらではないのだから）
+
+だが、言葉にできない不安が、胸の奥に居座っていた。
+
+もし――どこかで失態を演じたら。
+歩き方ひとつ、言葉の抑揚ひとつで、すべてが露見する気がしてならなかった。
+
+失敗はできない。
+“誰か”として完璧に振る舞わなければならない。
+
+動作、思考、言葉遣い、息づかい。
+表層だけでなく、深部まで、その人物に同化しなければ。
+
+そのためにも――
+
+（……相手のことだって、もっと知らなくては）
+
+一瞬だけ、前を行くクラウスに視線を向ける。
+その背は、まだ遠い。
+
+そして、重い沈黙が再び、二人の間に落ちていった。
+
+＊
+
+洞窟の空気が、少しずつ変わっていた。
+
+湿り気を帯びた冷たさが薄れ、岩肌のざらついた感触が増してくる。
+通路は緩やかに広がり、天井も高くなっていた。
+海の下にいることを、ふと忘れそうになるほど、深く静かな空間だ。
+
+ミレイは歩きながら、視線を少しだけ前にやった。
+
+（この男……）
+
+戦いの最中に見えた剣の扱い。
+踏み込みは正確で、剣筋に無駄がない。
+力任せでも、型に縛られた動きでもなかった。
+
+（……流派をきちんと叩き込まれている）
+
+知っておきたい。
+同じ道を進む以上、いずれ語られるものがあるのなら――
+その前に、こちらから踏み込むべきだ。
+
+「と、ところで」
+
+自分の声が、思ったより硬く響いた。
+一拍おいてから、続ける。
+
+「きみは……剣の扱いに慣れているようですが」
+
+クラウスは一度だけ振り返り、すぐに前へ視線を戻した。
+
+「はい。我が家系の男子は、代々剣士でした」
+
+淡々とした声が、洞窟に吸い込まれていく。
+
+「こと剣に関しては、自信があります」
+
+ミレイは小さくうなずこうとした。
+だが、クラウスはそこで言葉を切り、わずかに間を置いた。
+
+「……しかし」
+
+続く言葉はなかった。
+視線が、ほんの一瞬だけ落ちる。
+
+「いえ、なんでもありません……」
+
+それだけ言って、彼は歩みを進める。
+やがて、石の通路が途切れ、少し開けた空間に出た。
+
+壁には煤の跡が残り、岩陰には古い焚き火の痕。
+かつて人が留まった名残が、かすかに漂っている。
+
+ミレイが周囲を見渡していると、クラウスが足を止めた。
+
+「……できれば、一夜のうちに抜けきりたかったのですが」
+
+天井を見上げるようにして呟き、すぐに振り返る。
+
+「……貴方の体力では、少しペースを落とす必要がありそうです」
+
+その言葉には、棘はなかった。
+ただ、事実を述べただけの声音だった。
+
+ミレイの足が、わずかに止まる。
+
+（……判断は、正しい）
+
+否定の余地はなかった。
+剣の重さも、長時間の歩行も、すでに身体に響いている。
+それを悟られぬよう、気を張り続けていただけだ。
+ケープの下で、指先がゆっくりと拳を作る。
+
+クラウスは変わらぬ調子で続けた。
+
+「このあたりなら、魔物もそう多くはありません。
+　空気が動いている。火も使える地形です。
+　……少し休んでから進みましょう」
+
+〈マジック・ランタン〉を岩壁に掛け、灯りを調整する彼の背を、ミレイは無言で見つめた。
+指先に込めていた力を、そっと抜く。
+一度、深く息を整えてから、いつもの口調で答える。
+
+「……了解した。異論はない」
+
+声は冷静だった。
+だが、その奥に残る硬さまでは、拭いきれない。
+
+ミレイは荷を下ろし、何事もなかったように腰を下ろす。
+仮面は、まだ崩していない。
+
+この身体で、どこまで“演じきれる”のか。
+今まさに試されている気がした。
+
+＊
+
+岩の隙間に、古びた木箱の残骸が見えた。
+裂けた板、縄の切れ端、錆びついた釘の跡。
+ここがかつて“使われた道”だったことを、雄弁に物語っている。
+
+クラウスは岩陰に残されていた乾いた薪を集め、
+火打ち石を打ち鳴らした。
+
+*かち、かち……*
+
+小さな火花が散り、やがて赤い火種が生まれる。
+慎重に息を吹き込むと、炎がゆっくりと立ち上がった。
+
+焚火が形になる頃、マジックランタンの光は絞られ、
+洞窟の闇は、火の揺らぎに譲られた。
+
+湿った空気が残る洞窟の中で、
+この小さな広間だけが、かろうじて乾いている。
+
+ミレイは、焚火を挟んで向かいに腰を下ろしていた。
+ケープの裾を膝にかけ、長い銀の髪を肩の奥へとまとめる。
+
+クラウスは剣を膝の横に置いたまま、
+焚火の向こうで静かに息を整えていた。
+
+しばらく、火のはぜる音だけが響く。
+
+やがて、ミレイが口を開いた。
+
+「……きみのことを、まだ聞けてなかったと思って」
+
+焚火が、ぱちりとはぜる。
+クラウスが顔をわずかに上げた。
+
+「どんな生まれで、なぜ今ここにいるのか。
+　知っておきたいと思った」
+
+それは命令でも、詮索でもない。
+同行者としての、必要最低限の確認――
+そう聞こえるよう、意識して選んだ言葉だった。
+
+だが――クラウスの瞳が、ゆっくりと曇っていくのが見えた。
+
+「クラウス・バウル。
+　そう名乗っています。……かつて、ロネイルという家に生まれました」
+
+火が揺れた。
+
+ミレイは、その名を聞き逃さなかった。
+
+「剣士の家系、と言っていたな。
+　つまりロネイル家というのは……武家か」
+
+口調は穏やかだった。
+だが、その一言が――
+
+空気を切り裂いた。
+
+「――白々しい……！」
+
+抑えた声だったが、怒気は隠しきれていない。
+
+「貴方が“ガリヤ公爵の血”を引く人間なら、
+　ロネイルを知らないはずがない……！」
+
+焚火が、強くはぜる。
+赤い炎が、二人の間に落ちる影を、鋭く引き裂いた。
+
+クラウスの言葉は、焚火の音と交錯して洞窟に反響した。
+ミレイはわずかに眉を動かしたが、それ以上表情を崩さなかった。
+
+クラウスは顔をそむけたまま、続けた。
+その声には、静かな怒りと、滲む苦味があった。
+
+「俺の父は、ガリヤ公爵と同じ軍にいた。
+　……九年前の異教徒征伐で」
+
+火がぱちりと鳴る。
+洞窟の湿気の中、その音だけが乾いていた。
+
+「遠征の戦況が悪化すると、あの男は……自分の軍を退いた。
+　父の部隊を見捨てて。
+　結果、ロネイル卿は戦死。
+　ガリヤ家は、戦後すぐにうちの家を“統治”という名で吸収した」
+
+ミレイは言葉を差し挟まなかった。
+ただ、彼の語る“父の死”を、仮面の奥で受け止めていた。
+
+「実質は取り潰しだ。
+　……兄たちは異国に送られ、三人いた兄弟は散り散りになった。
+　唯一の肉親を失い、ロネイルの名は記録から消えた。
+　そして残った俺は――そのガリヤ家に仕えるよう命じられた」
+
+ミレイは、思わず拳を握っていた。
+それは怒りでも、同情でもない。
+ただ、自分の“仮面”が、その憎悪の対象であることへの、静かな震えだった。
+
+「親を見殺しにしたも同然の老人に仕えねばならない。
+　こんな仕打ち。
+　屈辱だった。……今でも、そう思ってる。
+　だが、それでも俺はそうするしかなかった。
+　戦で親を失った子供の行き場なんて、限られてる」
+
+言いながら、腰に下げた剣にそっと手を添える。
+焚火の光が、その刃に鈍く反射する。
+
+「あなたも、どうも見くびってるみたいだが……俺とて、剣士の家系。
+　術士が相手なら――距離次第で、どうとでもなる」
+
+淡々とした口ぶり。だが、
+言葉の一つ一つが鋭かった。
+
+挑発ではない。
+それは、“覚悟”の確認。
+
+この“ガリヤ公爵の息子”という人物に、剣を向けるべき存在か否か。
+本気かどうかは、今の自分にもわからない。
+ただ――それを口にしてしまうほどには、感情が近すぎた。
+
+しばしの沈黙をおいて、彼はふっと笑った。
+
+「まあ……今さら、こんなこと言われても困るでしょうが」
+
+それは、冗談のように軽い。
+だが、焚火の影に隠れたその表情には、笑いではないものが滲んでいた。
+
+ミレイは、すぐに答えることができなかった。
+
+自分が“その血”を背負う者として振る舞っている以上、何を言っても、すべては偽りのままだ。
+それでも――何かを返すべきだと、彼女は思っていた。
+
+焚火の灯が、ミレイの横顔を照らした。
+その光の中、彼女は口を開いた。
+
+「……そうか」
+
+焚火の光に照らされたミレイの横顔は、感情の起伏をほとんど感じさせなかった。
+声も、驚くほど静かだった。
+
+「本当に――つゆほども、知らなかった」
+
+仮面の言葉。
+だが、どこかに滲む“本音”の響きがあった。
+
+クラウスは目を細めた。
+
+（……そうやって、何も知らなかったと？）
+
+拳に力がこもる。
+焚火の影が、彼の表情に揺れて落ちた。
+
+「……その言葉に、どれほどの意味がある」
+
+低い声だった。
+
+「あなたは、“あの男”の血を引いているんでしょう？」
+
+ミレイの瞳が、わずかに揺れる。
+
+「その決断が、どれだけの人間を押しつぶしたか、知っていたはずだ」
+
+「……知らない」
+
+その声は、遮るような強さではなく、
+それでも――明確だった。
+
+「私は、戦のことも、その話も……何も聞かされていない」
+
+沈黙。
+焚火が、ぱち、と小さくはぜた。
+
+クラウスは、視線をミレイから外す。
+
+「……なら、せめて知ってください」
+
+焚火がまた小さくはぜる。
+
+「俺が語ったことを。
+　今ここで、確かに聞いたという事実を、覚えていてください」
+
+その口調には、もはや怒気はなかった。
+けれど、言葉の芯には、痛みと、重みが残っていた。
+
+ミレイは黙ってうなずいた。
+表情は仮面のまま。それでも、焚火の影が彼女の頬に揺れるたび、
+その奥で何かが揺れていることだけは、伝わっていた。
+
+クラウスが、わずかに視線を戻す。
+
+「……進む道を、間違えないでください。公子殿」
+
+その“公子”という呼び方が、妙に重く響いた。
+皮肉か、忠告か、あるいは――警告か。
+
+（これは、わたしが背負うべきもの？
+　それとも、背負ってはいけないものなのか）
+
+ミレイは答えなかった。
+ただ、火を見つめていた。
+
+（……この仮面では、きっと何も届かない）
+
+    ` },
+      { type: 'image', src: '../image/mote_ep16_bivouac.png' },
+      { type: 'text', content: `
+
+炎の揺らめきが、ふたりの影を長く伸ばす。
+その間にあるのは、まだ理解とは呼べないもの。
+
+＊
+
+焚火は、いつの間にかほとんど燃え尽きていた。
+崩れた薪の隙間からは、赤い炭火が名残のようにかすかに瞬いている。
+
+ミレイは黙ったまま、その火をじっと見つめていた。
+さきほど交わされた言葉たち――
+どれもまだ、胸の内で熱を持ったまま、冷めきっていなかった。
+
+やがて、洞窟の奥からひんやりとした風が吹き込んだ。
+夜明けの冷気だ。
+遠く、潮の満ち引きに合わせるように、空気がわずかに動いている。
+
+クラウスが、ゆっくりと立ち上がる。
+手慣れた手つきで装備を整え、剣を腰に収める。
+
+「……そろそろ、潮が戻り始める」
+
+焚火の残りに水を数滴落とす。
+じゅっという音とともに、小さな湯気が立ちのぼった。
+
+「では、抜け道を急ぎましょう。
+　ここを出れば、ルニアまではもうすぐです」
+
+ミレイは顔を上げ、静かにうなずく。
+
+「……分かった」
+
+短い応答。
+ふたりの間で、昨夜の話題に触れる者はもういなかった。
+
+＊
+
+通路を進む足音が、かつてより静かに重なる。
+背を向け合うこともなく、振り返ることもなく。
+ただ前を向いて、光を目指して歩く。
+
+青白いランタンの灯が、まだ湿った岩の壁を淡く照らしていた。
+その先に、地上の朝が、わずかな光となって差し始めていた。
+    ` }
+    ],
+
+      // リンク先（存在しない場合は null に）
+      prevHref: 'mote_ep15.html',     // 例: 'ep00.html'
+      nextHref: 'mote_ep17.html',     // 例: 'ep02.html'
+      indexHref: '../mote_index.html',     // インデックスのパス
+  };
+  </script>
+  <!-- ここまで -->
+
+  <div class="wrap">
+    <header>
+      <h1 id="h-title">読み込み中…</h1>
+      <div class="sub" id="h-sub"></div>
+    </header>
+
+    <section class="panel">
+      <div class="audio" id="audio-wrap"></div>
+    </section>
+
+    <section class="panel" id="content-wrap"></section>
+
+    <footer class="nav" id="nav">
+      <a id="prev" class="btn" href="#" aria-disabled="true">← 前の話</a>
+      <a id="index" class="btn" href="#">目次へ</a>
+      <a id="next" class="btn" href="#" aria-disabled="true">次の話 →</a>
+    </footer>
+  </div>
+
+  <script>
+    (function init(){
+      const hTitle = document.getElementById('h-title');
+      const hSub = document.getElementById('h-sub');
+      const audioWrap = document.getElementById('audio-wrap');
+      const artWrap = document.getElementById('art-wrap');
+      const beforeWrap = document.getElementById('before-wrap');
+      const afterWrap = document.getElementById('after-wrap');
+
+      hTitle.textContent = `${META.no}｜${META.title}`;
+      hSub.textContent = META.id;
+
+      if (META.audio) {
+        audioWrap.innerHTML = `<div>BGM</div><audio src="${escapeAttr(META.audio)}" controls controlsList="nodownload" preload="metadata" loop></audio>`;
+      } else {
+        audioWrap.textContent = '（BGM なし）';
+      }
+
+    const contentWrap = document.getElementById('content-wrap');
+
+    if (Array.isArray(META.blocks)) {
+      META.blocks.forEach(block => {
+        if (block.type === 'time') {
+          const panel = document.createElement('section');
+          panel.className = 'panel time';
+          const div = document.createElement('div');
+          div.className = 'time-label';
+          div.textContent = block.value || '';
+          panel.appendChild(div);
+          contentWrap.appendChild(panel);
+        }
+
+        if (block.type === 'location') {
+          const panel = document.createElement('section');
+          panel.className = 'panel location';
+          const h = document.createElement('div');
+          h.className = 'location-title';
+          h.textContent = block.title || '';
+          panel.appendChild(h);
+
+          if (block.subtitle) {
+            const s = document.createElement('div');
+            s.className = 'location-sub';
+            s.textContent = block.subtitle;
+            panel.appendChild(s);
+          }
+          contentWrap.appendChild(panel);
+        }
+        if (block.type === 'text') {
+        const div = document.createElement('div');
+        div.className = 'caption';
+        div.innerHTML = renderText(block.content);
+        contentWrap.appendChild(div);
+        }
+
+        if (block.type === 'image') {
+          const fig = document.createElement('figure');
+          fig.className = 'art';
+          fig.innerHTML = `<img src="${escapeAttr(block.src)}">`;
+          contentWrap.appendChild(fig);
+        }
+      });
+    }
+
+      // ナビゲーション
+      const aPrev = document.getElementById('prev');
+      const aNext = document.getElementById('next');
+      const aIndex = document.getElementById('index');
+
+      if (META.prevHref) { aPrev.href = META.prevHref; aPrev.removeAttribute('aria-disabled'); }
+      else { aPrev.setAttribute('aria-disabled','true'); aPrev.removeAttribute('href'); }
+      if (META.nextHref) { aNext.href = META.nextHref; aNext.removeAttribute('aria-disabled'); }
+      else { aNext.setAttribute('aria-disabled','true'); aNext.removeAttribute('href'); }
+
+      aIndex.href = META.indexHref || '../index.html';
+    })();
+
+    function renderText(raw = '') {
+      return escapeHtml(raw)
+        .replace(/\[i\]([\s\S]+?)\[\/i\]/g, '<em class="chant">$1</em>')
+        .replace(/\[b\]([\s\S]+?)\[\/b\]/g, '<strong>$1</strong>')
+        .replace(/\[think\]([\s\S]+?)\[\/think\]/g, '<span class="think">$1</span>');
+    }
+
+    function escapeHtml(str=''){ return String(str).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#039;'); }
+    function escapeAttr(str=''){ return escapeHtml(str).replaceAll('"','&quot;'); }
+  </script>
+</body>
+</html>

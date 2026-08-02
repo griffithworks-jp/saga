@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>『境界のミレイ ―Mirei on the Edge― 』 | 第5話</title>
+  <style>
+    :root { --bg:#0f1320; --ink:#e7ebff; --muted:#a6b0d4; --border:#2a3147; --accent:#6ea8fe; }
+    html, body { margin:0; background:var(--bg); color:var(--ink); font-family: system-ui, -apple-system, Segoe UI, Roboto, Noto Sans JP, "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif; }
+    .wrap { max-width: 820px; margin: 0 auto; padding: 18px 14px 24px; }
+    header h1 { margin:0 0 6px; font-size: 1.2rem; }
+    header .sub { color: var(--muted); font-size: .9rem; margin:0 0 8px; }
+
+    .panel { background: linear-gradient(180deg, #1a1f33, #151a2a); border:1px solid var(--border); border-radius:12px; padding: 12px; box-shadow: 0 4px 12px rgba(0,0,0,.35); }
+    .panel + .panel { margin-top: 10px; }
+
+    .panel.location { background: linear-gradient(180deg, #14182a, #101424); text-align: center; }
+    .location-title { font-size: 1.05rem; letter-spacing: 0.15em; color: var(--ink); }
+    .location-sub { margin-top: 4px; font-size: 0.85rem; color: var(--muted); }
+    .panel.time { background: none; border: none; box-shadow: none; padding: 8px 0 4px; text-align: center; }
+    .time-label { font-size: 0.8rem; color: var(--muted); letter-spacing: 0.1em; }
+
+    em.chant { font-style: italic; color: #cfd8ff; letter-spacing: 0.05em; text-shadow: 0 0 6px rgba(180,200,255,.25); }
+    .think { color: var(--muted); font-style: italic; }
+
+    .audio { display:flex; flex-direction:column; gap:6px; }
+    .caption { color:var(--muted); line-height:1.7; font-size: 1rem; white-space: pre-wrap; }
+    figure { margin:0; }
+    .art { width:100%; aspect-ratio: auto; background:none; border:none; border-radius: 0; overflow:hidden; display:grid; place-items:left; }
+    .art img { max-width:100%; height:auto; display:block; }
+
+    footer.nav { display:flex; gap:8px; justify-content:space-between; margin-top:14px; flex-wrap:wrap; }
+    .btn { display:inline-block; padding:10px 14px; border:1px solid var(--border); border-radius:999px; background:#11162a; color:var(--ink); text-decoration:none; font-size:.95rem; }
+    .btn:hover { border-color: var(--accent); box-shadow: 0 0 0 2px rgba(110,168,254,.15) inset; }
+    .btn[aria-disabled="true"] { opacity:.5; pointer-events:none; }
+
+    :root { --font-body: 1rem; --line-body: 1.9; }
+    .caption { font-size: var(--font-body); line-height: var(--line-body); line-height: 1.9; }
+    .font-tools { display:flex; gap:8px; justify-content:flex-start; margin-left:8px; margin-top:8px; }
+    .font-tools button { padding:4px 10px; border:1px solid var(--border);
+      border-radius:8px; background:#11162a; color:var(--ink); cursor:pointer; }
+  </style>
+</head>
+<body>
+  <div class="font-tools">
+    <button onclick="setFontSize('small')">小</button>
+    <button onclick="setFontSize('normal')">標準</button>
+    <button onclick="setFontSize('large')">大</button>
+  </div>
+  <!-- ここから編集 -->
+  <script>
+    function setFontSize(size) {
+    const root = document.documentElement;
+    if (size === 'large') {
+      root.style.setProperty('--font-body', '1.25rem');
+      root.style.setProperty('--line-body', '2.1');
+      localStorage.setItem('fontSize', 'large');
+    } else if (size === 'small') {
+      root.style.setProperty('--font-body', '0.9rem');
+      localStorage.setItem('fontSize', 'small');
+    } else {
+      root.style.setProperty('--font-body', '1rem');
+      localStorage.setItem('fontSize', 'normal');
+    }
+  }
+  (function(){
+    const saved = localStorage.getItem('fontSize');
+    if (saved === 'large') {
+      document.documentElement.style.setProperty('--font-body', '1.25rem');
+      document.documentElement.style.setProperty('--line-body', '2.1');
+    } else if (saved === 'small') {
+      document.documentElement.style.setProperty('--font-body', '0.9rem');
+    }
+  })();
+  const META = {
+    id: 'mote_ep05',
+    no: '第5話',
+    title: 'まだ、呼べない',
+    audio: '../assets/PerituneMaterial_Nostalgic_Jig_loop.mp3',
+    blocks: [
+      { type: 'text', content: `
+道を照らす西陽が、町の端から延びていた。
+
+ミレイは静かに歩いていた。
+結った髪を外套の内へ押し込み、フードを目深にかぶる。
+誰にも名を名乗らぬまま。
+
+教会を出てからの足取りは、迷いにも似ていたが。
+それでも確かに――前へと進んでいた。
+
+    ` },
+      { type: 'image', src: '../image/mote_ep05_thurein.png' },
+      { type: 'text', content: ` ` },
+      { type: 'location',
+        title: 'トゥレーン / Thurein',
+        subtitle: '' },
+      { type: 'text', content: `
+
+この宿場町〈トゥレーン〉は、街道沿いでは珍しく穏やかな雰囲気に包まれていた。
+七つ国でも武家として信の厚いロウディガン伯爵家の治める地らしく、町には過剰な警戒も、不穏な緊張も見当たらない。
+
+荷車の音と、遠くから聞こえる旅人の笑い声。
+剣呑さはなく、人々はそれぞれの営みに戻っている。
+
+それらはまるで、ミレイという存在を認識していないかのようだった。
+それが――心地よかった。
+
+宿の帳場で部屋を取る。
+部屋は一つしかないと言われ、頷くだけで応じた。
+名を聞かれたときも、低い声でただ「旅の者です」とだけ答えた。
+
+鍵を受け取ると、荷を置くものもなく、真っ先に湯気の立ちこめる浴室へ向かう。
+木の桶から湯を汲み、肩にかける。
+冷えと潮風でこわばっていた肌がほぐれていくのが分かる。
+指先に触れる長い髪は、温かい湯でほぐされ、銀糸のように滑らかになった。
+
+（……やっぱり、洗うと違うな）
+
+洗面用に置かれた、歪みのほとんどない鏡。
+ミレイは最初、それを避けるようにしていたが、ふと視線が滑る。
+
+鏡の中に、誰かがいた。
+――一瞬、そう思った。
+
+（……誰だ）
+
+    ` },
+      { type: 'image', src: '../image/mote_ep05_mirei.png' },
+      { type: 'text', content: `
+
+銀の髪が、肩から背中へ流れている。
+水を含んで重く、やけに艶があった。
+顔立ちは整っているが、表情が薄いぶん、人形めいて見える。
+
+目が合った。
+銀の瞳。
+
+心臓が、わずかに跳ねた。
+
+（……俺、だよな）
+
+理解はしている。
+この身体が、自分であることも。
+それでも、実感が追いつかない。
+
+少し距離を詰める。
+鏡の向こうの“それ”も、同じように近づく。
+
+（……変な感じだ）
+
+角度を変えてみる。
+首の線、鎖骨の影、濡れた髪が張りつく肌。
+
+試しに、口元をわずかに緩める。
+意識的に、ほんの少しだけ。
+鏡の中の“それ”も、同じように微笑んだ。
+
+（……なんだ、これ）
+
+敵意もないし、警戒でもない。
+なのに、胸の奥が、わずかにざわつく。
+
+次は、少し驚いた顔。
+目を見開き、口を半分ほど開ける。
+
+鏡の中の銀の瞳が、光を弾いた。
+――思わず、視線を逸らした。
+
+（……男から見たら、これ、絶対……）
+
+言葉にする前に、なんとなく察してしまう。
+視線が集まるとか、放っておかれないとか、そういう類のやつだ。
+
+眉をひそめる。
+
+（面倒くさそう……）
+
+続きを考えるのが、なんとなく嫌だった。
+ミレイは息を吐き、表情を元に戻す。
+感情を消す、というより、遮断するように。
+
+（表情の練習なんて、意味ないな）
+
+ミレイは視線を外し、布で髪を拭く。
+指先が、無意識に丁寧になる。
+
+鏡の前で、ミレイはもう一つだけ気になっていた箇所に目を向けた。
+フードの縁から、銀髪をかき分けて確かめる。
+そこにあるのは、わずかに尖った形の耳だった。
+
+（……やっぱり、尖ってる）
+
+指先で触れる。
+人の耳よりも、少しだけ先が細い。
+頭の中に、昔見た映像や物語が浮かぶ。
+悪魔。魔族。契約の証。
+だいたい、そういう類のやつだ。
+
+（“魔人と契約しました”って、自分から言ってるようなものじゃないか？）
+
+一瞬、背筋が冷える。
+
+だが、記憶を掘り返してみる。
+街道で見かけた人々。
+宿の主人。
+通りを歩く旅人たち。
+耳の形が違う者は、少なからずいた。
+それが遺伝なのか、土地柄なのか。誰も気にしない様子だった。
+髪の色にしたって、かつて自分が知っていた常識とは異なる。
+
+（この世界じゃ……とくに珍しくないわけか）
+
+そう結論づけると、緊張はすっと引いた。
+ミレイは耳から手を離し、フードを戻す。
+鏡の中の銀の影は、最後まで“自分”という感じがしなかった。
+
+それでも、フードをかぶる前に、もう一度だけ――
+ほんの一瞬、確認するように見つめてから、視線を逸らした。
+
+＊
+
+湯から上がると、外は夕暮れ前。
+宿を出て、通りの市へ向かう。
+干し肉、干し果物、水袋……そして、安価な麻製の肩掛け袋を一つ。
+外套の上から肩に提げてみると、荷物を持った自分の姿が急に“旅人”らしくなった。
+
+「荷がない旅人は目立ちますからね、気をつけなさいな」
+
+商人の軽口に、苦笑いで返す。
+教会を飛び出した時は、こんな準備をする余裕もなかった。
+こうして揃えてみれば、旅をするということが、少しだけ現実味を帯びてくる。
+
+買い物を終え、袋の重みを感じながら宿へ戻る。
+明日はまた、知らない道を行く。
+どこまで行くかは、まだ決めていない。
+
+＊
+
+帳場の前は静かだった。
+
+木製のカウンター。帳簿。油灯の匂い。
+階段に向かおうとした、そのとき――外の扉の向こうから、賑やかな声がした。
+
+「この街に魔王の情報はなし、か」
+「なら東へ抜けよう。中原の街々を当たるしかないな」
+「とりあえず今日はここに泊まろうぜ」
+
+聞き覚えのある、少年の声。
+そして、彼の仲間たちの声が重なった。
+会話に混じり、扉が開く音がする。
+
+彼らの先頭に立っていたのが、一番見慣れた顔だった。
+
+（……ああ）
+
+弟だ。
+彼らは自分よりも後、ここに召喚された存在。
+ただ今はもう、違う道を選び、違う目的のために歩いている。
+
+（……そういうことだ）
+
+それだけで、十分だった。
+
+ただ――目を、ほんの一瞬だけ見た。
+彼の目に浮かんだのは、疑問か、違和感か。
+
+（今は、まだ）
+
+言葉にしてはいけない気がした。
+何かが崩れる気がした。
+彼もまた、こちらを見ながら何も言わなかった。
+
+ミレイは、無意識に襟元の術具〈ソノ・ピン〉へ指を伸ばす。
+無意識に思い描く“自分の声”の波長を、音として引き出す補助の術具だ。
+
+「……先に取ったけど。あとは使っていい」
+
+出てきた声は、中性的で、落ち着いていた。
+自分でも驚くほど、自然だった。
+
+部屋の鍵を少年に投げ、フードを押さえて足早に宿を出る。
+
+（……関係ない）
+
+魔王の行方だとか。
+彼らの旅の話は。
+
+誰かと同じ空間にいるのは、今の彼女に重たかった。
+その感情だけが、はっきりしていた。
+
+彼女の背は小さく、でも確かに遠ざかっていった。
+
+    ` },
+      { type: 'image', src: '../image/mote_ep05_thurein_rake.png' },
+      { type: 'text', content: `
+
+ミレイは一人、宿の近くにある湖へと足を運んだ。
+
+夜気が、身体にじわりと染み込んでくる。
+人の喧騒が去った後の世界は、風と水音だけが生きていた。
+
+（……このあたりでいいか）
+
+水面は鏡のように静かで、空に浮かぶ星々をそのまま映していた。
+ミレイは湖の傍に腰を下ろし、木陰を背にして膝を抱えた。
+
+（もし全部を話せば……いや格好悪すぎるだろ）
+
+魔人の前で煽られて、つい口走った結果これだ――なんて、あまりにも情けない。
+笑う気にもならなかった。
+そんな自分が、ひどくちっぽけに思えた。
+
+夜風が、ゆるやかに法衣を揺らす。
+胸元のピンが、わずかに冷たい音を立てた。
+
+（……この姿で、どこまで行ける）
+
+誰かに会うたび、自分が偽者に思えてしまう。
+だが、それを“自分”と呼べる日が、果たして来るのだろうか。
+
+──そのとき、胸の奥で微かに疼きが走った。
+身体の芯を、細い刃でなぞられたような感覚。
+すぐにおさまったが、こういうことは、もう何度目だったろう。
+
+湖の向こうに、うっすらと街の灯が見えた。
+
+性を捨て、名を捨て、それでもなお残ったのは――“生”だけだった。
+
+膝の間に顔を埋める。
+何も語らず、誰の声も聞かず、ただ夜の静けさに身を委ねた。
+
+（……あの学苑に行くしかない）
+
+自分をこの世界に喚んだ者がいるならば、戻れる手段もあるはずだ。
+模写学苑。すべての始まり。そして、おそらく終わりも――そこにある。
+
+遠くで、鳥が一声、鳴いた。
+    ` }
+    ],
+
+      // リンク先（存在しない場合は null に）
+      prevHref: 'mote_ep04.html',     // 例: 'ep00.html'
+      nextHref: 'mote_ex01.html',     // 例: 'ep02.html'
+      indexHref: '../mote_index.html',     // インデックスのパス
+  };
+  </script>
+  <!-- ここまで -->
+
+  <div class="wrap">
+    <header>
+      <h1 id="h-title">読み込み中…</h1>
+      <div class="sub" id="h-sub"></div>
+    </header>
+
+    <section class="panel">
+      <div class="audio" id="audio-wrap"></div>
+    </section>
+
+    <section class="panel" id="content-wrap"></section>
+
+    <footer class="nav" id="nav">
+      <a id="prev" class="btn" href="#" aria-disabled="true">← 前の話</a>
+      <a id="index" class="btn" href="#">目次へ</a>
+      <a id="next" class="btn" href="#" aria-disabled="true">次の話 →</a>
+    </footer>
+  </div>
+
+  <script>
+    // META を流し込む
+    (function init(){
+      const hTitle = document.getElementById('h-title');
+      const hSub = document.getElementById('h-sub');
+      const audioWrap = document.getElementById('audio-wrap');
+      const artWrap = document.getElementById('art-wrap');
+      const beforeWrap = document.getElementById('before-wrap');
+      const afterWrap = document.getElementById('after-wrap');
+
+      hTitle.textContent = `${META.no}｜${META.title}`;
+      hSub.textContent = META.id;
+
+      if (META.audio) {
+        audioWrap.innerHTML = `<div>BGM</div><audio src="${escapeAttr(META.audio)}" controls controlsList="nodownload" preload="metadata" loop></audio>`;
+      } else {
+        audioWrap.textContent = '（BGM なし）';
+      }
+
+  const contentWrap = document.getElementById('content-wrap');
+
+  if (Array.isArray(META.blocks)) {
+    META.blocks.forEach(block => {
+      if (block.type === 'time') {
+        const panel = document.createElement('section');
+        panel.className = 'panel time';
+
+        const div = document.createElement('div');
+        div.className = 'time-label';
+        div.textContent = block.value || '';
+
+        panel.appendChild(div);
+        contentWrap.appendChild(panel);
+      }
+
+      if (block.type === 'location') {
+        const panel = document.createElement('section');
+        panel.className = 'panel location';
+
+        const h = document.createElement('div');
+        h.className = 'location-title';
+        h.textContent = block.title || '';
+
+        panel.appendChild(h);
+
+        if (block.subtitle) {
+          const s = document.createElement('div');
+          s.className = 'location-sub';
+          s.textContent = block.subtitle;
+          panel.appendChild(s);
+        }
+
+        contentWrap.appendChild(panel);
+      }
+          if (block.type === 'text') {
+        const div = document.createElement('div');
+        div.className = 'caption';
+        div.innerHTML = renderText(block.content);
+        contentWrap.appendChild(div);
+      }
+
+      if (block.type === 'image') {
+        const fig = document.createElement('figure');
+        fig.className = 'art';
+        fig.innerHTML = `<img src="${escapeAttr(block.src)}">`;
+        contentWrap.appendChild(fig);
+      }
+    });
+  }
+
+      // ナビゲーション
+      const aPrev = document.getElementById('prev');
+      const aNext = document.getElementById('next');
+      const aIndex = document.getElementById('index');
+
+      if (META.prevHref) { aPrev.href = META.prevHref; aPrev.removeAttribute('aria-disabled'); }
+      else { aPrev.setAttribute('aria-disabled','true'); aPrev.removeAttribute('href'); }
+
+      if (META.nextHref) { aNext.href = META.nextHref; aNext.removeAttribute('aria-disabled'); }
+      else { aNext.setAttribute('aria-disabled','true'); aNext.removeAttribute('href'); }
+
+      aIndex.href = META.indexHref || '../index.html';
+    })();
+
+    function renderText(raw = '') {
+      return escapeHtml(raw)
+        .replace(/\[i\]([\s\S]+?)\[\/i\]/g, '<em class="chant">$1</em>')
+        .replace(/\[b\]([\s\S]+?)\[\/b\]/g, '<strong>$1</strong>')
+        .replace(/\[think\]([\s\S]+?)\[\/think\]/g, '<span class="think">$1</span>');
+    }
+
+    function escapeHtml(str=''){ return String(str).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#039;'); }
+    function escapeAttr(str=''){ return escapeHtml(str).replaceAll('"','&quot;'); }
+  </script>
+</body>
+</html>

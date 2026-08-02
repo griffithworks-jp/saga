@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>『境界のミレイ ―Mirei on the Edge― 』 | 第19話</title>
+  <style>
+    :root { --bg:#0f1320; --ink:#e7ebff; --muted:#a6b0d4; --border:#2a3147; --accent:#6ea8fe; }
+    html, body { margin:0; background:var(--bg); color:var(--ink); font-family: system-ui, -apple-system, Segoe UI, Roboto, Noto Sans JP, "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif; }
+    .wrap { max-width: 820px; margin: 0 auto; padding: 18px 14px 24px; }
+    header h1 { margin:0 0 6px; font-size: 1.2rem; }
+    header .sub { color: var(--muted); font-size: .9rem; margin:0 0 8px; }
+
+    .panel { background: linear-gradient(180deg, #1a1f33, #151a2a); border:1px solid var(--border); border-radius:12px; padding: 12px; box-shadow: 0 4px 12px rgba(0,0,0,.35); }
+    .panel + .panel { margin-top: 10px; }
+
+    .panel.location { background: linear-gradient(180deg, #14182a, #101424); text-align: center; }
+    .location-title { font-size: 1.05rem; letter-spacing: 0.15em; color: var(--ink); }
+    .location-sub { margin-top: 4px; font-size: 0.85rem; color: var(--muted); }
+    .panel.time { background: none; border: none; box-shadow: none; padding: 8px 0 4px; text-align: center; }
+    .time-label { font-size: 0.8rem; color: var(--muted); letter-spacing: 0.1em; }
+
+    em.chant { font-style: italic; color: #cfd8ff; letter-spacing: 0.05em; text-shadow: 0 0 6px rgba(180,200,255,.25); }
+    .think { color: var(--muted); font-style: italic; }
+
+    .audio { display:flex; flex-direction:column; gap:6px; }
+    .caption { color:var(--muted); line-height:1.7; font-size: 1rem; white-space: pre-wrap; }
+    figure { margin:0; }
+    .art { width:100%; aspect-ratio: auto; background:none; border:none; border-radius: 0; overflow:hidden; display:grid; place-items:left; }
+    .art img { max-width:100%; height:auto; display:block; }
+
+    footer.nav { display:flex; gap:8px; justify-content:space-between; margin-top:14px; flex-wrap:wrap; }
+    .btn { display:inline-block; padding:10px 14px; border:1px solid var(--border); border-radius:999px; background:#11162a; color:var(--ink); text-decoration:none; font-size:.95rem; }
+    .btn:hover { border-color: var(--accent); box-shadow: 0 0 0 2px rgba(110,168,254,.15) inset; }
+    .btn[aria-disabled="true"] { opacity:.5; pointer-events:none; }
+
+    :root { --font-body: 1rem; --line-body: 1.9; }
+    .caption { font-size: var(--font-body); line-height: var(--line-body); line-height: 1.9; }
+    .font-tools { display:flex; gap:8px; justify-content:flex-start; margin-left:8px; margin-top:8px; }
+    .font-tools button { padding:4px 10px; border:1px solid var(--border);
+      border-radius:8px; background:#11162a; color:var(--ink); cursor:pointer; }
+  </style>
+</head>
+<body>
+  <div class="font-tools">
+    <button onclick="setFontSize('small')">小</button>
+    <button onclick="setFontSize('normal')">標準</button>
+    <button onclick="setFontSize('large')">大</button>
+  </div>
+  <!-- ここから編集 -->
+  <script>
+    function setFontSize(size) {
+    const root = document.documentElement;
+    if (size === 'large') {
+      root.style.setProperty('--font-body', '1.25rem');
+      root.style.setProperty('--line-body', '2.1');
+      localStorage.setItem('fontSize', 'large');
+    } else if (size === 'small') {
+      root.style.setProperty('--font-body', '0.9rem');
+      localStorage.setItem('fontSize', 'small');
+    } else {
+      root.style.setProperty('--font-body', '1rem');
+      localStorage.setItem('fontSize', 'normal');
+    }
+  }
+  (function(){
+    const saved = localStorage.getItem('fontSize');
+    if (saved === 'large') {
+      document.documentElement.style.setProperty('--font-body', '1.25rem');
+      document.documentElement.style.setProperty('--line-body', '2.1');
+    } else if (saved === 'small') {
+      document.documentElement.style.setProperty('--font-body', '0.9rem');
+    }
+  })();
+  const META = {
+    id: 'mote_ep19',
+    no: '第19話',
+    title: '誰でもない誰かになるまで',
+    audio: '../assets/kk_scene3.mp3',
+    blocks: [
+      { type: 'text', content: `
+曲がりくねった山道を抜けた先に、朽ちかけたロッジが姿を現す。
+風雨を避けるには十分な壁と屋根を備えている。
+
+「ここなら……少しは、休めるか」
+
+ロッジにたどり着き、クラウスはミレイを下ろす。
+ミレイの顔は汗に濡れ、荒い呼吸が続いていた。
+
+クラウスは薪を集め、炉に火を灯す。
+暖かな光が部屋に広がる。
+
+腿の外側から付け根寄りに血が滲んでいるのが目に入った。
+傷の状態を確かめなければ。
+そう思い、ミレイのベルトを解き、法衣の裾に手をかける。
+
+「待ってくれ……」
+
+かすれた声。
+
+「無理するな。手当てを……」
+
+服越しではない、はっきりとした柔らかさに触れ、クラウスの手が止まる。
+
+「……え？」
+
+
+    ` },
+      { type: 'image', src: '../image/ep19_1_mirei.png' },
+      { type: 'text', content: `
+現れたのは、しなやかな白い脚。
+
+華奢な腰。
+
+男のものとは思えない身体の線。
+
+視線を逸らそうとしてもできずに、クラウスは思わず一歩引いた。
+
+「……お前は……
+　ガリヤ公の、“息子”じゃなかったのか……？」
+
+思わず声が漏れる。
+
+ミレイは、観念したようにほんの一瞬だけ目を伏せ、
+小さく――息を吐いた。
+
+静かに顔を上げて言う。
+
+「そういうことになっている」
+
+「じゃあ、お前は……」
+
+「隠していたことを謝るつもりはないし、説明もしない。
+　ただ一つ――わたしは、公爵家の跡継ぎとして振る舞う。
+　それ以外のことは、どうでもいい」
+
+クラウスは、立ち尽くしたまま彼女を見つめる。
+
+――血は出ているが、致命傷ではない。
+刃は深く入っていない。
+だから、命に別状はない。
+
+無意識のうちに、そう判断していた。
+そうすることでしか今、この状況に立っていられなかった。
+
+短い沈黙。
+
+「……絶好の機会じゃないですか」
+
+皮肉のような、挑発のようなミレイの声。
+だが、その響きに、先ほどまでの作り物の硬さはなかった。
+
+低く整えられた声色ではない。
+掠れながらも、柔らかさを帯びた――彼女の声。
+
+「……君の仇が、今、目の前で無防備に横たわっている」
+
+「……なにを……」
+
+ミレイは言いながら、
+ゆっくりと、クラウスの手元へ視線を落とした。
+
+「喉を裂けばいい。
+　あなたが正しいと信じてきたことは、そこで果たされる」
+
+その瞳に、怯えも、悲しみもなかった。
+クラウスは、その視線を追って――
+初めて、自分の手に気づいた。
+
+いつの間にか、剣の柄を握りしめている。
+抜くつもりも、構えるつもりもなかったはずなのに。
+
+（そんな……そんなはずが、あるか……）
+
+クラウスは、そのまま立ち尽くしていた。
+
+──これは、復讐の好機。確かにそうだ。
+目の前には、ガリヤの血筋として振る舞う“誰か”がいる。
+たとえ本物でなくとも、その立場にある者。
+
+ミレイの目は、炎の残滓に照らされて、静かに彼を見上げていた。
+怯えもせず、かといって開き直っているわけでもない。
+まるで、自分の命を相手に預けるかのような、奇妙な覚悟があった。
+
+「……それで、どうするんですか？　クラウス君」
+
+その言葉に、クラウスは胸の奥が痛んだ。
+
+剣を抜いているのに。
+自分の心は、なぜか目の前の少女に触れることを拒んでいた。
+
+“少女”──
+
+クラウスの目に映る彼女は、守られることを拒みながら、守る術を持たない、
+あまりに人間的な存在だった。
+傷つき、疲れきり、それでも気丈に振る舞おうとする姿に見えた。
+
+クラウスは剣を握ったまま、動けなかった。
+
+──これが復讐の機会じゃなかったら、何だ。
+
+父を、家を、未来を奪われた。
+その仇の名を継ぐ者が、いま無防備にも目の前にいる。
+その正体が何であろうと、彼の家を滅ぼした者の血を継ぎ、未来を約束された存在であることに変わりはないのに。
+
+クラウスが剣を固く握りしめる気配が、皮膚の上をなぞるように伝わってくる。
+
+──それでいい、とミレイは思った。
+
+自分は“偽物”だ。
+奪われた名前、与えられた役目。
+望んで手にしたわけではないのに、誰かの人生をなぞるように生きている。
+この身体さえ、自分のものではないような感覚がずっとあった。
+
+（今ここで終わってしまうなら、それも仕方ないかもしれない）
+
+だって自分は――最初から、間違っていたのだから。
+誰かの人生を、生きる役を与えられ――。
+
+ふと、焚火がはぜる音とともに、クラウスの視線を感じる。
+
+それが、ひどく重く感じられた。
+
+彼の目に、今の自分はどう映っている？
+騙した人間か。
+復讐の道具か。
+それとも
+――言葉をかける価値もない存在か。
+
+「……見ないで」
+
+か細く、掠れた声だった。
+聞き取れるかどうかのぎりぎりの声量。
+
+剣を持つ腕がわずかに震えた。
+クラウスは息を飲んだ。
+何も言えなかった。
+
+「……なにもしないなら……見ないでください」
+
+今度は、少しだけ強く。
+でも泣きそうな声音で、火の揺らめきの中に拒絶の輪郭を描いた。
+
+ミレイはゆっくりと肩を抱くように腕を回し、背を丸める。
+あの堂々とした仮面のような振る舞いは、もう見当たらなかった。
+
+長い銀髪が揺れて頬を隠し、わずかに伏せた瞳が床を見つめる。
+焚火の明かりに照らされたその表情には、羞恥と痛みと、それでも消えない誇りが入り混じっていた。
+
+クラウスの視線に気づいていたのだ。
+見つめられること、それが何より恐ろしかった。
+男ではない自分。強くもなく、誰かの代わりでしかない自分。
+それでも戦い、生き延びようとする自分
+
+「君がいま何を考えているか、ちゃんとはわからないけど……」
+
+震えを押し殺すように、ミレイの言葉が続く。
+
+「……これでも、わたしは」
+
+一瞬、言葉を詰まらせる。
+
+「わたしなりに……戦ってきたんです。
+　男としてでも、女としてでもなく……ただ、“わたし”として」
+
+言葉の端々に、恐れと誇り、そして痛みが宿っていた。
+誰も信用できないまま、嘘をついて生きてきた。
+それでも倒れなかった。
+
+──その姿が、自分と重なって見えた。
+
+クラウスは目を伏せ、そしてようやく剣を鞘に戻した。
+
+「……だったら」
+
+喉が詰まりそうになる。胸の奥で何かが軋んだ。
+
+「……だったら、勝手に死ぬんじゃねえよ」
+
+その言葉に驚いて、ミレイが顔を上げた。
+
+「……は？」
+
+「そんな顔して、そんな目をして……！
+　俺だって、どうすればいいか分からない。
+　でもな……」
+
+クラウスは俯いたまま、拳を強く握りしめる。
+
+「そんな風に、自分を終わらせるような言い方をするな。
+　……見ていられないんだよ。
+　自分の足で立って、生きろ。
+　戦え。
+　俺の手で終わりにするなんて、そんなの……そんなのは、まっぴらだ」
+
+震える声だった。
+怒っているのか、泣いているのか、自分でも分からなかった。
+
+「誰かの手を汚さないくらいには、しがみついてでも生きろよ……」
+
+命令でも責めでもなかった。
+けれど、まるで自分自身に言い聞かせるような、切実な言葉だった。
+
+ミレイは、それを聞いて小さく目を伏せた。
+彼の言葉の奥にある、悔しさと痛みと、そして優しさを、少しだけ感じ取れた気がした。
+
+それに――あの瞬間に、彼は選ばなかった。
+
+「……すみません。
+　少し、意地悪をしましたね」
+
+その声は、どこかほっとしたような、けれど切なさのにじむ声だった。
+そう一言を残し、ミレイは裾を直して立ち上がり、部屋の奥へと身を翻す。
+
+焚火の火が、ぱち、ぱちと音を立てる。
+燃え尽きていくのは薪か、それとも心か。
+
+夜は、まだ深く、ふたりの心にも霧がかかっていた。
+けれど、いまふたりのあいだに、まだ名もないものが確かに残っていた。
+    ` }
+    ],
+
+      // リンク先（存在しない場合は null に）
+      prevHref: 'mote_ep18.html',     // 例: 'ep00.html'
+      nextHref: 'mote_ep20.html',     // 例: 'ep02.html'
+      indexHref: '../mote_index.html',     // インデックスのパス
+  };
+  </script>
+  <!-- ここまで -->
+
+  <div class="wrap">
+    <header>
+      <h1 id="h-title">読み込み中…</h1>
+      <div class="sub" id="h-sub"></div>
+    </header>
+
+    <section class="panel">
+      <div class="audio" id="audio-wrap"></div>
+    </section>
+
+    <section class="panel" id="content-wrap"></section>
+
+    <footer class="nav" id="nav">
+      <a id="prev" class="btn" href="#" aria-disabled="true">← 前の話</a>
+      <a id="index" class="btn" href="#">目次へ</a>
+      <a id="next" class="btn" href="#" aria-disabled="true">次の話 →</a>
+    </footer>
+  </div>
+
+  <script>
+    (function init(){
+      const hTitle = document.getElementById('h-title');
+      const hSub = document.getElementById('h-sub');
+      const audioWrap = document.getElementById('audio-wrap');
+      const artWrap = document.getElementById('art-wrap');
+      const beforeWrap = document.getElementById('before-wrap');
+      const afterWrap = document.getElementById('after-wrap');
+
+      hTitle.textContent = `${META.no}｜${META.title}`;
+      hSub.textContent = META.id;
+
+      if (META.audio) {
+        audioWrap.innerHTML = `<div>BGM</div><audio src="${escapeAttr(META.audio)}" controls controlsList="nodownload" preload="metadata" loop></audio>`;
+      } else {
+        audioWrap.textContent = '（BGM なし）';
+      }
+
+    const contentWrap = document.getElementById('content-wrap');
+
+    if (Array.isArray(META.blocks)) {
+      META.blocks.forEach(block => {
+        if (block.type === 'time') {
+          const panel = document.createElement('section');
+          panel.className = 'panel time';
+          const div = document.createElement('div');
+          div.className = 'time-label';
+          div.textContent = block.value || '';
+          panel.appendChild(div);
+          contentWrap.appendChild(panel);
+        }
+
+        if (block.type === 'location') {
+          const panel = document.createElement('section');
+          panel.className = 'panel location';
+          const h = document.createElement('div');
+          h.className = 'location-title';
+          h.textContent = block.title || '';
+          panel.appendChild(h);
+
+          if (block.subtitle) {
+            const s = document.createElement('div');
+            s.className = 'location-sub';
+            s.textContent = block.subtitle;
+            panel.appendChild(s);
+          }
+          contentWrap.appendChild(panel);
+        }
+        if (block.type === 'text') {
+        const div = document.createElement('div');
+        div.className = 'caption';
+        div.innerHTML = renderText(block.content);
+        contentWrap.appendChild(div);
+        }
+
+        if (block.type === 'image') {
+          const fig = document.createElement('figure');
+          fig.className = 'art';
+          fig.innerHTML = `<img src="${escapeAttr(block.src)}">`;
+          contentWrap.appendChild(fig);
+        }
+      });
+    }
+
+      // ナビゲーション
+      const aPrev = document.getElementById('prev');
+      const aNext = document.getElementById('next');
+      const aIndex = document.getElementById('index');
+
+      if (META.prevHref) { aPrev.href = META.prevHref; aPrev.removeAttribute('aria-disabled'); }
+      else { aPrev.setAttribute('aria-disabled','true'); aPrev.removeAttribute('href'); }
+      if (META.nextHref) { aNext.href = META.nextHref; aNext.removeAttribute('aria-disabled'); }
+      else { aNext.setAttribute('aria-disabled','true'); aNext.removeAttribute('href'); }
+
+      aIndex.href = META.indexHref || '../index.html';
+    })();
+
+    function renderText(raw = '') {
+      return escapeHtml(raw)
+        .replace(/\[i\]([\s\S]+?)\[\/i\]/g, '<em class="chant">$1</em>')
+        .replace(/\[b\]([\s\S]+?)\[\/b\]/g, '<strong>$1</strong>')
+        .replace(/\[think\]([\s\S]+?)\[\/think\]/g, '<span class="think">$1</span>');
+    }
+
+    function escapeHtml(str=''){ return String(str).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#039;'); }
+    function escapeAttr(str=''){ return escapeHtml(str).replaceAll('"','&quot;'); }
+  </script>
+</body>
+</html>
