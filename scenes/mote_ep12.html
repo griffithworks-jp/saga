@@ -281,6 +281,8 @@
 
       if (META.audio) {
         audioWrap.innerHTML = `<div>BGM</div><audio src="${escapeAttr(META.audio)}" controls controlsList="nodownload" preload="metadata" loop></audio>`;
+        const audio = audioWrap.querySelector("audio");
+        audio.volume = 0.5; // 50%
       } else {
         audioWrap.textContent = '（BGM なし）';
       }
