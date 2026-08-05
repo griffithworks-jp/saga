@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>第零章『ガルレリアンサーガ・ゼロ』</title>
+  <style>
+/*    :root { --bg:#0f1320; --card:#171b2a; --ink:#e7ebff; --muted:#a6b0d4; --border:#2a3147; --accent:#6ea8fe; } */
+    :root { --bg:#0b0b0d; --card:#171b2a; --ink:#ececec; --muted:#9a9a9f; --border:#26262d; --accent:#8ab4ff; }
+    html, body { margin:0; background:var(--bg); color:var(--ink); font-family:system-ui,-apple-system,Segoe UI,Roboto,Noto Sans JP,"Hiragino Kaku Gothic ProN","Meiryo",sans-serif; }
+    header { padding:20px 16px 8px; text-align:center; }
+    header h1 { margin:0 0 6px; font-weight:800; letter-spacing:.02em; font-size:1.25rem; }
+    header p { margin:0; color:var(--muted); font-size:.92rem; }
+    footer p { margin:0; color:var(--muted); font-size:.92rem; }
+
+    .site-header { margin-bottom: 14px; text-align: center; }
+    .page-label { font-size: 0.7rem; letter-spacing: 0.25em; color: var(--muted); margin-bottom: 2px; }
+    .novel-title { margin: 0; font-size: 1.3rem; letter-spacing: 0.06em; }
+    .catch { margin: 6px 0 8px; font-size: 0.85rem; color: var(--muted); line-height: 1.7; }
+    .header-nav { font-size: 0.85rem; }
+    .header-nav a { color: var(--accent); text-decoration: none; }
+    .header-nav a:hover { text-decoration: underline; }
+    .sep { margin: 0 6px; color: var(--muted); }
+
+    .wrap { max-width:980px; margin:0 auto; padding:14px; display:grid; gap:16px; }
+
+    .block { background:linear-gradient(180deg,#1a1f33,#151a2a); border:1px solid var(--border); border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,.35); }
+    .block h2 { margin:0; padding:12px 14px; border-bottom:1px solid var(--border); font-size:1rem; }
+    .block .body { padding:12px 14px; }
+
+    /* episode list */
+    table { width:100%; border-collapse:collapse; }
+    th, td { padding:8px 6px; border-bottom:1px solid var(--border); text-align:left; }
+    thead th { position:sticky; top:0; background:#151a2a; z-index:1; }
+    tr:hover td { background:rgba(110,168,254,.06); }
+    a.row { display:block; color:inherit; text-decoration:none; }
+
+    /* layout for split (4th part) */
+    .grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+    @media (max-width:900px){ .grid-2 { grid-template-columns:1fr; } }
+
+    /* scroll containers */
+    .scroll { max-height:calc(100vh - 240px); overflow:auto; }
+    @media (max-width:900px){ .scroll { max-height:42vh; } }
+
+    .pill { display:inline-block; font-size:.75rem; color:#b9c3ff; background:#11162a; border:1px solid var(--border); padding:2px 6px; border-radius:999px; margin-left:6px; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="page-label">サウンドノベル・インデックス</div>
+    <h1 class="novel-title">第零章『ガルレリアンサーガ・ゼロ』</h1>
+    <p class="catch"></p>
+    <nav class="header-nav">
+      <a href="glossary.html">用語集・設定資料</a>
+      <span class="sep">｜</span>
+      <a href="saga_portal.html">Web小説ポータル</a>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <!-- 1列 -->
+    <section class="block">
+      <h2>『ガルレリアンサーガ・ゼロ』　序節 ― Overture ― <span class="pill">共通ルート</span></h2>
+      <div class="body">
+        <div id="part-1"></div>
+      </div>
+    </section>
+
+    <section class="block">
+      <h2>『ガルレリアンサーガ・ゼロ』　第一節 <span class="pill">共通ルート</span></h2>
+      <div class="body">
+        <div id="part-2"></div>
+      </div>
+    </section>
+
+    <section class="block">
+      <h2>『ガルレリアンサーガ・ゼロ』　第二節 <span class="pill">共通ルート</span></h2>
+      <div class="body scroll">
+        <div id="part-3"></div>
+      </div>
+    </section>
+
+    <!-- 2列分岐 --><!--
+    <section class="block">
+      <h2>『ガルレリアンサーガ・ゼロ』　第三節 <span class="pill">分岐ルート（ 正史エンド / アナザーエンド ）</span></h2>
+      <div class="body">
+        <div class="grid-2">
+          <div>
+            <h3 style="margin:.2rem 0 .6rem; font-size:.95rem; color:var(--muted)">正史</h3>
+            <div class="scroll"><div id="part-4A"></div></div>
+          </div>
+          <div>
+            <h3 style="margin:.2rem 0 .6rem; font-size:.95rem; color:var(--muted)">アナザー</h3>
+            <div class="scroll"><div id="part-4B"></div></div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- 1列合流 --><!--
+    <section class="block">
+      <h2>『ガルレリアンサーガ・ゼロ』Extra <span class="pill">合流</span></h2>
+      <div class="body scroll">
+        <div id="part-5"></div>
+      </div>
+    </section> -->
+
+    <footer class="credit">
+      <p>© 2025 GriffithWorks<br>
+      本作品は個人制作のサウンドノベルです。知人向け公開中のため無断転載は禁じます。</p>
+      <p>使用している音楽、および一部の画像の著作権については各権利者に帰属します。</p>
+<!--      <p>BGM：PeriTune, かねこかずき, MOMIZizm MUSiC（もみじば）</p>-->
+    </footer>
+  </main>
+
+  <script>
+    const EPISODES = [
+  { id:'gs0_ep01', no:'第1話', title:'目覚め', part:1 },
+//  { id:'gs_ep02', no:'第2話', title:'仮話', part:1 },
+//  { id:'gs_ep03', no:'第3話', title:'仮話', part:1 },
+//  { id:'gs_ep04', no:'第4話', title:'仮話', part:1 },
+//  { id:'gs_ep05', no:'第5話', title:'仮話', part:1 },
+//  { id:'gs_ep06', no:'第6話', title:'仮話', part:1 },
+//  { id:'gs_ep07', no:'第7話', title:'仮話', part:1 },
+//  { id:'gs_ep08', no:'第8話', title:'仮話', part:1 },
+//  { id:'gs_ep09', no:'第9話', title:'仮話', part:1 },
+//  { id:'gs_ep10', no:'第10話', title:'仮話', part:1 },
+//  { id:'gs_ep11', no:'第11話', title:'仮話', part:1 },
+//  { id:'gs_ep12', no:'第12話', title:'仮話', part:1 },
+//  { id:'gs_ep13', no:'第13話', title:'仮話', part:1 },
+//  { id:'gs_ep14', no:'第14話', title:'仮話', part:1 },
+//  { id:'gs_ep15', no:'第15話', title:'仮話', part:1 },
+//  { id:'gs_ep16', no:'第16話', title:'仮話', part:1 },
+//  { id:'gs_ep17', no:'第17話', title:'仮話', part:1 },
+//  { id:'gs_ep18', no:'第18話', title:'仮話', part:1 },
+//  { id:'gs_ep19', no:'第19話', title:'仮話', part:1 },
+//  { id:'gs_ep20', no:'第20話', title:'仮話', part:1 },
+//  { id:'gs_ep21', no:'第21話', title:'仮話', part:2 },
+//  { id:'gs_ep50', no:'第50話', title:'仮話', part:3 },
+//  { id:'gs_ep51A', no:'第51話A', title:'仮話', part:4, branch: 'A' },
+//  { id:'gs_ep51B', no:'第51話B', title:'仮話', part:4, branch: 'B' },
+//  { id:'gs_ep61', no:'第61話', title:'仮話', part:5 }
+    ]
+
+    // --- レンダラ ---
+    function renderTable(container, list) {
+      const wrap = document.getElementById(container);
+      if (!wrap) return;
+      wrap.innerHTML = '';
+      const table = document.createElement('table');
+      table.innerHTML = `<thead><tr><th style="width:22%">#</th><th>タイトル</th></tr></thead><tbody></tbody>`;
+      const tbody = table.querySelector('tbody');
+      list.forEach(ep => {
+        const tr = document.createElement('tr');
+        const href = `scenes/${ep.id}.html`;
+        tr.innerHTML = `<td>${ep.no}</td><td><a class="row" href="${href}"><strong>${escapeHtml(ep.title)}</strong></a></td>`;
+        tbody.appendChild(tr);
+      });
+      wrap.appendChild(table);
+    }
+
+    function escapeHtml(str=''){ return String(str).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#039;'); }
+
+    // --- グルーピング ---
+    const P1 = EPISODES.filter(e => e.part === 1);
+    const P2 = EPISODES.filter(e => e.part === 2);
+//    const P3 = EPISODES.filter(e => e.part === 3);
+//    const P4A = EPISODES.filter(e => e.part === 4 && (e.branch||'A') === 'A');
+//    const P4B = EPISODES.filter(e => e.part === 4 && (e.branch||'B') === 'B');
+//    const P5 = EPISODES.filter(e => e.part === 5);
+
+    renderTable('part-1', P1);
+    renderTable('part-2', P2);
+//    renderTable('part-3', P3);
+//    renderTable('part-4A', P4A);
+//    renderTable('part-4B', P4B);
+//    renderTable('part-5', P5);
+  </script>
+</body>
+</html>

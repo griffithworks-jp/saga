@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Web小説ポータル</title>
+
+  <style>
+    :root { --bg:#0f1320; --ink:#e7ebff; --muted:#a6b0d4; --border:#2a3147; --accent:#6ea8fe; }
+    html, body { margin:0; background:var(--bg); color:var(--ink);
+      font-family: system-ui,-apple-system,Segoe UI,Roboto,Noto Sans JP,"Hiragino Kaku Gothic ProN","Meiryo",sans-serif; }
+
+    .wrap { max-width: 820px; margin: 0 auto; padding: 18px 14px 24px; }
+
+    header { margin-bottom: 12px; text-align:center; }
+    header h1 { margin:0 0 6px; font-size:1.3rem; }
+    header p { margin:0; color:var(--muted); font-size:.9rem; }
+
+    .panel {
+      background: linear-gradient(180deg, #1a1f33, #151a2a);
+      border:1px solid var(--border);
+      border-radius:12px;
+      padding:12px;
+      box-shadow:0 4px 12px rgba(0,0,0,.35);
+    }
+    .panel + .panel { margin-top: 12px; }
+    .section-title { font-size:1rem; margin-bottom:8px; color:var(--muted); }
+    .list { display:flex; flex-direction:column; gap:6px; }
+
+    .btn {
+      display:block;
+      padding:10px 12px;
+      border:1px solid var(--border);
+      border-radius:10px;
+      background:#11162a;
+      color:var(--ink);
+      text-decoration:none;
+      font-size:.95rem;
+    }
+    .btn:hover {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 2px rgba(110,168,254,.15) inset;
+    }
+    .desc { font-size:.85rem; color:var(--muted); margin-left:4px; }
+
+    footer { margin-top:16px; text-align:center; font-size:.8rem; color:var(--muted); }
+    footer a { color:var(--accent); text-decoration:none; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <header>
+      <h1>Web小説ポータル</h1>
+      <p>個人制作による、剣と魔術、戦乱を描く長編ファンタジーシリーズ</p>
+    </header>
+
+    <!-- 本編 -->
+    <section class="panel">
+      <div class="section-title">ガルレリアンサーガ 本編</div>
+      <div class="list">
+
+        <a class="btn" href="gs0_index.html">
+          ガルレリアンサーガ 第零章『ガルレリアンサーガ・ゼロ』
+          <div class="desc">大陸歴573年〜575年</div>
+        </a>
+
+        <a class="btn" href="">
+          ガルレリアンサーガ 第一章『玉座のウェイン』
+          <div class="desc">大陸歴579年〜583年</div>
+        </a>
+
+        <a class="btn" href="">
+          ガルレリアンサーガ 第二章『ジルヴァの帰還』
+          <div class="desc">大陸歴585年〜589年</div>
+        </a>
+
+<!--        <a class="btn" href="gs3_index.html">
+          ガルレリアンサーガ第三章『反逆のアレス』
+          <div class="desc">大陸歴591年〜592年</div>
+        </a> -->
+
+      </div>
+    </section>
+
+    <!-- 外伝 -->
+    <section class="panel">
+      <div class="section-title">ガルレリアンサーガ 外伝</div>
+      <div class="list">
+
+        <a class="btn" href="mote_index.html">
+          『境界のミレイ ―Mirei on the Edge― 』
+          <div class="desc">本編 第零章の外伝</div>
+        </a>
+
+<!--        <a class="btn" href="mote_confirm.html">
+          『境界のミレイ ―Mirei on the Edge― 』巡り灯ルート
+          <div class="desc">アナザーエンド後の物語</div>
+        </a> -->
+
+      </div>
+    </section>
+
+    <!-- 短編 -->
+    <section class="panel">
+      <div class="section-title">ガルレリアンサーガ 短編</div>
+      <div class="list">
+<!--
+        <a class="btn" href="short/sh01.html">
+          短編：
+        </a>
+
+        <a class="btn" href="">
+          短編：
+        </a>
+ -->
+      </div>
+    </section>
+
+    <!-- その他 -->
+    <section class="panel">
+      <div class="section-title">その他</div>
+      <div class="list">
+        <a class="btn" href="glossary.html">用語集・設定資料</a>
+      </div>
+    </section>
+
+<!--     <footer>
+      <p>
+        <a href="saga_portal.html">Web小説ポータルへ戻る</a>
+      </p>
+    </footer> -->
+
+  </div>
+</body>
+</html>
