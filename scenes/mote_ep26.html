@@ -319,7 +319,7 @@
 
       // リンク先（存在しない場合は null に）
       prevHref: 'mote_ep25.html',     // 例: 'ep00.html'
-      nextHref: null,     // 例: 'ep02.html'
+      nextHref: 'mote_ep27.html',     // 例: 'ep02.html'
       indexHref: '../mote_index.html',     // インデックスのパス
   };
   </script>
@@ -357,7 +357,7 @@
       hSub.textContent = META.id;
 
       if (META.audio) {
-        audioWrap.innerHTML = `<div>BGM</div><audio src="${escapeAttr(META.audio)}" controls controlsList="nodownload" preload="metadata" loop></audio>`;
+        audioWrap.innerHTML = `<div>BGM</div><audio src="${escapeAttr(META.audio)}" controls controlsList="nodownload noplaybackrate" preload="metadata" loop></audio>`;
         const audio = audioWrap.querySelector("audio");
         audio.volume = 0.5; // 50%
       } else {
