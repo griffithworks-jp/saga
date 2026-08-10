@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>『境界のミレイ ―Mirei on the Edge― 』 | 第28話</title>
+  <style>
+    :root { --bg:#0f1320; --ink:#e7ebff; --muted:#a6b0d4; --border:#2a3147; --accent:#6ea8fe; }
+    html, body { margin:0; background:var(--bg); color:var(--ink); font-family: system-ui, -apple-system, Segoe UI, Roboto, Noto Sans JP, "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif; }
+    .wrap { max-width: 820px; margin: 0 auto; padding: 18px 14px 24px; }
+    header h1 { margin:0 0 6px; font-size: 1.2rem; }
+    header .sub { color: var(--muted); font-size: .9rem; margin:0 0 8px; }
+
+    .panel { background: linear-gradient(180deg, #1a1f33, #151a2a); border:1px solid var(--border); border-radius:12px; padding: 12px; box-shadow: 0 4px 12px rgba(0,0,0,.35); }
+    .panel + .panel { margin-top: 10px; }
+
+    .panel.location { background: linear-gradient(180deg, #14182a, #101424); text-align: center; }
+    .location-title { font-size: 1.05rem; letter-spacing: 0.15em; color: var(--ink); }
+    .location-sub { margin-top: 4px; font-size: 0.85rem; color: var(--muted); }
+    .panel.time { background: none; border: none; box-shadow: none; padding: 8px 0 4px; text-align: center; }
+    .time-label { font-size: 0.8rem; color: var(--muted); letter-spacing: 0.1em; }
+
+    em.chant { font-style: italic; color: #cfd8ff; letter-spacing: 0.05em; text-shadow: 0 0 6px rgba(180,200,255,.25); }
+    .think { color: var(--muted); font-style: italic; }
+
+    .audio { display:flex; flex-direction:column; gap:6px; }
+    .caption { color:var(--muted); line-height:1.7; font-size: 1rem; white-space: pre-wrap; }
+    figure { margin:0; }
+    .art { width:100%; aspect-ratio: auto; background:none; border:none; border-radius: 0; overflow:hidden; display:grid; place-items:left; }
+    .art img { max-width:100%; height:auto; display:block; }
+
+    footer.nav { display:flex; gap:8px; justify-content:space-between; margin-top:14px; flex-wrap:wrap; }
+    .btn { display:inline-block; padding:10px 14px; border:1px solid var(--border); border-radius:999px; background:#11162a; color:var(--ink); text-decoration:none; font-size:.95rem; }
+    .btn:hover { border-color: var(--accent); box-shadow: 0 0 0 2px rgba(110,168,254,.15) inset; }
+    .btn[aria-disabled="true"] { opacity:.5; pointer-events:none; }
+
+    :root { --font-body: 1rem; --line-body: 1.9; }
+    .caption { font-size: var(--font-body); line-height: var(--line-body); line-height: 1.9; }
+    .font-tools { display:flex; gap:8px; justify-content:flex-start; margin-left:8px; margin-top:8px; }
+    .font-tools button { padding:4px 10px; border:1px solid var(--border);
+      border-radius:8px; background:#11162a; color:var(--ink); cursor:pointer; }
+  </style>
+</head>
+<body>
+  <div class="font-tools">
+    <button onclick="setFontSize('small')">小</button>
+    <button onclick="setFontSize('normal')">標準</button>
+    <button onclick="setFontSize('large')">大</button>
+  </div>
+  <!-- ここから編集 -->
+  <script>
+    function setFontSize(size) {
+    const root = document.documentElement;
+    if (size === 'large') {
+      root.style.setProperty('--font-body', '1.25rem');
+      root.style.setProperty('--line-body', '2.1');
+      localStorage.setItem('fontSize', 'large');
+    } else if (size === 'small') {
+      root.style.setProperty('--font-body', '0.9rem');
+      localStorage.setItem('fontSize', 'small');
+    } else {
+      root.style.setProperty('--font-body', '1rem');
+      localStorage.setItem('fontSize', 'normal');
+    }
+  }
+  (function(){
+    const saved = localStorage.getItem('fontSize');
+    if (saved === 'large') {
+      document.documentElement.style.setProperty('--font-body', '1.25rem');
+      document.documentElement.style.setProperty('--line-body', '2.1');
+    } else if (saved === 'small') {
+      document.documentElement.style.setProperty('--font-body', '0.9rem');
+    }
+  })();
+  const META = {
+    id: 'mote_ep28',
+    no: '第28話',
+    title: '帰路の岐路（きろ）',
+    audio: '../assets/Code_of_Honor_2.mp3',
+    blocks: [
+      { type: 'image', src: '../image/sea2_m.jpg' },
+      { type: 'text', content: ` ` },
+      { type: 'location',
+        title: 'グラン地中海 / Gran Mediterranean Sea',
+        subtitle: '' },
+      { type: 'text', content: `
+昼下がりの海は、風がよく通る。
+甲板に出る者はまばらで、静かな帆音と水音だけが響いていた。
+
+ミレイはひとり、船縁近くに腰を下ろし、膝の上で小さな帳面を開いていた。
+羊皮紙に細いペン先で文字を綴っている。
+
+「……また書いてるのか」
+
+クラウスの声に気づいたミレイは一瞬手を止めたが、顔は上げずに答えた。
+
+「ええ。
+　旅の記録。地名、日付、出来事。
+　……それだけ」
+
+クラウスは彼女の隣に腰を下ろし、そっと風を避けるように背を丸める。
+
+「書かないのか？
+　……感じたこととか、思ったこと」
+
+ミレイは短く笑った。
+けれど、その目はどこか遠い。
+
+「書けたら楽でしょうね。
+　……でも、書けないの。たぶん、最初から」
+
+「どうして」
+
+「――記してしまえば、それは“ここ”の事になるから」
+
+クラウスが言葉を失ったことに、ミレイは気づいていた。
+でも、それでよかった。
+聞かれないことのなかに、救われるものがある。
+
+「……ただ、
+　誰にも話さないまま消えてしまうのも、怖い。
+　だから書いてる。
+　せめて、自分には残したいから」
+
+クラウスは視線を水面に向けたまま、やわらかく言った。
+
+「それでいいと思う。
+　話せないことがあるのは、誰にでもある」
+
+それきりふたりは何も言わなかった。
+けれど風は少しだけ温く、陽は背中を照らしていた。
+
+“この人は、聞いてこない”
+――それが、どれだけ楽だったか。
+
+“この人は、わかっていないふりをしてくれる”
+――それが、どれほど優しかったか。
+
+＊
+
+――船はとうに港を離れ、今はただ、静かな夜の道を進んでいた。
+
+波の揺れが船体を撫でる。
+クラウスは甲板の端に立ち、月明かりの海を眺めていた。
+
+「……眠れないんですか？」
+
+背後から声がした。
+
+振り返ると、ミレイが佇んでいた。
+夜風に煽られる銀髪を、片手でそっと押さえている。
+
+「お前こそ」
+
+「わたしは……ちょっと、夜風にあたりたくて」
+
+ミレイは少し肩をすくめて、すぐに目を伏せた。
+
+もう片方の手には、古びた紙が握られていた。
+その紙の端は、ところどころ指に擦れて柔らかくなっていた。
+
+「それは？」
+
+ミレイは紙に視線を落とした。
+
+「……昔のもの。
+　捨ててしまおうとも思ったんだけど……結局、できなくて」
+
+ミレイの声が、夜に紛れる。
+月明かりに照らされた銀の瞳が、わずかに潤んで見えた。
+その紙には、家族からの言葉が書かれているのかもしれない。
+あるいは、もう会えない家族の名が記されていたのかもしれない。
+
+「どこかで、まだ戻れると思っていた。
+　誰にも見られないところで、”あの頃の自分”に戻れる気がしてたの」
+
+その呟きに、クラウスは何も言えなかった。
+
+「でも……少しずつ、思い出せなくなってるの。
+　あのときの空気も、音も……昔はもっと、はっきり覚えていたのに。
+　今はもう、遠く霞んで……手を伸ばしたって届かない」
+
+指先が震えていた。
+それを、風のせいにしようとするように、ミレイはケープの裾を強く握りしめる。
+
+「それでも……弱さは見せられない。
+　わたしは、“強いふり”をしなきゃいけないから」
+
+彼女は笑ってみせた。
+でもその笑みは、夜の寒さのように、静かで儚かった。
+
+＊
+
+その紙には、ボールペンの走り書きでこうあった。
+
+「夕飯は冷蔵庫の中にあります。
+　温めて食べてね。　母より」
+
+そこには、魔術も呪いも戦争もない、ただ平穏な世界の空気が染みついている。
+目を閉じても、まぶたの裏に残るのは、あのキッチンの白い光景。
+
+ミレイは無言でそれを見つめると、折りたたんで、また丁寧にしまう。
+
+（帰れない。でも、捨てられない。
+　あの日常を忘れてしまったら、自分はもう本当に“こちらの人間”になってしまうから）
+
+＊
+
+船は静かに揺れていた。
+波が船体をなぞるたび、わずかにきしむ音が夜の空気に溶けていく。
+
+ミレイは、寄りかかるようにクラウスの肩に頭を預けていた。
+小さく呼吸を整え、やがてその瞼がすとんと落ちる。
+
+その重みは軽いのに、不思議と心の奥にずしりと響いた。
+
+クラウスは動かず、ただじっと彼女の気配を感じていた。
+
+「……強い人だと思ってた」
+
+なんてひどい勘違いをしていたんだろう。
+夜の闇に溶けるように、彼は小さく呟く。
+
+「冷たくて、誰の助けも借りずに戦って。
+　……孤高のまま、ずっと前を歩いていく、そういう人なのかと思ってた」
+
+月明かりが甲板を照らし、海の上に光の細道を描いていた。
+
+「けど違ったんだ。お前は、痛みも抱えてた。
+　脆くて、でも折れない……」
+
+ふっと、風が吹いた。
+ミレイの銀髪が揺れ、クラウスの肩にさらりと触れた。
+
+風に吹かれて、肩をすくめて立っていたあの背中は、強さじゃなく、壊れそうな何かを必死に守っていたんだ。
+
+誰にも見せないように包み込んで。
+感情を隠して、過去を隠して。
+鎧じゃない服で、ずっと心を隠してきた。
+
+それでもあいつは、折れなかった。
+俺みたいに怒りで誤魔化すことも、
+誰かにすがることもできずに、ただ前を向いて歩いてた。
+
+「……本当は、聞いてやりたい。
+　何が書かれていたのか、誰を思っていたのか」
+
+クラウスは目を伏せ、小さく息を吐く。
+
+「でも――それを聞いたら、たぶん、お前はもう笑わなくなる気がしたんだ」
+
+静かに、ただそのまま。
+
+「だから、聞かない。
+　……こんなの、俺の勝手な優しさだけどな」
+
+ミレイは何も言わない。
+ただ月明かりのもとで、静かに眠っているように見える。
+けれど、彼女の長い睫毛が、一度だけわずかに揺れた。
+
+それにクラウスは気づいたのか、気づかなかったのか。
+ただ夜の深さのなかで、彼は静かに、肩に預けられた温もりをそのままに、目を閉じた。
+
+そして、船はなおも、静かに北へ向かって進んでいた。
+
+＊
+
+朝陽が、波間を金色に染めていた。
+穏やかな潮風が甲板を撫で、夜の湿り気をさらってゆく。
+
+ミレイは、ゆっくりと目を覚ました。
+すぐ隣にいるクラウスの肩に、まだ自分の頭が預けられていることに気づいて。
+
+「あ……」
+
+わずかに身を起こしながら、ミレイは小さく息を吐いた。
+髪が少し乱れているのを指先で整え、ちらりとクラウスを見る。
+
+「……おはようございます」
+
+それは、いつも通りの落ち着いた声。
+けれど、その頬にはほんのわずか、寝起きの熱が残っていた。
+
+クラウスもすでに目を覚ましていたようで、ぎこちなく視線を逸らしながら返す。
+
+「おはよう。……よく、眠れたか」
+
+「ええ。おかげさまで」
+
+言葉は少ない。
+けれど、静かに伝わってくるものがあった。
+“おかげ”が何を指すか――互いにわかっていて、あえて口にはしなかった。
+
+少しの沈黙。
+
+甲板の端から、水夫たちが声をかけ合うのが聞こえてくる。
+帆が風を受け、船がわずかに揺れた。
+
+「……あと数刻もあれば、波止場が見えるらしい」
+
+クラウスが何気なく言った。
+
+「そう。戻るのね、また……」
+
+ミレイもそれに応じたが、その声の奥にある何かは、どちらも言葉にしなかった。
+
+クラウスは何か言いかけて、けれどやめた。
+そして、代わりに――
+
+「……よく晴れてるな。今日は」
+
+ミレイは少し驚いたように彼を見たあと、ふっと笑みを浮かべた。
+
+「ええ。……本当に」
+
+やがて二人は朝の水面を見つめる。
+言葉は少ない。
+わずかに気まずく、けれどそれを壊さぬように包む、優しい気配。
+
+船は、光をかき分けながら進んでいく。
+
+戻れない場所はある。
+でも、進める場所も、ひとつくらいなら――
+    ` }
+    ],
+
+      // リンク先（存在しない場合は null に）
+      prevHref: 'mote_ep27.html',     // 例: 'ep00.html'
+      nextHref: 'mote_ep29.html',     // 例: 'ep02.html'
+      indexHref: '../mote_index.html',     // インデックスのパス
+  };
+  </script>
+  <!-- ここまで -->
+
+  <div class="wrap">
+    <header>
+      <h1 id="h-title">読み込み中…</h1>
+      <div class="sub" id="h-sub"></div>
+    </header>
+
+    <section class="panel">
+      <div class="audio" id="audio-wrap"></div>
+    </section>
+
+    <section class="panel" id="content-wrap"></section>
+
+    <footer class="nav" id="nav">
+      <a id="prev" class="btn" href="#" aria-disabled="true">← 前の話</a>
+      <a id="index" class="btn" href="#">目次へ</a>
+      <a id="next" class="btn" href="#" aria-disabled="true">次の話 →</a>
+    </footer>
+  </div>
+
+  <script>
+    (function init(){
+      const hTitle = document.getElementById('h-title');
+      const hSub = document.getElementById('h-sub');
+      const audioWrap = document.getElementById('audio-wrap');
+      const artWrap = document.getElementById('art-wrap');
+      const beforeWrap = document.getElementById('before-wrap');
+      const afterWrap = document.getElementById('after-wrap');
+
+      hTitle.textContent = `${META.no}｜${META.title}`;
+      hSub.textContent = META.id;
+
+      if (META.audio) {
+        audioWrap.innerHTML = `<div>BGM</div><audio src="${escapeAttr(META.audio)}" controls controlsList="nodownload noplaybackrate " preload="metadata" loop></audio>`;
+        const audio = audioWrap.querySelector("audio");
+        audio.volume = 0.5; // 50%
+      } else {
+        audioWrap.textContent = '（BGM なし）';
+      }
+
+    const contentWrap = document.getElementById('content-wrap');
+
+    if (Array.isArray(META.blocks)) {
+      META.blocks.forEach(block => {
+        if (block.type === 'time') {
+          const panel = document.createElement('section');
+          panel.className = 'panel time';
+          const div = document.createElement('div');
+          div.className = 'time-label';
+          div.textContent = block.value || '';
+          panel.appendChild(div);
+          contentWrap.appendChild(panel);
+        }
+
+        if (block.type === 'location') {
+          const panel = document.createElement('section');
+          panel.className = 'panel location';
+          const h = document.createElement('div');
+          h.className = 'location-title';
+          h.textContent = block.title || '';
+          panel.appendChild(h);
+
+          if (block.subtitle) {
+            const s = document.createElement('div');
+            s.className = 'location-sub';
+            s.textContent = block.subtitle;
+            panel.appendChild(s);
+          }
+          contentWrap.appendChild(panel);
+        }
+        if (block.type === 'text') {
+        const div = document.createElement('div');
+        div.className = 'caption';
+        div.innerHTML = renderText(block.content);
+        contentWrap.appendChild(div);
+        }
+
+        if (block.type === 'image') {
+          const fig = document.createElement('figure');
+          fig.className = 'art';
+          fig.innerHTML = `<img src="${escapeAttr(block.src)}">`;
+          contentWrap.appendChild(fig);
+        }
+      });
+    }
+
+      // ナビゲーション
+      const aPrev = document.getElementById('prev');
+      const aNext = document.getElementById('next');
+      const aIndex = document.getElementById('index');
+
+      if (META.prevHref) { aPrev.href = META.prevHref; aPrev.removeAttribute('aria-disabled'); }
+      else { aPrev.setAttribute('aria-disabled','true'); aPrev.removeAttribute('href'); }
+      if (META.nextHref) { aNext.href = META.nextHref; aNext.removeAttribute('aria-disabled'); }
+      else { aNext.setAttribute('aria-disabled','true'); aNext.removeAttribute('href'); }
+
+      aIndex.href = META.indexHref || '../index.html';
+    })();
+
+    function renderText(raw = '') {
+      return escapeHtml(raw)
+        .replace(/\[i\]([\s\S]+?)\[\/i\]/g, '<em class="chant">$1</em>')
+        .replace(/\[b\]([\s\S]+?)\[\/b\]/g, '<strong>$1</strong>')
+        .replace(/\[think\]([\s\S]+?)\[\/think\]/g, '<span class="think">$1</span>');
+    }
+
+    function escapeHtml(str=''){ return String(str).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#039;'); }
+    function escapeAttr(str=''){ return escapeHtml(str).replaceAll('"','&quot;'); }
+  </script>
+</body>
+</html>
