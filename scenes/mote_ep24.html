@@ -580,7 +580,7 @@
 ミレイは笑おうとするように、ほんの少し口元を持ち上げた。
 
 クラウスはそれ以上は何も訊かず、そっと彼女の隣に立つ。
-ミレイはしばらく瓶を見つめたあと、それを一つ選び、角銀貨を数枚、台に置いた。
+ミレイはしばらく瓶を見つめたあと、それを一つ選んで、丸銅貨を数枚、差し出した。
 
 「買っていくのか」
 
@@ -725,7 +725,7 @@
       hSub.textContent = META.id;
 
       if (META.audio) {
-        audioWrap.innerHTML = `<div>BGM</div><audio src="${escapeAttr(META.audio)}" controls controlsList="nodownload" preload="metadata" loop></audio>`;
+        audioWrap.innerHTML = `<div>BGM</div><audio src="${escapeAttr(META.audio)}" controls controlsList="nodownload noplaybackrate" preload="metadata" loop></audio>`;
         const audio = audioWrap.querySelector("audio");
         audio.volume = 0.5; // 50%
       } else {
