@@ -226,7 +226,7 @@
 
 「……やるな。だが――甘い」
 
-ジルヴァの足元に、赤い術式が展開される。
+ジルヴァの足元に、赤い術陣が展開される。
 
 [i]「熾槍爆炎……放て！《ボル＝ラガン》」[/i]
 
@@ -237,7 +237,7 @@
 「クラウス君！」
 
 空気が凍りつく。
-銀の魔力が旋回し、術式を描く。
+銀の魔力が旋回し、宙に術陣を描く。
 
 [i]「白の息吹、舞い降りよ。星の欠片、嵐と化しすべてを覆え――《リザ＝アステール》！」[/i]
 
@@ -343,7 +343,7 @@
       hSub.textContent = META.id;
 
       if (META.audio) {
-        audioWrap.innerHTML = `<div>BGM</div><audio src="${escapeAttr(META.audio)}" controls controlsList="nodownload" preload="metadata" loop></audio>`;
+        audioWrap.innerHTML = `<div>BGM</div><audio src="${escapeAttr(META.audio)}" controls controlsList="nodownload noplaybackrate " preload="metadata" loop></audio>`;
         const audio = audioWrap.querySelector("audio");
         audio.volume = 0.5; // 50%
       } else {

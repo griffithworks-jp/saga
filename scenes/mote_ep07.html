@@ -179,8 +179,8 @@
 
 「――反律展開」
 
-術式が、歪んで揺れる。
-詠唱が崩壊し、魔力が喉に詰まる。
+魔術が、歪んで揺れる。
+術理が崩壊し、魔力が喉に詰まる。
 
 「ぐっ……！」
 
@@ -346,7 +346,7 @@
       hSub.textContent = META.id;
 
       if (META.audio) {
-        audioWrap.innerHTML = `<div>BGM</div><audio src="${escapeAttr(META.audio)}" controls controlsList="nodownload" preload="metadata" loop></audio>`;
+        audioWrap.innerHTML = `<div>BGM</div><audio src="${escapeAttr(META.audio)}" controls controlsList="nodownload noplaybackrate " preload="metadata" loop></audio>`;
         const audio = audioWrap.querySelector("audio");
         audio.volume = 0.5; // 50%
       } else {

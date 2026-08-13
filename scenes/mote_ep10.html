@@ -93,12 +93,13 @@
 だが、それ以上に――今の「声」に、どこかしっくり来ていない。
 借り物のような、誰かの声を“装って”生きている気がした。
 
-だからこそ、自分の身体の中に術式を組み込み、“自分の声”を取り戻したいと思った。
-魔術による補助ではない、純粋な「声」を。
+だからこそ、取り戻したかった。
+道具を外してしまえば消えてしまう声ではなく、この身体そのものから生まれる純粋な“自分の声”を。
 
 「――意思を、音に。魂を、波に」
 
-脳内で詠唱を組み立て、喉に力を入れる。だが声は出ない。
+脳内で理を組み立て、喉に力を入れる。
+だが声は出ない。
 
 （違う、力じゃない……流れを、通すように……）
 
@@ -219,7 +220,7 @@
       hSub.textContent = META.id;
 
       if (META.audio) {
-        audioWrap.innerHTML = `<div>BGM</div><audio src="${escapeAttr(META.audio)}" controls controlsList="nodownload" preload="metadata" loop></audio>`;
+        audioWrap.innerHTML = `<div>BGM</div><audio src="${escapeAttr(META.audio)}" controls controlsList="nodownload noplaybackrate " preload="metadata" loop></audio>`;
         const audio = audioWrap.querySelector("audio");
         audio.volume = 0.5; // 50%
       } else {

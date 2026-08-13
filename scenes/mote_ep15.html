@@ -226,7 +226,7 @@
 「こっちだ……！」
 
 魔物がそちらに気を取られた刹那――
-ミレイの術式が、次は丁寧に編まれる。
+ミレイの魔術が、次は丁寧に編まれる。
 
 [i]「凍空に宿りし刃よ、聖域を刻め――穿て、《リザ＝ルデ》」[/i]
 
@@ -320,7 +320,7 @@
       hSub.textContent = META.id;
 
       if (META.audio) {
-        audioWrap.innerHTML = `<div>BGM</div><audio src="${escapeAttr(META.audio)}" controls controlsList="nodownload" preload="metadata" loop></audio>`;
+        audioWrap.innerHTML = `<div>BGM</div><audio src="${escapeAttr(META.audio)}" controls controlsList="nodownload noplaybackrate " preload="metadata" loop></audio>`;
         const audio = audioWrap.querySelector("audio");
         audio.volume = 0.5; // 50%
       } else {

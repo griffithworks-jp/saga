@@ -112,7 +112,7 @@
 
 「動かないで」
 
-ミレイは息を整え、掌に淡い術式を浮かべる。
+ミレイは息を整え、掌に淡い光の紋を浮かべる。
 
 （わたしには、効かないけれど）
 
@@ -254,7 +254,7 @@
 煮える匂いが立ちのぼるころには、空気の冷えもやわらいでいた。
 
 食事を終えると、クラウスは軍装サックに荷をまとめ、残り火に靴で土をかぶせる。
-防汚の術式が編み込まれたミレイの法衣に落ちた灰は、払えば跡も残らない。
+防汚の魔織が編み込まれたミレイの法衣に落ちた灰は、払えば跡も残らない。
 
 晴れた空の下、ふたりはほとんど同時に立ち上がった。
 
@@ -611,7 +611,7 @@
       hSub.textContent = META.id;
 
       if (META.audio) {
-        audioWrap.innerHTML = `<div>BGM</div><audio src="${escapeAttr(META.audio)}" controls controlsList="nodownload" preload="metadata" loop></audio>`;
+        audioWrap.innerHTML = `<div>BGM</div><audio src="${escapeAttr(META.audio)}" controls controlsList="nodownload noplaybackrate " preload="metadata" loop></audio>`;
         const audio = audioWrap.querySelector("audio");
         audio.volume = 0.5; // 50%
       } else {

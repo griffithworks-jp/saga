@@ -172,7 +172,7 @@
 
 「人間、大詰めを迎えると丈夫になるらしいな。
 　由緒正しき五公家、魔術の名門……そして、王たる資質を持つ系譜。
-　儂の代で終わるわけにはゆくまいて」
+　儂（わし）の代で終わるわけにはゆくまいて」
 
 その声音には、誇りと、そしてわずかな寂寥があった。
 
@@ -682,7 +682,7 @@
       hSub.textContent = META.id;
 
       if (META.audio) {
-        audioWrap.innerHTML = `<div>BGM</div><audio src="${escapeAttr(META.audio)}" controls controlsList="nodownload" preload="metadata" loop></audio>`;
+        audioWrap.innerHTML = `<div>BGM</div><audio src="${escapeAttr(META.audio)}" controls controlsList="nodownload noplaybackrate " preload="metadata" loop></audio>`;
         const audio = audioWrap.querySelector("audio");
         audio.volume = 0.5; // 50%
       } else {

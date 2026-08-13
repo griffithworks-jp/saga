@@ -87,7 +87,7 @@
 森の木々は遠く、道の左右には見渡すかぎりの草地が広がる。
 茂みも、遮る岩場もほとんどない。
 
-俺は、その何もない平原のただ中にいた。
+ミレイは、その何もない平原のただ中にいた。
 ときおり、小さな昆虫が草を跳ね、陽炎が遠くに揺れている。
 
 （……静かすぎる）
@@ -110,14 +110,14 @@
 「……！」
 
 思わず後退る。
-詠唱の準備。
+魔術詠唱の準備。
 
-だが術式を組もうとして、詰まる。
+だが声を出そうとして、詰まる。
 頭の中では、構文ははっきりと描けている。
 間違っていない。
 順番も、意味も、力の流れも。
 
-それなのに――声を通そうとする瞬間、どこかで削がれる。
+それなのに声を――詠唱を通そうとする瞬間、どこかで削がれる。
 
 （落ち着け……）
 
@@ -165,7 +165,7 @@
 白い霧が手元に滲み、次の瞬間、透明な刃が形を得た。
 
 氷の剣。
-握った感触は、かつて手に馴染んだ鋼の剣に、よく似ていた。
+握った感触は、かつて手に馴染んだ鋼の剣に、少しだけ似ていた。
 
 ミレイは一歩踏み込み、飛びかかる魔物にその刃を突き出す。
 
@@ -238,7 +238,7 @@
       hSub.textContent = META.id;
 
       if (META.audio) {
-        audioWrap.innerHTML = `<div>BGM</div><audio src="${escapeAttr(META.audio)}" controls controlsList="nodownload" preload="metadata" loop></audio>`;
+        audioWrap.innerHTML = `<div>BGM</div><audio src="${escapeAttr(META.audio)}" controls controlsList="nodownload noplaybackrate " preload="metadata" loop></audio>`;
         const audio = audioWrap.querySelector("audio");
         audio.volume = 0.5; // 50%
       } else {
