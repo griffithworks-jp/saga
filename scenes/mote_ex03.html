@@ -144,15 +144,15 @@
 
 《ミスア＝ヴェール》。
 
-旅人向けの補助術式。
-雨と汚れを寄せ付けにくくするだけの、地味な加工だ。
+旅人向けに補助の水魔術《ミスア＝コルテ》を施した衣だ。
+雨と汚れを寄せ付けにくくするだけの、地味な加工。
 
 クラウスは黙って自分のサックを軽く叩く。
-こちらは軍用品。
+こちらは最新の軍用品。
 
 《ミスア＝シェル》。
 
-同じ系統の術式が施されている。
+同じ系統の魔術加工が施され、耐候性が高められている。
 
 雨はまだ止まない。
 
@@ -228,7 +228,7 @@
       hSub.textContent = META.id;
 
       if (META.audio) {
-        audioWrap.innerHTML = `<div>BGM</div><audio src="${escapeAttr(META.audio)}" controls controlsList="nodownload" preload="metadata" loop></audio>`;
+        audioWrap.innerHTML = `<div>BGM</div><audio src="${escapeAttr(META.audio)}" controls controlsList="nodownload noplaybackrate" preload="metadata" loop></audio>`;
         const audio = audioWrap.querySelector("audio");
         audio.volume = 0.5; // 50%
       } else {
