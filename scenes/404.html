@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>404 Page Not Found</title>
+
+  <style>
+  /*  :root {
+      --bg: #0d171c;
+      --ink: #edf8fb;
+      --muted: #9db6be;
+      --border: #2c454f;
+      --accent: #73b8d6;
+    } */
+
+    :root { --bg:#0f1320; --ink:#e7ebff; --muted:#a6b0d4; --border:#2a3147; --accent:#6ea8fe; }
+
+    html, body {
+      margin: 0;
+      min-height: 100%;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto,
+        Noto Sans JP, "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .wrap {
+      width: 100%;
+      max-width: 820px;
+      box-sizing: border-box;
+      padding: 24px 18px;
+      text-align: center;
+    }
+
+    .panel {
+      background: linear-gradient(180deg, #1a1f33, #151a2a);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 42px 20px 30px;
+      box-shadow: 0 4px 12px rgba(0,0,0,.35);
+    }
+
+    .message {
+      margin: 0;
+      line-height: 2;
+      font-size: 1.05rem;
+      letter-spacing: .04em;
+    }
+
+    .portal {
+      margin-top: 34px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 18px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: #111a1e;
+      color: var(--ink);
+      text-decoration: none;
+      font-size: .95rem;
+    }
+
+    .btn:hover {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 2px rgba(115,184,214,.15) inset;
+    }
+
+    .error-code {
+      margin-top: 28px;
+      color: var(--muted);
+      font-size: .72rem;
+      letter-spacing: .08em;
+      opacity: .55;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <main class="panel">
+      <p class="message">この先には、まだ何も記されていない。</p>
+
+      <div class="portal">
+<!--        <a class="btn" href="saga_portal.html">Web小説ポータルへ</a> -->
+        <a class="btn" href="../saga_portal.html">Web小説ポータルへ</a>
+      </div>
+
+      <div class="error-code">404 Page Not Found</div>
+    </main>
+  </div>
+</body>
+</html>
