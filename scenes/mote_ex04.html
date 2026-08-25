@@ -25,7 +25,11 @@
     .think { color: var(--muted); font-style: italic; }
 
     .audio { display:flex; flex-direction:column; gap:6px; }
+    .audio-credit { font-size: .72rem; color: var(--muted); opacity: .65; }
+    .audio-credit a { color: inherit; text-decoration: none; }
+    .audio-credit a:hover { color: var(--accent); text-decoration: underline; }
     .caption { color:var(--muted); line-height:1.7; font-size: 1rem; white-space: pre-wrap; }
+
     figure { margin:0; }
     .art { width:100%; aspect-ratio: auto; background:none; border:none; border-radius: 0; overflow:hidden; display:grid; place-items:left; }
     .art img { max-width:100%; height:auto; display:block; }
@@ -78,6 +82,7 @@
     no: 'Extra04',
     title: '地図を広げて、葡萄畑',
     audio: '../assets/PerituneMaterial_Harvest2_loop.mp3',
+    audioCredit: { name: 'PeriTune', site: 'https://peritune.com/' },
     blocks: [
       { type: 'image', src: '../image/Hillside-village-with-vineyards4.jpg' },
       { type: 'text', content: ` ` },

@@ -25,7 +25,11 @@
     .think { color: var(--muted); font-style: italic; }
 
     .audio { display:flex; flex-direction:column; gap:6px; }
+    .audio-credit { font-size: .72rem; color: var(--muted); opacity: .65; }
+    .audio-credit a { color: inherit; text-decoration: none; }
+    .audio-credit a:hover { color: var(--accent); text-decoration: underline; }
     .caption { color:var(--muted); line-height:1.7; font-size: 1rem; white-space: pre-wrap; }
+
     figure { margin:0; }
     .art { width:100%; aspect-ratio: auto; background:none; border:none; border-radius: 0; overflow:hidden; display:grid; place-items:left; }
     .art img { max-width:100%; height:auto; display:block; }
@@ -78,6 +82,7 @@
     no: '第22話',
     title: '白銀の詠唱、信じる背中',
     audio: '../assets/PerituneMaterial_Fight3_loop.mp3',
+    audioCredit: { name: 'PeriTune', site: 'https://peritune.com/' },
     blocks: [
       { type: 'text', content: `
 鳥の声が消える。
@@ -228,7 +233,23 @@
       hSub.textContent = META.id;
 
       if (META.audio) {
-        audioWrap.innerHTML = `<div>BGM</div><audio src="${escapeAttr(META.audio)}" controls controlsList="nodownload noplaybackrate" preload="metadata" loop></audio>`;
+        let credit = '';
+        if (META.audioCredit) {
+          if (META.audioCredit.url) {
+            credit = `
+              <span class="audio-credit">｜ 音楽：
+                <a href="${escapeAttr(META.audioCredit.url)}" target="_blank" rel="noopener noreferrer">
+                  ${escapeHtml(META.audioCredit.name)}
+                </a>
+              </span>`;
+          } else if (META.audioCredit.name) {
+            credit = `
+              <span class="audio-credit">｜ 音楽：
+                ${escapeHtml(META.audioCredit.name)}
+              </span>`;
+          }
+        }
+        audioWrap.innerHTML = `<div>BGM${credit}</div><audio src="${escapeAttr(META.audio)}" controls controlsList="nodownload noplaybackrate" preload="metadata" loop></audio>`;
         const audio = audioWrap.querySelector("audio");
         audio.volume = 0.5; // 50%
       } else {
