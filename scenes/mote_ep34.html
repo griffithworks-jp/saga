@@ -1,0 +1,520 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>『境界のミレイ ―Mirei on the Edge― 』 | 第34話</title>
+  <style>
+    :root { --bg:#0f1320; --ink:#e7ebff; --muted:#a6b0d4; --border:#2a3147; --accent:#6ea8fe; }
+    html, body { margin:0; background:var(--bg); color:var(--ink); font-family: system-ui, -apple-system, Segoe UI, Roboto, Noto Sans JP, "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif; }
+    .wrap { max-width: 820px; margin: 0 auto; padding: 18px 14px 24px; }
+    header h1 { margin:0 0 6px; font-size: 1.2rem; }
+    header .sub { color: var(--muted); font-size: .9rem; margin:0 0 8px; }
+
+    .panel { background: linear-gradient(180deg, #1a1f33, #151a2a); border:1px solid var(--border); border-radius:12px; padding: 12px; box-shadow: 0 4px 12px rgba(0,0,0,.35); }
+    .panel + .panel { margin-top: 10px; }
+
+    .panel.location { background: linear-gradient(180deg, #14182a, #101424); text-align: center; }
+    .location-title { font-size: 1.05rem; letter-spacing: 0.15em; color: var(--ink); }
+    .location-sub { margin-top: 4px; font-size: 0.85rem; color: var(--muted); }
+    .panel.time { background: none; border: none; box-shadow: none; padding: 8px 0 4px; text-align: center; }
+    .time-label { font-size: 0.8rem; color: var(--muted); letter-spacing: 0.1em; }
+
+    em.chant { font-style: italic; color: #cfd8ff; letter-spacing: 0.05em; text-shadow: 0 0 6px rgba(180,200,255,.25); }
+    .think { color: var(--muted); font-style: italic; }
+
+    .audio { display:flex; flex-direction:column; gap:6px; }
+    .audio-credit { font-size: .72rem; color: var(--muted); opacity: .65; }
+    .audio-credit a { color: inherit; text-decoration: none; }
+    .audio-credit a:hover { color: var(--accent); text-decoration: underline; }
+    .caption { color:var(--muted); line-height:1.7; font-size: 1rem; white-space: pre-wrap; }
+
+    figure { margin:0; }
+    .art { width:100%; aspect-ratio: auto; background:none; border:none; border-radius: 0; overflow:hidden; display:grid; place-items:left; }
+    .art img { max-width:100%; height:auto; display:block; }
+
+    footer.nav { display:flex; gap:8px; justify-content:space-between; margin-top:14px; flex-wrap:wrap; }
+    .btn { display:inline-block; padding:10px 14px; border:1px solid var(--border); border-radius:999px; background:#11162a; color:var(--ink); text-decoration:none; font-size:.95rem; }
+    .btn:hover { border-color: var(--accent); box-shadow: 0 0 0 2px rgba(110,168,254,.15) inset; }
+    .btn[aria-disabled="true"] { opacity:.5; pointer-events:none; }
+
+    :root { --font-body: 1rem; --line-body: 1.9; }
+    .caption { font-size: var(--font-body); line-height: var(--line-body); line-height: 1.9; }
+    .font-tools { display:flex; gap:8px; justify-content:flex-start; margin-left:8px; margin-top:8px; }
+    .font-tools button { padding:4px 10px; border:1px solid var(--border);
+      border-radius:8px; background:#11162a; color:var(--ink); cursor:pointer; }
+  </style>
+</head>
+<body>
+  <div class="font-tools">
+    <button onclick="setFontSize('small')">小</button>
+    <button onclick="setFontSize('normal')">標準</button>
+    <button onclick="setFontSize('large')">大</button>
+  </div>
+  <!-- ここから編集 -->
+  <script>
+    function setFontSize(size) {
+    const root = document.documentElement;
+    if (size === 'large') {
+      root.style.setProperty('--font-body', '1.25rem');
+      root.style.setProperty('--line-body', '2.1');
+      localStorage.setItem('fontSize', 'large');
+    } else if (size === 'small') {
+      root.style.setProperty('--font-body', '0.9rem');
+      localStorage.setItem('fontSize', 'small');
+    } else {
+      root.style.setProperty('--font-body', '1rem');
+      localStorage.setItem('fontSize', 'normal');
+    }
+  }
+  (function(){
+    const saved = localStorage.getItem('fontSize');
+    if (saved === 'large') {
+      document.documentElement.style.setProperty('--font-body', '1.25rem');
+      document.documentElement.style.setProperty('--line-body', '2.1');
+    } else if (saved === 'small') {
+      document.documentElement.style.setProperty('--font-body', '0.9rem');
+    }
+  })();
+  const META = {
+    id: 'mote_ep34',
+    no: '第34話',
+    title: '小さな誇りと、ふたりの距離',
+    audio: '../assets/240414_celtic7.mp3',
+    audioCredit: null,
+    blocks: [
+      { type: 'image', src: '../image/Village-Wells2_m.jpg' },
+      { type: 'text', content: ` ` },
+      { type: 'location',
+        title: 'クリアストーリ村 / Clearstory',
+        subtitle: '' },
+      { type: 'text', content: `
+朝早くから、村の広場には人が集まっていた。
+その中心に、黒いケープを羽織った銀髪の少女。
+
+「嬢ちゃん、ちょっとこっち！」
+
+「あ、あの、順番にお願いします……！」
+
+どういうわけか、すっかり村の“便利屋”になっていた。
+
+「ええと……焼けたパン窯の温度調整ですか……？」
+
+「そうだよ、中が焦げちまって困ってるのさ！
+　ほら、魔術ってやつでなんとか――」
+
+「……魔術は火遊びじゃないんですけど……まあ、やってみますね」
+
+ミレイは小さくため息をつきながら、窯の前で手をかざした。
+
+[i]「……抑えよ、炎のゆらぎ――《バ＝ボル》」[/i]
+
+術が発動すると、窯から上がっていた過剰な熱気が、ふっと穏やかになる。
+
+「おぉ……！　煙が消えた！」
+「火加減がっ……ちょうどいい！」
+「さすがだな、“銀のまじない師”！」
+
+「……そういう呼び名は、ほんと、やめてほしいんですけど……」
+
+それからも、ミレイのところには次から次へと声がかかる。
+
+＊
+
+■ 【失せ物探し】
+
+[i]「視界、裂けよ──《エル＝スピラ》」[/i]
+
+──水路の底が透けて見え、落としてしまった指輪を発見。
+
+「あっ、あった！」
+
+「ありがとう！　貰ったばっかりだったのよ！」
+
+＊
+
+■ 【樹木の剪定】
+
+[i]「風よ裂け――《ビュア＝ザン》」[/i]
+
+──道へと張り出した庭木の枝を、風の刃がすぱりと切り落とす。
+
+「切った枝、片付けてくださいね」
+
+「ああ助かった！　これで近所迷惑にならずに済む……！」
+
+＊
+
+■ 【冷たい水が飲みたい】
+
+[i]「……そのくらい我慢しなさい、って言いたいけど──《リザ》」[/i]
+
+──桶の水が冷やされて、子どもが無邪気に「ひゃっこい！」と喜ぶ。
+
+＊
+
+■【子どもたちへ“雷のおもちゃ”】
+
+[i]「ぴっ、ちっ、ちっ、ひかりの鼓動――《ニグ＝ピチチ・レレレ》♪」[/i]
+
+──ミレイが指先を鳴らすと、青白い光が跳ねると同時に、小さな音が鳴った。
+
+小指から薬指、そして親指へ。
+指を動かすたび、光と音が踊る。
+
+ぴちっ。ちっ。ぴちっ。
+
+まるで指先で奏でる、小さな楽器のようだった。
+
+「わあっ！　今の見た！？」
+「光で遊んでるよ！」
+「もう一回やってー！」
+
+「……サービスですからね」
+
+    ` },
+      { type: 'image', src: '../image/Hillside-village-with-vineyards3_m.jpg' },
+      { type: 'text', content: `
+
+「……はぁ……」
+
+正午前、ミレイは石垣のそばに腰を下ろし、肩を落とす。
+
+「角銀貨が一枚に丸銅貨が二十で……３銀ぶんくらい。
+　朝から働きすぎてしまいましたね……」
+
+魔力の残りを確認する。
+
+（……疲れた。そろそろ戻らないとクラウス君が心配するかも）
+
+何かを忘れようとするかのように、無心になってしまった。
+そんなミレイの傍に、村の少女が駆け寄ってくる。
+
+「ねーねーおねえちゃん、まだここに居てくれる？」
+
+「……いえ、もう明日には出発なので」
+
+「えー、つまんなーい」
+
+「……ふふ、そうですか」
+
+ミレイは立ち上がり、静かに笑った。
+
+「でもまあ……また、寄り道がしたくなったら」
+
+「え？」
+
+「なんでもありません。それでは──」
+
+＊
+
+宿の扉を開ける。
+
+――クラウスが、待ち構えていた。
+
+「お前、財布なくしたんだな？」
+
+「…………」
+
+「なんで、言わなかった？」
+
+その瞬間。
+ミレイの中で、何かが切れた。
+
+「――言ったら、なんだっていうんですか。
+　“ちゃんと見てろ”とか、“頼れ”とか！
+　そういうこと言ったんでしょう！？」
+
+クラウスは、思わず言葉を失う。
+
+「わたしは……！　わたしだって、自分で！！
+　ちゃんと、なんとかできるって……」
+
+ミレイは声を震わせながら叫んだ。
+目元に、涙が浮かぶ。
+
+「どうして……見てくれないの……」
+
+クラウスが一歩踏み出すが、ミレイは振り返らない。
+
+「もう……いいです」
+
+そして、部屋の奥に消えた。
+
+＊
+
+怒声の余韻が、まだ空気に残っている気がした。
+
+部屋の扉が閉まったあと、クラウスはその場に立ち尽くしていた。
+ミレイが声を荒げたのは、旅の中で初めてだった。
+
+（……やってしまった）
+
+別に、指摘するつもりじゃなかった。
+ただ、心配で、気になって、それでつい――
+それが責めるように聞こえたのは、間違いないのだろう。
+
+（あいつ、俺のこと……頼ってなかったわけじゃないんだ）
+
+自分の力で、やれる範囲で、できることをしようとしていただけで――
+そうやって努力していたことに、気がつかなかったのかもしれない。
+
+彼女の手。
+魔術を使ったあと、いつも少し震えているその指。
+
+あれは、“弱さ”じゃない。
+戦っていたんだ。
+俺とは違うやり方で、俺と並ぼうとしてくれていた。
+
+「……対等でいたかったんだな、あいつ」
+
+呟いて、クラウスは目を伏せた。
+
+守らなきゃいけないと思ってた。
+けど、彼女はそれだけの存在じゃなかった。
+
+ずっと、自分の足で立とうとしてた。
+
+俺はそれを認めるどころか、その誇りを傷つけるようなことをして。
+
+涙まで――
+
+（馬鹿だな）
+
+拳を握る。
+
+彼女の表情が、焼き付いて離れない。
+怒鳴った彼女の声も、傷ついた瞳も、忘れられそうになかった。
+もう、そんな顔はさせたくない。
+
+（謝ろう）
+
+守るんじゃない。
+追いつこう。
+同じ高さで、お互いがちゃんと向き合えるように。
+
+＊
+
+部屋の中は静かだった。
+ミレイは背を扉に預け、膝を抱え込むようにして床に座っていた。
+感情をぶつけてしまったあとは、思いのほか静かだった。
+
+（……怒りたかったわけじゃ、ないのに）
+
+それでも、涙が勝手に溢れてきたのは――
+きっと、昨日の“あの子”の話が、まだ胸に刺さっていたからか。
+
+あのときの彼は、自分の知らない顔で笑っていた。
+その横顔が、今でも脳裏にちらつく。
+
+（わたしは……）
+
+守られたいんじゃない。
+追いつきたい。
+並びたかった。
+
+同じ場所で、同じ目線で、見てほしかった。
+
+なのに――
+
+心配だって目をされると、自分が“対等じゃない存在”におかれているような気がして、悔しかった。
+寂しかった。
+
+（……怒鳴るなんて、最低……）
+
+膝に顔を押し付ける。
+少しだけ、鼻をすする音が響いた。
+
+（謝ろう）
+
+そう思ったそのとき、扉の向こうから、声がした。
+
+＊
+
+「ミレイ……」
+
+間を置いて、静かな声で続く。
+
+「言い方が悪かった。
+　責めるつもりは、なくて。ただ……」
+
+少しだけ、言葉に詰まる。
+
+「……ごめん」
+
+ミレイはゆっくりと顔を上げた。
+指先で涙を拭い、立ち上がる。
+
+扉の前に立ち、躊躇いがちに取っ手を握る。
+
+――カチリ。
+
+扉を開く。
+そこには、クラウスが立っていた。
+
+「……わたしのほうこそ、ごめんなさい」
+
+一瞬だけ、視線が交差する。
+
+「いや。俺が悪かった」
+
+「……でも、わたしも言いすぎました」
+
+「……そうかもな」
+
+「もう」
+
+ミレイが少しだけ頬を膨らませる。
+
+「そこは否定してくださいよ」
+
+クラウスは一瞬きょとんとして、それからお互いにふっと、力の抜けた笑みがこぼれた。
+
+「……あの、クラウス君」
+
+ミレイは肩をすくめ、小さくため息をついた。
+
+「お昼ご飯の時間、とっくにすぎてしまいました」
+
+「……ああ、ほんとだ。腹が減ったな」
+
+ふたり、どちらからともなく笑った。
+もう昼をとうに過ぎた村には、午後の陽が静かに差していた。
+    ` }
+    ],
+
+      // リンク先（存在しない場合は null に）
+      prevHref: 'mote_ep33.html',     // 例: 'ep00.html'
+      nextHref: 'mote_ep35.html',     // 例: 'ep02.html'
+      indexHref: '../mote_index.html',     // インデックスのパス
+  };
+  </script>
+  <!-- ここまで -->
+
+  <div class="wrap">
+    <header>
+      <h1 id="h-title">読み込み中…</h1>
+      <div class="sub" id="h-sub"></div>
+    </header>
+
+    <section class="panel">
+      <div class="audio" id="audio-wrap"></div>
+    </section>
+
+    <section class="panel" id="content-wrap"></section>
+
+    <footer class="nav" id="nav">
+      <a id="prev" class="btn" href="#" aria-disabled="true">← 前の話</a>
+      <a id="index" class="btn" href="#">目次へ</a>
+      <a id="next" class="btn" href="#" aria-disabled="true">次の話 →</a>
+    </footer>
+  </div>
+
+  <script>
+    (function init(){
+      const hTitle = document.getElementById('h-title');
+      const hSub = document.getElementById('h-sub');
+      const audioWrap = document.getElementById('audio-wrap');
+      const artWrap = document.getElementById('art-wrap');
+      const beforeWrap = document.getElementById('before-wrap');
+      const afterWrap = document.getElementById('after-wrap');
+
+      hTitle.textContent = `${META.no}｜${META.title}`;
+      hSub.textContent = META.id;
+
+      if (META.audio) {
+        let credit = '';
+        if (META.audioCredit) {
+          if (META.audioCredit.url) {
+            credit = `
+              <span class="audio-credit">｜ 音楽：
+                <a href="${escapeAttr(META.audioCredit.url)}" target="_blank" rel="noopener noreferrer">
+                  ${escapeHtml(META.audioCredit.name)}
+                </a>
+              </span>`;
+          } else if (META.audioCredit.name) {
+            credit = `
+              <span class="audio-credit">｜ 音楽：
+                ${escapeHtml(META.audioCredit.name)}
+              </span>`;
+          }
+        }
+        audioWrap.innerHTML = `<div>BGM${credit}</div><audio src="${escapeAttr(META.audio)}" controls controlsList="nodownload noplaybackrate" preload="metadata" loop></audio>`;
+        const audio = audioWrap.querySelector("audio");
+        audio.volume = 0.5; // 50%
+      } else {
+        audioWrap.textContent = '（BGM なし）';
+      }
+
+    const contentWrap = document.getElementById('content-wrap');
+
+    if (Array.isArray(META.blocks)) {
+      META.blocks.forEach(block => {
+        if (block.type === 'time') {
+          const panel = document.createElement('section');
+          panel.className = 'panel time';
+          const div = document.createElement('div');
+          div.className = 'time-label';
+          div.textContent = block.value || '';
+          panel.appendChild(div);
+          contentWrap.appendChild(panel);
+        }
+
+        if (block.type === 'location') {
+          const panel = document.createElement('section');
+          panel.className = 'panel location';
+          const h = document.createElement('div');
+          h.className = 'location-title';
+          h.textContent = block.title || '';
+          panel.appendChild(h);
+
+          if (block.subtitle) {
+            const s = document.createElement('div');
+            s.className = 'location-sub';
+            s.textContent = block.subtitle;
+            panel.appendChild(s);
+          }
+          contentWrap.appendChild(panel);
+        }
+        if (block.type === 'text') {
+        const div = document.createElement('div');
+        div.className = 'caption';
+        div.innerHTML = renderText(block.content);
+        contentWrap.appendChild(div);
+        }
+
+        if (block.type === 'image') {
+          const fig = document.createElement('figure');
+          fig.className = 'art';
+          fig.innerHTML = `<img src="${escapeAttr(block.src)}">`;
+          contentWrap.appendChild(fig);
+        }
+      });
+    }
+
+      // ナビゲーション
+      const aPrev = document.getElementById('prev');
+      const aNext = document.getElementById('next');
+      const aIndex = document.getElementById('index');
+
+      if (META.prevHref) { aPrev.href = META.prevHref; aPrev.removeAttribute('aria-disabled'); }
+      else { aPrev.setAttribute('aria-disabled','true'); aPrev.removeAttribute('href'); }
+      if (META.nextHref) { aNext.href = META.nextHref; aNext.removeAttribute('aria-disabled'); }
+      else { aNext.setAttribute('aria-disabled','true'); aNext.removeAttribute('href'); }
+
+      aIndex.href = META.indexHref || '../index.html';
+    })();
+
+    function renderText(raw = '') {
+      return escapeHtml(raw)
+        .replace(/\[i\]([\s\S]+?)\[\/i\]/g, '<em class="chant">$1</em>')
+        .replace(/\[b\]([\s\S]+?)\[\/b\]/g, '<strong>$1</strong>')
+        .replace(/\[think\]([\s\S]+?)\[\/think\]/g, '<span class="think">$1</span>');
+    }
+
+    function escapeHtml(str=''){ return String(str).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#039;'); }
+    function escapeAttr(str=''){ return escapeHtml(str).replaceAll('"','&quot;'); }
+  </script>
+</body>
+</html>
